@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32210.238
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetPal-Api", "PetPal-Api\PetPal-Api.csproj", "{B378B678-DDFC-4D50-A62A-56620758E94D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetPal-DataAccess", "PetPal-DataAccess\PetPal-DataAccess.csproj", "{444F2C74-2FF9-464A-BA39-0E6B6C919447}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B378B678-DDFC-4D50-A62A-56620758E94D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B378B678-DDFC-4D50-A62A-56620758E94D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B378B678-DDFC-4D50-A62A-56620758E94D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B378B678-DDFC-4D50-A62A-56620758E94D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{444F2C74-2FF9-464A-BA39-0E6B6C919447}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{444F2C74-2FF9-464A-BA39-0E6B6C919447}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{444F2C74-2FF9-464A-BA39-0E6B6C919447}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{444F2C74-2FF9-464A-BA39-0E6B6C919447}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {669C7ED7-6938-4090-98BA-70E74AD32625}
+	EndGlobalSection
+EndGlobal
