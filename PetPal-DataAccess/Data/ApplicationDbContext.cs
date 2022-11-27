@@ -10,5 +10,6 @@ namespace PetPal_DataAccess.Data
         }
 
         public DbSet<AppUser> AppUsers { get; set; }
+        public DbSet<Animal> Animals { get; set; }
     }
 }
