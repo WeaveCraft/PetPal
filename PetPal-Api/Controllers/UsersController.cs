@@ -4,9 +4,7 @@ using PetPal_DataAccess.Models;
 
 namespace PetPal_Api.Controllers
 {
-    [ApiController]
-    [Route("api/[controller]")] // /api/users
-    public class UsersController
+    public class UsersController : BaseApiController
     {
         private readonly ApplicationDbContext _context;
         public UsersController(ApplicationDbContext context)
