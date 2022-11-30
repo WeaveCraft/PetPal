@@ -8,6 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.25.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\PetPal-DataAccess\PetPal-DataAccess.csproj" />
   </ItemGroup>
 
