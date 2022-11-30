@@ -1,4 +1,6 @@
 using Microsoft.EntityFrameworkCore;
+using PetPal_Business.Interfaces;
+using PetPal_Business.Services;
 using PetPal_DataAccess.Data;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,6 +14,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(opt =>
 });
 
 builder.Services.AddCors();
+builder.Services.AddScoped<ITokenService, TokenService>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
