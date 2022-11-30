@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using PetPal_Business.Interfaces;
 using PetPal_DataAccess.Data;
 using PetPal_DataAccess.DTOs;
 using PetPal_DataAccess.Models;
@@ -11,13 +12,16 @@ namespace PetPal_Api.Controllers
     public class AccountController : BaseApiController
     {
         private readonly ApplicationDbContext _context;
-        public AccountController(ApplicationDbContext context)
+        private readonly ITokenService _tokenService;
+
+        public AccountController(ApplicationDbContext context, ITokenService tokenService)
         {
             _context = context;
+            _tokenService = tokenService;
         }
 
         [HttpPost("register")] // POST: api/account/register?username=dave&password=pwd
-        public async Task<ActionResult<AppUser>> Register(RegisterDTO registerDto)
+        public async Task<ActionResult<UserDto>> Register(RegisterDTO registerDto)
         {
             if(await UserExists(registerDto.Username)) return BadRequest("Username is Taken");
 
@@ -25,7 +29,7 @@ namespace PetPal_Api.Controllers
 
             var user = new AppUser
             {
-                UserName = registerDto.Username.ToLower(),
+                Username = registerDto.Username.ToLower(),
                 PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(registerDto.Password)),
                 PasswordSalt = hmac.Key
             };
@@ -33,13 +37,17 @@ namespace PetPal_Api.Controllers
             _context.AppUsers.Add(user);
             await _context.SaveChangesAsync();
 
-            return user;
+            return new UserDto
+            {
+                Username = user.Username,
+                Token = _tokenService.CreateToken(user)
+            };
         }
 
         [HttpPost("login")]
-        public async Task<ActionResult<AppUser>> Login(LoginDto loginDto)
+        public async Task<ActionResult<UserDto>> Login(LoginDto loginDto)
         {
-            var user = await _context.AppUsers.SingleOrDefaultAsync(x => x.UserName == loginDto.UserName);
+            var user = await _context.AppUsers.SingleOrDefaultAsync(x => x.Username == loginDto.Username);
 
             if (user == null) return Unauthorized();
 
@@ -52,12 +60,16 @@ namespace PetPal_Api.Controllers
                 if (computedHash[i] != user.PasswordHash[i]) return Unauthorized("Invalid Password");
             }
 
-            return user;
+            return new UserDto
+            {
+                Username = user.Username,
+                Token = _tokenService.CreateToken(user)
+            };
         }
 
         private async Task<bool> UserExists(string username)
         {
-            return await _context.AppUsers.AnyAsync(x => x.UserName == username.ToLower());
+            return await _context.AppUsers.AnyAsync(x => x.Username == username.ToLower());
         }
     }
 }
