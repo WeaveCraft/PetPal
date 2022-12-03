@@ -1,4 +1,5 @@
 using PetPal_Business.Extensions;
+using PetPal_Business.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,6 +19,8 @@ var app = builder.Build();
 app.UseCors(builder => builder.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:4200")); //Access Angular.
 
 // Configure the HTTP request pipeline.
+app.UseMiddleware<ExceptionMiddleware>();
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
