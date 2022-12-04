@@ -1,6 +1,6 @@
-﻿using PetPal_DataAccess.Enums;
+﻿using PetPal_Model.Enums;
 
-namespace PetPal_DataAccess.Models
+namespace PetPal_Model.Models
 {
     public class Animal
     {

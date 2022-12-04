@@ -1,4 +1,4 @@
-﻿using PetPal_DataAccess.Models;
+﻿using PetPal_Model.Models;
 
 namespace PetPal_Business.Interfaces
 {

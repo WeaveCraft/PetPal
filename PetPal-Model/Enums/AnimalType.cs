@@ -1,4 +1,4 @@
-﻿namespace PetPal_DataAccess.Enums
+﻿namespace PetPal_Model.Enums
 {
     public enum AnimalType
     {

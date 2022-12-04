@@ -19,6 +19,7 @@
   <ItemGroup>
     <ProjectReference Include="..\PetPal-Business\PetPal-Business.csproj" />
     <ProjectReference Include="..\PetPal-DataAccess\PetPal-DataAccess.csproj" />
+    <ProjectReference Include="..\PetPal-Model\PetPal-Model.csproj" />
   </ItemGroup>
 
 </Project>

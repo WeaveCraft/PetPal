@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PetPal_DataAccess.Data;
-using PetPal_DataAccess.Models;
+using PetPal_Model.Models;
 
 namespace PetPal_Api.Controllers
 {

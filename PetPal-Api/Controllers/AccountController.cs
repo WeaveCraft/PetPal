@@ -2,8 +2,8 @@
 using Microsoft.EntityFrameworkCore;
 using PetPal_Business.Interfaces;
 using PetPal_DataAccess.Data;
-using PetPal_DataAccess.DTOs;
-using PetPal_DataAccess.Models;
+using PetPal_Model.DTOs;
+using PetPal_Model.Models;
 using System.Security.Cryptography;
 using System.Text;
 

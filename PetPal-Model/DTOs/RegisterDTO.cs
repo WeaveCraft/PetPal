@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace PetPal_DataAccess.DTOs
+namespace PetPal_Model.DTOs
 {
     public class RegisterDTO
     {

@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using PetPal_DataAccess.Models;
+using PetPal_Model.Models;
 
 namespace PetPal_DataAccess.Data
 {
