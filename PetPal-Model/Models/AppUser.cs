@@ -1,4 +1,6 @@
 ﻿using PetPal_Logic.Extensions;
+using PetPal_Model.Enums;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PetPal_Model.Models
 {
@@ -8,17 +10,16 @@ namespace PetPal_Model.Models
         public string? Username { get; set; }
         public byte[] PasswordHash { get; set; }
         public byte[] PasswordSalt { get; set; }
+        [NotMapped]
         public DateOnly DateOfBirth { get; set; }
-        public string? KnownAs { get; set; }
         public DateTime Created { get; set; } = DateTime.UtcNow;
         public DateTime LastActive { get; set; } = DateTime.UtcNow;
-        public string Gender { get; set; }
-        public string Introduction { get; set; }
-        public string LookingFor { get; set; }
-        public string Interests { get; set; }
+        public string? Introduction { get; set; }
+        public string? LookingFor { get; set; }
         public string City { get; set; }
-        public string Country { get; set; }
-        public List<Photo> Photos { get; set; } = new();
+        public Country Country { get; set; }
+        public Language Language { get; set; }
+        public List<Animal> Animals { get; set; } = new();
 
         public int GetAge()
         {
