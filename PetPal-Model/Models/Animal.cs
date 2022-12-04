@@ -22,6 +22,8 @@ namespace PetPal_Model.Models
         public string? FavoriteTreat { get; set; }
         public string? FavoriteToy { get; set; }
         public List<Photo> Photos { get; set; }
+        public int AppUserId { get; set; }
+        public AppUser AppUser { get; set; }
 
         public int GetAge()
         {

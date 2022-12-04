@@ -33,7 +33,7 @@ namespace PetPalDataAccess.Migrations
                     b.Property<int?>("Age")
                         .HasColumnType("int");
 
-                    b.Property<int?>("AppUserId")
+                    b.Property<int>("AppUserId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("Created")
@@ -120,7 +120,7 @@ namespace PetPalDataAccess.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int?>("AnimalId")
+                    b.Property<int>("AnimalsId")
                         .HasColumnType("int");
 
                     b.Property<bool>("IsMain")
@@ -136,23 +136,31 @@ namespace PetPalDataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AnimalId");
+                    b.HasIndex("AnimalsId");
 
                     b.ToTable("Photos");
                 });
 
             modelBuilder.Entity("PetPal_Model.Models.Animal", b =>
                 {
-                    b.HasOne("PetPal_Model.Models.AppUser", null)
+                    b.HasOne("PetPal_Model.Models.AppUser", "AppUser")
                         .WithMany("Animals")
-                        .HasForeignKey("AppUserId");
+                        .HasForeignKey("AppUserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("AppUser");
                 });
 
             modelBuilder.Entity("PetPal_Model.Models.Photo", b =>
                 {
-                    b.HasOne("PetPal_Model.Models.Animal", null)
+                    b.HasOne("PetPal_Model.Models.Animal", "Animals")
                         .WithMany("Photos")
-                        .HasForeignKey("AnimalId");
+                        .HasForeignKey("AnimalsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Animals");
                 });
 
             modelBuilder.Entity("PetPal_Model.Models.Animal", b =>
