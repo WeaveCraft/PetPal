@@ -22,14 +22,14 @@ namespace PetPal_Business.Repositories
         public async Task<AppUser> GetUserByUsernameAsync(string username)
         {
             return await _context.AppUsers
-                .Include(x => x.Animals)
+                .Include(x => x.Animals).ThenInclude(y => y.Photos)
                 .SingleOrDefaultAsync(x => x.Username == username);
         }
 
         public async Task<IEnumerable<AppUser>> GetUsersAsync()
         {
             return await _context.AppUsers
-                .Include(x => x.Animals)
+                .Include(x => x.Animals).ThenInclude(y => y.Photos)
                 .ToListAsync();
         }
 

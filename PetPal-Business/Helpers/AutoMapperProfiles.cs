@@ -9,7 +9,9 @@ namespace PetPal_Business.Helpers
         public AutoMapperProfiles()
         {
             CreateMap<AppUser, MemberDto>();
-            CreateMap<Animal, AnimalDto>();
+            CreateMap<Animal, AnimalDto>()
+                .ForMember(dest => dest.PhotoUrl, opt => opt.MapFrom(src => src.Photos.FirstOrDefault(x => x.IsMain).Url));
+            CreateMap<Photo, PhotoDto>();
         }
     }
 }
