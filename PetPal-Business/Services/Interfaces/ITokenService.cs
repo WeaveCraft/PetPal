@@ -1,6 +1,6 @@
 ﻿using PetPal_Model.Models;
 
-namespace PetPal_Business.Interfaces
+namespace PetPal_Business.Services.Interfaces
 {
     public interface ITokenService
     {

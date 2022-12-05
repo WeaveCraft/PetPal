@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
-using PetPal_Business.Interfaces;
+using PetPal_Business.Services.Interfaces;
 using PetPal_Model.Models;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;

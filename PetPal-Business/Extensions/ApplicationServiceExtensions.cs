@@ -1,8 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using PetPal_Business.Interfaces;
+using PetPal_Business.Repositories;
+using PetPal_Business.Repositories.Interfaces;
 using PetPal_Business.Services;
+using PetPal_Business.Services.Interfaces;
 using PetPal_DataAccess.Data;
 
 namespace PetPal_Business.Extensions
@@ -15,8 +17,9 @@ namespace PetPal_Business.Extensions
             {
                 opt.UseSqlServer(config.GetConnectionString("DefaultConnection"));
             });
-
+            services.AddCors();
             services.AddScoped<ITokenService, TokenService>();
+            services.AddScoped<IUserRepository, UserRepository>();
 
             return services;
         }
