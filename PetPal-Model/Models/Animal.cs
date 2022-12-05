@@ -1,7 +1,5 @@
-﻿using PetPal_Logic.Extensions;
-using PetPal_Model.Enums;
+﻿using PetPal_Model.Enums;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PetPal_Model.Models
 {
@@ -13,7 +11,7 @@ namespace PetPal_Model.Models
         [StringLength(20)]
         public string Name { get; set; }
         public string? KnownAs { get; set; }
-        public DateTime? DateOfBirth { get; set; }
+        public DateTime DateOfBirth { get; set; }
         public DateTime Created { get; set; } = DateTime.UtcNow;
         public int Age { get; set; }
         public Gender? Gender { get; set; }

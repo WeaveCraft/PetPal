@@ -1,4 +1,5 @@
 ﻿using PetPal_Model.Enums;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PetPal_Model.Models
 {
@@ -8,7 +9,7 @@ namespace PetPal_Model.Models
         public string? Username { get; set; }
         public byte[] PasswordHash { get; set; }
         public byte[] PasswordSalt { get; set; }
-        public DateTime? DateOfBirth { get; set; }
+        public DateTime DateOfBirth { get; set; }
         public DateTime Created { get; set; } = DateTime.UtcNow;
         public DateTime LastActive { get; set; } = DateTime.UtcNow;
         public string? Introduction { get; set; }

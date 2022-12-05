@@ -9,9 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetPal-DataAccess", "PetPal
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetPal-Business", "PetPal-Business\PetPal-Business.csproj", "{CE6CDB0A-4256-438B-A3D0-546DBD40A165}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetPal-Model", "PetPal-Model\PetPal-Model.csproj", "{43442F05-0FA1-4572-9CB1-D92C42530C5A}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetPal-Logic", "PetPal-Logic\PetPal-Logic.csproj", "{4488D148-3CA7-443F-92D7-70D4353F46D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetPal-Model", "PetPal-Model\PetPal-Model.csproj", "{43442F05-0FA1-4572-9CB1-D92C42530C5A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +33,6 @@ Global
 		{43442F05-0FA1-4572-9CB1-D92C42530C5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{43442F05-0FA1-4572-9CB1-D92C42530C5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{43442F05-0FA1-4572-9CB1-D92C42530C5A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4488D148-3CA7-443F-92D7-70D4353F46D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4488D148-3CA7-443F-92D7-70D4353F46D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4488D148-3CA7-443F-92D7-70D4353F46D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4488D148-3CA7-443F-92D7-70D4353F46D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

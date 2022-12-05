@@ -1,4 +1,4 @@
-﻿namespace PetPal_Logic.Extensions
+﻿namespace PetPal_Logic.Calculations
 {
     public static class CalculateUserAge
     {
