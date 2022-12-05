@@ -1,22 +1,20 @@
 ﻿using PetPal_Model.Enums;
 
-namespace PetPal_Model.Models
+namespace PetPal_Model.DTOs
 {
-    public class AppUser
+    public class MemberDto
     {
         public int Id { get; set; }
         public string? Username { get; set; }
-        public byte[] PasswordHash { get; set; }
-        public byte[] PasswordSalt { get; set; }
-        public DateTime? DateOfBirth { get; set; }
-        public DateTime Created { get; set; } = DateTime.UtcNow;
-        public DateTime LastActive { get; set; } = DateTime.UtcNow;
+        public int Age { get; set; }
+        public DateTime Created { get; set; }
+        public DateTime LastActive { get; set; }
         public string? Introduction { get; set; }
         public string? LookingFor { get; set; }
         public string? City { get; set; }
         public Country? Country { get; set; }
         public Language? Language { get; set; }
-        public List<Animal> Animals { get; set; } = new();
+        public List<AnimalDto> Animals { get; set; }
 
         //public int GetAge()
         //{
