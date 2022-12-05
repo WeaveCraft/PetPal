@@ -12,7 +12,7 @@ namespace PetPal_DataAccess.Data
         {
             if (await context.AppUsers.AnyAsync()) return;
 
-            var userData = await File.ReadAllTextAsync("Data/UserSeedData.json");
+            var userData = await File.ReadAllTextAsync("../PetPal-DataAccess/Data/UserSeedData.json");
 
             var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
 

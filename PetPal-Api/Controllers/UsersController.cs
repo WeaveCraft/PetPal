@@ -1,31 +1,30 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using PetPal_DataAccess.Data;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using PetPal_Business.Repositories.Interfaces;
 using PetPal_Model.Models;
 
 namespace PetPal_Api.Controllers
 {
+    [Authorize]
     public class UsersController : BaseApiController
     {
-        private readonly ApplicationDbContext _context;
-        public UsersController(ApplicationDbContext context)
+        private readonly IUserRepository _userRepository;
+
+        public UsersController(IUserRepository userRepository)
         {
-            _context = context;
+            _userRepository = userRepository;
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<AppUser>> GetUsers()
+        public async Task<ActionResult<IEnumerable<AppUser>>> GetUsers()
         {
-            var users = _context.AppUsers.ToList();
-
-            return users;
+            return Ok(await _userRepository.GetUsersAsync());
         }
 
-        [HttpGet("{id}")]
-        public ActionResult<AppUser> GetUser(int id)
+        [HttpGet("{username}")]
+        public async Task<ActionResult<AppUser>> GetUser(string username)
         {
-            var user = _context.AppUsers.Find(id);
-
-            return user;
+            return await _userRepository.GetUserByUsernameAsync(username);
         }
     }
 }

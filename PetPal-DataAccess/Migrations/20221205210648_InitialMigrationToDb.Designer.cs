@@ -12,7 +12,7 @@ using PetPal_DataAccess.Data;
 namespace PetPalDataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20221204011759_InitialMigrationToDb")]
+    [Migration("20221205210648_InitialMigrationToDb")]
     partial class InitialMigrationToDb
     {
         /// <inheritdoc />
@@ -33,7 +33,7 @@ namespace PetPalDataAccess.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int?>("Age")
+                    b.Property<int>("Age")
                         .HasColumnType("int");
 
                     b.Property<int>("AppUserId")
@@ -42,13 +42,16 @@ namespace PetPalDataAccess.Migrations
                     b.Property<DateTime>("Created")
                         .HasColumnType("datetime2");
 
+                    b.Property<DateTime?>("DateOfBirth")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("FavoriteToy")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FavoriteTreat")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Genders")
+                    b.Property<int?>("Gender")
                         .HasColumnType("int");
 
                     b.Property<string>("Interests")
@@ -78,19 +81,21 @@ namespace PetPalDataAccess.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("City")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Country")
+                    b.Property<int?>("Country")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("Created")
                         .HasColumnType("datetime2");
 
+                    b.Property<DateTime?>("DateOfBirth")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Introduction")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Language")
+                    b.Property<int?>("Language")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("LastActive")
@@ -130,7 +135,6 @@ namespace PetPalDataAccess.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("PublicId")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Url")

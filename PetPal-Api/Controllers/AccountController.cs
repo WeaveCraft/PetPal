@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using PetPal_Business.Interfaces;
+using PetPal_Business.Services.Interfaces;
 using PetPal_DataAccess.Data;
 using PetPal_Model.DTOs;
 using PetPal_Model.Models;
