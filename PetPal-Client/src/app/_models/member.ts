@@ -1,4 +1,4 @@
-import { Animal } from './Animal';
+import { Animal } from './animal';
 
 export interface Member {
     id: number;
