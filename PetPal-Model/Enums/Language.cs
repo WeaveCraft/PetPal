@@ -12,7 +12,7 @@
         Japanska,
         Kinesiska,
         Thailändska,
-        Rysska,
+        Ryska,
         Tyska,
         Franska,
         Portugisiska,

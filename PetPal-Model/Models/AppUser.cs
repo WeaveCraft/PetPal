@@ -18,11 +18,5 @@ namespace PetPal_Model.Models
         public Country? Country { get; set; }
         public Language? Language { get; set; }
         public List<Animal> Animals { get; set; } = new();
-
-        //public int GetAge()
-        //{
-        //    return DateOfBirth.CalculateAge();
-        //}
-
     }
 }
