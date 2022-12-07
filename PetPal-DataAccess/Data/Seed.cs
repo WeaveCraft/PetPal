@@ -14,7 +14,7 @@ namespace PetPal_DataAccess.Data
 
             var userData = await File.ReadAllTextAsync("../PetPal-DataAccess/Data/UserSeedData.json");
 
-            var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+            //var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
 
             var users = JsonSerializer.Deserialize<List<AppUser>>(userData);
 

@@ -1,12 +1,12 @@
-<div class="card mb-4" *ngIf="member">
+<div class="card mb-4" *ngIf="animal">
     <div class="card-img-wrapper">
-        <img src="" alt="{{member.username}}" class="card-img-top">
+        <img src="{{animal.photoUrl}}" alt="{{animal.knownAs}}" class="card-img-top">
     </div>
     <div class="card-body p-1">
         <h6 class="card-title text-center mb-1">
             <i class="fa fa-user me-2"></i>
-            {{member.username}}
+            {{animal.knownAs}}
         </h6>
-        <p class="card-text text-muted text-center">{{member.city}}</p>
+        <p class="card-text text-muted text-center">{{animal.favoriteToy}}</p>
     </div>
 </div>
