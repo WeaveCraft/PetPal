@@ -9,6 +9,8 @@ import { AuthGuard } from './_guards/auth.guard';
 import { TestErrorComponent } from './errors/test-error/test-error.component';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { ServerErrorComponent } from './errors/server-error/server-error.component';
+import { AnimalDetailComponent } from './animals/animal-detail/animal-detail.component';
+import { AnimalListComponent } from './animals/animal-list/animal-list.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -18,6 +20,8 @@ const routes: Routes = [
     children: [
       {path: 'members', component: MemberListComponent},
       {path: 'members/:id', component: MemberDetailComponent},
+      {path: 'pets', component: AnimalListComponent},
+      {path: 'pets/:id', component: AnimalDetailComponent},
       {path: 'lists', component: ListsComponent},
       {path: 'messages', component: MessagesComponent},
     ]

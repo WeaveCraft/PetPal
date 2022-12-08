@@ -6,23 +6,23 @@ import { Animal } from '../_models/animal';
 @Injectable({
   providedIn: 'root'
 })
-export class MembersService {
+export class AnimalsService {
   baseUrl = environment.apiUrl;
 
   constructor(private http: HttpClient) { }
 
-  getMembers() {
+  getAnimals() {
     return this.http.get<Animal[]>(this.baseUrl + 'animals', this.getHttpOptions());
   }
 
-  getMember(name: string) {
+  getAnimal(name: string) {
     return this.http.get<Animal>(this.baseUrl + 'animals/' + name, this.getHttpOptions());
   }
 
   getHttpOptions() {
-    const userString = localStorage.getItem('animal');
-    if (!userString) return;
-    const user = JSON.parse(userString);
+    const animalString = localStorage.getItem('animal');
+    if (!animalString) return;
+    const user = JSON.parse(animalString);
     return {
       headers: new HttpHeaders({
         Authorization: 'Bearer ' + user.token

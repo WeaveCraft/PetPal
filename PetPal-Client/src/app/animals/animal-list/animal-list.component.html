@@ -1,1 +1,5 @@
-<p>animal-list works!</p>
+<div class="row">
+    <div class="col-2" *ngFor="let animal of animals">
+        <app-animal-card [animal]="animal"></app-animal-card>
+    </div>
+</div>

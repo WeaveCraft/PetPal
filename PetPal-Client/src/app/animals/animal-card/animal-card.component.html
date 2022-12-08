@@ -1,1 +1,12 @@
-<p>animal-card works!</p>
+<div class="card mb-4" *ngIf="animal">
+    <div class="card-img-wrapper">
+        <img src="{{animal.photoUrl}}" alt="{{animal.knownAs}}" class="card-img-top">
+    </div>
+    <div class="card-body p-1">
+        <h6 class="card-title text-center mb-1">
+            <i class="fa fa-user me-2"></i>
+            {{animal.knownAs}}
+        </h6>
+        <p class="card-text text-muted text-center">{{animal.favoriteToy}}</p>
+    </div>
+</div>
