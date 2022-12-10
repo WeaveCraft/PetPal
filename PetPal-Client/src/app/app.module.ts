@@ -31,15 +31,15 @@ import { AnimalListComponent } from './animals/animal-list/animal-list.component
     RegisterComponent,
     MemberListComponent,
     MemberDetailComponent,
+    MemberCardComponent,
+    AnimalListComponent,
+    AnimalDetailComponent,
+    AnimalCardComponent,
     ListsComponent,
     MessagesComponent,
     TestErrorComponent,
     NotFoundComponent,
-    ServerErrorComponent,
-    MemberCardComponent,
-    AnimalDetailComponent,
-    AnimalCardComponent,
-    AnimalListComponent
+    ServerErrorComponent
   ],
   imports: [
     BrowserAnimationsModule,

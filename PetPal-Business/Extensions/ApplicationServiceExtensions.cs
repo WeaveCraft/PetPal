@@ -20,6 +20,7 @@ namespace PetPal_Business.Extensions
             services.AddCors();
             services.AddScoped<ITokenService, TokenService>();
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IAnimalRepository, AnimalRepository>();
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies()); ;
 
             return services;

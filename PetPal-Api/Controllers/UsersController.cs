@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PetPal_Business.Repositories.Interfaces;
 using PetPal_Model.DTOs;
-using PetPal_Model.Models;
 
 namespace PetPal_Api.Controllers
 {

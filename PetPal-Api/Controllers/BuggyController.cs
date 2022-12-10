@@ -20,7 +20,7 @@ namespace PetPal_Api.Controllers
             return "secret text";
         }
 
-        [HttpGet("not-found")]
+        [HttpGet("not-found")] //404
         public ActionResult<AppUser> GetNotFound()
         {
             var thing = _context.AppUsers.Find(-1);
@@ -30,7 +30,7 @@ namespace PetPal_Api.Controllers
             return thing;
         }
 
-        [HttpGet("server-error")]
+        [HttpGet("server-error")] //500
         public ActionResult<string> GetServerError()
         {
 
@@ -41,7 +41,7 @@ namespace PetPal_Api.Controllers
             return thingToReturn;
         }
 
-        [HttpGet("bad-request")]
+        [HttpGet("bad-request")] //401
         public ActionResult<string> GetBadRequest()
         {
             return BadRequest("This was not a good request");

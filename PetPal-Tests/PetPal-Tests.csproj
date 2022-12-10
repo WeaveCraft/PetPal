@@ -21,4 +21,9 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\PetPal-Business\PetPal-Business.csproj" />
+    <ProjectReference Include="..\PetPal-DataAccess\PetPal-DataAccess.csproj" />
+  </ItemGroup>
+
 </Project>
