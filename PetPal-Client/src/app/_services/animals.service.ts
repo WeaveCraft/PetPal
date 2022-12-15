@@ -12,21 +12,10 @@ export class AnimalsService {
   constructor(private http: HttpClient) { }
 
   getAnimals() {
-    return this.http.get<Animal[]>(this.baseUrl + 'animals', this.getHttpOptions());
+    return this.http.get<Animal[]>(this.baseUrl + 'animals');
   }
 
   getAnimal(name: string) {
-    return this.http.get<Animal>(this.baseUrl + 'animals/' + name, this.getHttpOptions());
-  }
-
-  getHttpOptions() {
-    const animalString = localStorage.getItem('animal');
-    if (!animalString) return;
-    const user = JSON.parse(animalString);
-    return {
-      headers: new HttpHeaders({
-        Authorization: 'Bearer ' + user.token
-      })
-    }
+    return this.http.get<Animal>(this.baseUrl + 'animals/' + name);
   }
 }

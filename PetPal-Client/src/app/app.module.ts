@@ -22,6 +22,7 @@ import { MemberCardComponent } from './members/member-card/member-card.component
 import { AnimalDetailComponent } from './animals/animal-detail/animal-detail.component';
 import { AnimalCardComponent } from './animals/animal-card/animal-card.component';
 import { AnimalListComponent } from './animals/animal-list/animal-list.component';
+import { JwtInterceptor } from './_interceptors/jwt.interceptor';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { AnimalListComponent } from './animals/animal-list/animal-list.component
     SharedModule
   ],
   providers: [
-    {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true}
+    {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
+    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}
   ],
   bootstrap: [AppComponent]
 })
