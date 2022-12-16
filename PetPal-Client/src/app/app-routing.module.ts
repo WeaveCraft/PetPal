@@ -21,7 +21,7 @@ const routes: Routes = [
       {path: 'members', component: MemberListComponent},
       {path: 'members/:id', component: MemberDetailComponent},
       {path: 'pets', component: AnimalListComponent},
-      {path: 'pets/:id', component: AnimalDetailComponent},
+      {path: 'pets/:name', component: AnimalDetailComponent},
       {path: 'lists', component: ListsComponent},
       {path: 'messages', component: MessagesComponent},
     ]
