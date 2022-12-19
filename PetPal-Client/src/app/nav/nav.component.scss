@@ -52,8 +52,7 @@ nav {
         transition: all 0.5s ease-in-out;
         position: relative;
         text-transform: uppercase;
-        top: 0px;
-        left: 850px;
+        text-align: center;
 
         &::before {
           content: attr(data-item);

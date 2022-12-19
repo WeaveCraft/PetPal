@@ -1,17 +1,22 @@
 <div class="card mb-4">
 	<div class="wrapper" *ngIf="animal">
 		<div class="card">
-			<img
-				src="{{animal.photoUrl}}" />
+			<img src="{{animal.photoUrl}}" />
 			<div class="descriptions">
 				<h1>{{animal.name}}</h1>
-				
+
 				<ul>
-					<li>City: {{animal.favoriteTreat}}</li>
+					<li>City: {{animal.age}}</li>
 					<li>Created: {{animal.created}}</li>
 					<li>Age: {{animal.age}}</li>
-				  </ul>
+				</ul>
+				<!-- HTML !-->
+				<button class="button-48" role="button"><span class="text"><i class="fa fa-user"></i></span></button>
+				<button class="button-48" role="button"><span class="text"><i class="fa fa-heart"></i></span></button>
+				<!-- <button class="button-48" role="button"><span class="text"><i class="fa fa-envelope"></i></span></button> -->
+				
 
+				<!-- 
 				<button routerLink="/members/{{animal.knownAs}}">
 					<i class="fa fa-user"></i>
 				</button>
@@ -20,7 +25,7 @@
 				</button>
 				<button>
 					<i class="fa fa-envelope"></i>
-				</button>
+				</button> -->
 			</div>
 		</div>
 	</div>
