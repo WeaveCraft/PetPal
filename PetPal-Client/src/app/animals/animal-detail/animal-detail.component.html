@@ -1,1 +1,32 @@
-<h1>{{animal?.knownAs}}</h1>
+<div class="row" *ngIf="animal">
+    <div class="col-4">
+        <div class="card">
+            <img src="{{animal.photoUrl || './assets/user.png'}}" alt="{{animal.knownAs}}"
+                class="card-img-top img-thumbnail">
+            <div class="card-body">
+                <div>
+                    <strong>Age:</strong>
+                    <p>{{animal.dateOfBirth}}</p>
+                </div>
+                <div>
+                    <strong>Gender:</strong>
+                    <p>{{animal.gender}}</p>
+                </div>
+                <div>
+                    <strong>Favorite Treat:</strong>
+                    <p>{{animal.favoriteTreat}}</p>
+                </div>
+                <div>
+                    <strong>Favorite Toy:</strong>
+                    <p>{{animal.favoriteToy}}</p>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="btn-group d-flex">
+                    <button class="btn btn-primary">Like</button>
+                    <button class="btn btn-success">Messages</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

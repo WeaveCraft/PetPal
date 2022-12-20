@@ -5,27 +5,10 @@
 			<div class="descriptions">
 				<h1>{{animal.name}}</h1>
 
-				<ul>
-					<li>City: {{animal.age}}</li>
-					<li>Created: {{animal.created}}</li>
-					<li>Age: {{animal.age}}</li>
-				</ul>
-				<!-- HTML !-->
-				<button class="button-48" role="button"><span class="text"><i class="fa fa-user"></i></span></button>
-				<button class="button-48" role="button"><span class="text"><i class="fa fa-heart"></i></span></button>
-				<!-- <button class="button-48" role="button"><span class="text"><i class="fa fa-envelope"></i></span></button> -->
-				
+				<button class="button-48" role="button" routerLink="/pets/{{animal.name}}"><span class="text"><i class="fa fa-heart"></i></span></button>
+				<button class="button-48" role="button"><span class="text"><i class="fa fa-envelope"></i></span></button>
+							
 
-				<!-- 
-				<button routerLink="/members/{{animal.knownAs}}">
-					<i class="fa fa-user"></i>
-				</button>
-				<button >
-					<i class="fa fa-heart"></i>
-				</button>
-				<button>
-					<i class="fa fa-envelope"></i>
-				</button> -->
 			</div>
 		</div>
 	</div>
