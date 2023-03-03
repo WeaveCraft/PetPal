@@ -1,137 +1,52 @@
-body{
-    background-color: #3d3d3d;
-    padding: 0px;
-    margin:0px;
-    width:100%;
-    height:100vh;
-    font-family: 'Lato';
-}
-.wrapper{
-    position: absolute;
-    top:50%;
-    left:50%;
-    transform: translate(-50%, -50%);
-    width:100%;
-    max-width: 650px;
-    height:auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-.card{
-    flex: 1;
-    flex-basis: 300px;
-    flex-grow: 0;
-    height: 350px;
-    background: #fff;
-    border: 2px solid #fff;
-    box-shadow: 0px 4px 7px rgba(0,0,0,.5);
-    cursor: pointer;
-    transition: all .5s cubic-bezier(.8,.5,.2,1.4);
+figure {
+    display: grid;
+    border-radius: 1rem;
     overflow: hidden;
-    position: relative;
-}
-.card img{
-    width: 100%;
-    height:100%;
-    transition: all .5s cubic-bezier(.8,.5,.2,1.4);
-}
-.descriptions{
-    font-size: 15px;
-    position: absolute;
-    top:0px;
-    left:0px;
-    background-color: rgba(255, 255, 255, 0.7);
-    width:100%;
-    height:100%;
-    transition: all .7s ease-in-out;
-    padding: 20px;
-    box-sizing: border-box;
-    clip-path: circle(0% at 100% 100%);
-}
-.card:hover .descriptions{
-    left:0px;
-    transition: all .7s ease-in-out;
-    clip-path: circle(75%);
-}
-.card:hover{
-    transition: all .5s cubic-bezier(.8,.5,.2,1.4);
-    box-shadow: 0px 2px 3px rgba(0,0,0,.3);
-    transform: scale(.97);
-}
-.card:hover img{
-    transition: all .5s cubic-bezier(.8,.5,.2,1.4);
-    transform: scale(1.6) rotate(20deg);
-    filter: blur(3px);
-}
-.card h1{
-    color: #ff3838;
-    letter-spacing: 1px;
-    margin: 0px;
-    font-size: 30px;
-}
-.card p{
-    line-height: 24px;
-    height: 70%;
-}
-
-
-/* CSS */
-.button-48 {
-    appearance: none;
-    background-color: #FFFFFF;
-    border-width: 0;
-    box-sizing: border-box;
-    color: #000000;
     cursor: pointer;
-    display: inline-block;
-    font-family: Clarkson,Helvetica,sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    letter-spacing: 0;
-    line-height: 1em;
+    float: left;
+    max-height: 20rem;
+    max-width: 20rem;
+    margin: auto;
+    justify-content: center;
+  }
+  figure > * {
+    grid-area: 1/1;
+    transition: .4s;
+  }
+  figure figcaption {
+    display: grid;
+    align-items: end;
+    font-family: sans-serif;
+    font-size: 2.3rem;
+    font-weight: bold;
+    color: #0000;
+    padding: .75rem;
+    background: var(--c,#0009);
+    clip-path: inset(0 var(--_i,100%) 0 0);
+    -webkit-mask:
+      linear-gradient(#000 0 0),
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    -webkit-mask-clip: text, padding-box;
+  }
+  figure:hover figcaption{
+    --_i: 0%;
+  }
+  figure:hover img {
+    transform: scale(1.2);
+  }
+  @supports not (-webkit-mask-clip: text) {
+    figure figcaption {
+     -webkit-mask: none;
+     color: #fff;
+    }
+  }
+  
+  body {
     margin: 0;
-    opacity: 1;
-    outline: 0;
-    padding: 1.5em 2.2em;
-    position: relative;
-    text-align: center;
-    text-decoration: none;
-    text-rendering: geometricprecision;
-    text-transform: uppercase;
-    transition: opacity 300ms cubic-bezier(.694, 0, 0.335, 1),background-color 100ms cubic-bezier(.694, 0, 0.335, 1),color 100ms cubic-bezier(.694, 0, 0.335, 1);
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    vertical-align: baseline;
-    white-space: nowrap;
-  }
-  
-  .button-48:before {
-    animation: opacityFallbackOut .5s step-end forwards;
-    backface-visibility: hidden;
-    background-color: #EBEBEB;
-    clip-path: polygon(-1% 0, 0 0, -25% 100%, -1% 100%);
-    content: "";
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    transform: translateZ(0);
-    transition: clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1), -webkit-clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1);
-    width: 100%;
-  }
-  
-  .button-48:hover:before {
-    animation: opacityFallbackIn 0s step-start forwards;
-    clip-path: polygon(0 0, 101% 0, 101% 101%, 0 101%);
-  }
-  
-  .button-48:after {
-    background-color: #FFFFFF;
-  }
-  
-  .button-48 span {
-    z-index: 1;
-    position: relative;
+    min-height: 100vh;
+    display: grid;
+    grid-auto-flow: column;
+    place-content: center;
+    background: #425a52;
   }

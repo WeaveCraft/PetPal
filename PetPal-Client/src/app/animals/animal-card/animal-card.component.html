@@ -1,15 +1,21 @@
-<div class="card mb-4">
+<!-- <div class="card mb-4">
 	<div class="wrapper" *ngIf="animal">
 		<div class="card">
 			<img src="{{animal.photoUrl}}" />
 			<div class="descriptions">
 				<h1>{{animal.name}}</h1>
 
-				<button class="button-48" role="button" routerLink="/pets/{{animal.name}}"><span class="text"><i class="fa fa-heart"></i></span></button>
-				<button class="button-48" role="button"><span class="text"><i class="fa fa-envelope"></i></span></button>
 							
 
 			</div>
 		</div>
 	</div>
+</div> -->
+
+<div *ngIf="animal"> 
+	<figure routerLink="/pets/{{animal.name}}">
+		<img src="{{animal.photoUrl}}" alt="Mountains">
+		<figcaption>{{animal.name}}</figcaption>
+		<div class="wrapper"></div>
+	</figure>
 </div>

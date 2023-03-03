@@ -1,11 +1,11 @@
 <div class="row" *ngIf="animal">
     <div class="col-4">
+        <img src="{{animal.photoUrl || './assets/user.png'}}" alt="{{animal.knownAs}}"
+            class="card-img-top img-thumbnail">
         <div class="card">
-            <img src="{{animal.photoUrl || './assets/user.png'}}" alt="{{animal.knownAs}}"
-                class="card-img-top img-thumbnail">
             <div class="card-body">
                 <div>
-                    <strong>Age:</strong>
+                    <strong>Age: hello</strong>
                     <p>{{animal.dateOfBirth}}</p>
                 </div>
                 <div>
@@ -19,12 +19,6 @@
                 <div>
                     <strong>Favorite Toy:</strong>
                     <p>{{animal.favoriteToy}}</p>
-                </div>
-            </div>
-            <div class="card-footer">
-                <div class="btn-group d-flex">
-                    <button class="btn btn-primary">Like</button>
-                    <button class="btn btn-success">Messages</button>
                 </div>
             </div>
         </div>
