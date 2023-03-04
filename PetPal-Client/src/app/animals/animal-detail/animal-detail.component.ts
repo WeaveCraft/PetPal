@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { NgxGalleryAnimation, NgxGalleryImage, NgxGalleryOptions } from '@kolkov/ngx-gallery/public-api';
 import { Animal } from 'src/app/_models/animal';
 import { AnimalsService } from 'src/app/_services/animals.service';
 
@@ -10,11 +11,24 @@ import { AnimalsService } from 'src/app/_services/animals.service';
 })
 export class AnimalDetailComponent implements OnInit {
   animal: Animal | undefined;
+  galleryOptions: NgxGalleryOptions[] = [];
+  galleryImages: NgxGalleryImage[] = [];
 
   constructor(private animalService: AnimalsService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.loadAnimal();
+
+    this.galleryOptions = [
+      {
+        width: '31rem',
+        height: '31rem',
+        imagePercent: 100,
+        thumbnailsColumns: 4,
+        imageAnimation: NgxGalleryAnimation.Slide,
+        preview: false
+      }
+    ]
   }
 
   loadAnimal() {
