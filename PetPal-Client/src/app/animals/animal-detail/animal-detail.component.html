@@ -21,6 +21,33 @@
                     <p>{{animal.favoriteToy}}</p>
                 </div>
             </div>
+            <div class="card-footer">
+                <div class="btn-group d-flex">
+                    <button class="btn btn-primary">Like</button>
+                    <button class="btn btn-success">Message</button>
+                </div>
+            </div>
         </div>
+    </div>
+
+    <div class="col-8">
+        <tabset class="member-tabset">
+            <tab heading="About {{animal.knownAs}}">
+                <p>Gender: {{animal.gender}}</p>
+                <h4>Bio</h4>
+                <p>Date of Birth: {{animal.dateOfBirth}}</p>
+                <p>Age: {{animal.age}}</p>
+            </tab>
+            <tab heading="Interests">
+                <p>Favorite Toy: {{animal.favoriteToy}}</p>
+                <p>Favorite Treat: {{animal.favoriteTreat}}</p>
+            </tab>
+            <tab heading="Photos">
+                <p>Photos will go here</p>
+            </tab>
+            <tab heading="Messages">
+                <p>Messages will go here</p>
+            </tab>
+        </tabset>
     </div>
 </div>
