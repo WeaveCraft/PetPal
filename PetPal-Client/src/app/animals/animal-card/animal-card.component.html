@@ -14,7 +14,7 @@
 
 <div *ngIf="animal"> 
 	<figure routerLink="/pets/{{animal.name}}">
-		<img src="{{animal.photoUrl}}" alt="Mountains">
+		<img src="{{animal.photoUrl || './assets/user.png'}}" alt="Pets">
 		<figcaption>{{animal.name}}</figcaption>
 		<div class="wrapper"></div>
 	</figure>

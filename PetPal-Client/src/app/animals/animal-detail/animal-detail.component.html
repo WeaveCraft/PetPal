@@ -10,7 +10,7 @@
                 </div>
                 <div>
                     <strong>Gender:</strong>
-                    <p>{{animal.gender}}</p>
+                    <p>{{ animal.gender }}</p>
                 </div>
                 <div>
                     <strong>Favorite Treat:</strong>
@@ -43,7 +43,7 @@
                 <p>Favorite Treat: {{animal.favoriteTreat}}</p>
             </tab>
             <tab heading="Photos">
-                <p>Photos will go here</p>
+                <ngx-gallery [options]="galleryOptions" [images]="galleryImages" class="ngx-gallery"></ngx-gallery>
             </tab>
             <tab heading="Messages">
                 <p>Messages will go here</p>
