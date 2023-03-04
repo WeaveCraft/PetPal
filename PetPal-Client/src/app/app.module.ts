@@ -23,6 +23,8 @@ import { AnimalDetailComponent } from './animals/animal-detail/animal-detail.com
 import { AnimalCardComponent } from './animals/animal-card/animal-card.component';
 import { AnimalListComponent } from './animals/animal-list/animal-list.component';
 import { JwtInterceptor } from './_interceptors/jwt.interceptor';
+import { AnimalEditComponent } from './animals/animal-edit/animal-edit.component';
+import { MemberEditComponent } from './members/member-edit/member-edit.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,9 @@ import { JwtInterceptor } from './_interceptors/jwt.interceptor';
     MessagesComponent,
     TestErrorComponent,
     NotFoundComponent,
-    ServerErrorComponent
+    ServerErrorComponent,
+    AnimalEditComponent,
+    MemberEditComponent
   ],
   imports: [
     BrowserAnimationsModule,
