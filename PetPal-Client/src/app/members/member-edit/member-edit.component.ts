@@ -1,12 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { take } from 'rxjs';
 import { Member } from 'src/app/_models/member';
 import { User } from 'src/app/_models/user';
 import { AccountService } from 'src/app/_services/account.service';
 import { MembersService } from 'src/app/_services/members.service';
-import {NgxGalleryOptions} from '@kolkov/ngx-gallery';
-import {NgxGalleryImage} from '@kolkov/ngx-gallery';
-import {NgxGalleryAnimation} from '@kolkov/ngx-gallery';
+import { ToastrService } from 'ngx-toastr';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-animal-edit',
@@ -15,12 +14,11 @@ import {NgxGalleryAnimation} from '@kolkov/ngx-gallery';
 })
 
 export class MemberEditComponent implements OnInit {
+  @ViewChild('editForm') editForm: NgForm | undefined;
   member: Member | undefined;
   user: User | null = null;
-  galleryOptions: NgxGalleryOptions[] = [];
-  galleryImages: NgxGalleryImage[] = [];
 
-  constructor(private accountService: AccountService, private memberService: MembersService) { 
+  constructor(private accountService: AccountService, private memberService: MembersService, private toastr: ToastrService) { 
     this.accountService.currentUser$.pipe(take(1)).subscribe({
       next: user => this.user = user
     })
@@ -35,5 +33,10 @@ export class MemberEditComponent implements OnInit {
     this.memberService.getMember(this.user.username).subscribe({
       next: member => this.member = member
   })
+}
+
+updateMember() {
+  this.toastr.success('Profile Updated Successfully');
+  this.editForm?.reset(this.member);
 }
 }
