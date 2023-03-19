@@ -22,7 +22,7 @@ const routes: Routes = [
     children: [
       {path: 'members', component: MemberListComponent},
       {path: 'members/:username', component: MemberDetailComponent},
-      {path: 'members/edit', component: MemberEditComponent},
+      {path: 'member/edit', component: MemberEditComponent},
       {path: 'pets', component: AnimalListComponent},
       {path: 'pets/:name', component: AnimalDetailComponent},
       {path: 'pet/edit', component: AnimalEditComponent},

@@ -10,6 +10,7 @@ import { AnimalsService } from 'src/app/_services/animals.service';
   templateUrl: './animal-edit.component.html',
   styleUrls: ['./animal-edit.component.css']
 })
+
 export class AnimalEditComponent implements OnInit {
   animal: Animal | undefined;
   user: User | null = null;
@@ -22,6 +23,7 @@ export class AnimalEditComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadAnimal();
+    console.log(this.loadAnimal())
   }
 
   loadAnimal() {
@@ -29,5 +31,5 @@ export class AnimalEditComponent implements OnInit {
     this.animalService.getAnimal(this.user.username).subscribe({
       next: animal => this.animal = animal
   })
-}}
-
+}
+}
