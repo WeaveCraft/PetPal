@@ -13,5 +13,3 @@ export interface Member {
     language: number;
     animals: Animal[];
 }
-
-

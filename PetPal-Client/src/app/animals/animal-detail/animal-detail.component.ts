@@ -33,8 +33,6 @@ export class AnimalDetailComponent implements OnInit {
         preview: false
       }
     ]
-
-    
   }
 
   getImages() {
