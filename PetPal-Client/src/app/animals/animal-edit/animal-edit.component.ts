@@ -29,6 +29,5 @@ export class AnimalEditComponent implements OnInit {
     this.animalService.getAnimal(this.user.username).subscribe({
       next: animal => this.animal = animal
   })
-}
+}}
 
-}
