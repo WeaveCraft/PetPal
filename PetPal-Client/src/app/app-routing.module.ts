@@ -13,6 +13,7 @@ import { AnimalDetailComponent } from './animals/animal-detail/animal-detail.com
 import { AnimalListComponent } from './animals/animal-list/animal-list.component';
 import { AnimalEditComponent } from './animals/animal-edit/animal-edit.component';
 import { MemberEditComponent } from './members/member-edit/member-edit.component';
+import { PreventUnsavedChangesGuard } from './_guards/prevent-unsaved-changes.guard';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -22,7 +23,7 @@ const routes: Routes = [
     children: [
       {path: 'members', component: MemberListComponent},
       {path: 'members/:username', component: MemberDetailComponent},
-      {path: 'member/edit', component: MemberEditComponent},
+      {path: 'member/edit', component: MemberEditComponent, canDeactivate: [PreventUnsavedChangesGuard]},
       {path: 'pets', component: AnimalListComponent},
       {path: 'pets/:name', component: AnimalDetailComponent},
       {path: 'pet/edit', component: AnimalEditComponent},
