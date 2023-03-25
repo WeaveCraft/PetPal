@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Animal } from 'src/app/_models/animal';
 import { AnimalsService } from 'src/app/_services/animals.service';
 
@@ -8,18 +9,11 @@ import { AnimalsService } from 'src/app/_services/animals.service';
   styleUrls: ['./animal-list.component.css']
 })
 export class AnimalListComponent implements OnInit {
-  animals: Animal[] = [];
+  animals$: Observable<Animal[]> | undefined;
 
   constructor(private animalService: AnimalsService) { }
 
   ngOnInit(): void {
-    this.loadAnimals();
+    this.animals$ = this.animalService.getAnimals();
   }
-
-  loadAnimals() {
-    this.animalService.getAnimals().subscribe({
-      next: animals => this.animals = animals
-    })
-  }
-
 }
