@@ -33,7 +33,7 @@ namespace PetPal_Api.Controllers
             return await _userRepository.GetMemberAsync(username);
         }
 
-        [HttpPost]
+        [HttpPut]
         public async Task<ActionResult> UpdateUser(MemberUpdateDto memberUpdateDto)
         {
             var username = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
