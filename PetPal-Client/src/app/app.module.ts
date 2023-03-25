@@ -25,6 +25,7 @@ import { AnimalListComponent } from './animals/animal-list/animal-list.component
 import { JwtInterceptor } from './_interceptors/jwt.interceptor';
 import { AnimalEditComponent } from './animals/animal-edit/animal-edit.component';
 import { MemberEditComponent } from './members/member-edit/member-edit.component';
+import { LoadingInterceptor } from './_interceptors/loading.interceptor';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { MemberEditComponent } from './members/member-edit/member-edit.component
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
-    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}
+    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true},
+    {provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true}
   ],
   bootstrap: [AppComponent]
 })
