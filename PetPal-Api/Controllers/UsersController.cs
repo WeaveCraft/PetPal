@@ -40,7 +40,7 @@ namespace PetPal_Api.Controllers
         [HttpPut]
         public async Task<ActionResult> UpdateUser(MemberUpdateDto memberUpdateDto)
         {
-            var user = await _userRepository.GetUserByUsernameAsync(User.GetAnimalName());
+            var user = await _userRepository.GetUserByUsernameAsync(User.GetUserName());
 
             if (user == null) return NotFound();
 
@@ -52,26 +52,30 @@ namespace PetPal_Api.Controllers
             return BadRequest("Error in updating member!");
         }
 
-        //[HttpPost("add-photo")]
-        //public async Task<ActionResult<PhotoDto>> AddPhoto(IFormFile file)
-        //{
-        //    var user = await _userRepository.GetUserByUsernameAsync(User.GetUserName());
+        [HttpPost("add-photo")]
+        public async Task<ActionResult<PhotoDto>> AddPhoto(IFormFile file)
+        {
+            var user = await _userRepository.GetUserByUsernameAsync(User.GetUserName());
 
-        //    if(user == null) return NotFound();
+            if (user == null) return NotFound();
 
-        //    var result = await _photoService.AddPhotoAsync(file); 
+            var result = await _photoService.AddPhotoAsync(file);
 
-        //    if(result.Error != null) return BadRequest(result.Error.Message);
+            if (result.Error != null) return BadRequest(result.Error.Message);
 
-        //    var photo = new Photo
-        //    {
-        //        Url = result.SecureUrl.AbsoluteUri,
-        //        PublicId = result.PublicId
-        //    };
+            var photo = new Photo
+            {
+                Url = result.SecureUrl.AbsoluteUri,
+                PublicId = result.PublicId
+            };
 
-        //    if (user.Photos.Count == 0) photo.IsMain = true;
+            if (user.Photos.Count == 0) photo.IsMain = true;
 
-        //    user.Photos.Add(photo);
-        //}
+            user.Photos.Add(photo);
+
+            if (await _userRepository.SaveAllAsync()) return _mapper.Map<PhotoDto>(photo);
+
+            return BadRequest("There was a problem adding the photo");
+        }
     }
 }

@@ -4,9 +4,9 @@ namespace PetPal_Business.Extensions
 {
     public static class ClaimsPrincipalExtensions
     {
-        public static string GetAnimalName(this ClaimsPrincipal animal)
+        public static string GetUserName(this ClaimsPrincipal member)
         {
-            return animal.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            return member.FindFirst(ClaimTypes.NameIdentifier)?.Value;
         }
     }
 }

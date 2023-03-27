@@ -38,7 +38,7 @@ namespace PetPal_Api.Controllers
         [HttpPut]
         public async Task<ActionResult> UpdateAnimal(AnimalUpdateDto animalUpdateDto)
         {
-            var animal = await _animalRepository.GetAnimalByNameAsync(User.GetAnimalName());
+            var animal = await _animalRepository.GetAnimalByNameAsync(User.GetUserName());
 
             if (animal == null) return NotFound();
 
@@ -71,7 +71,7 @@ namespace PetPal_Api.Controllers
 
         //    animal.Photos.Add(photo);
 
-        //    if(await _animalRepository.SaveAllAsync()) return _mapper.Map<PhotoDto>(photo);
+        //    if (await _animalRepository.SaveAllAsync()) return _mapper.Map<PhotoDto>(photo);
 
         //    return BadRequest("There was a problem adding the photo");
         //}
