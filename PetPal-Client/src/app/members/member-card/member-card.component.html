@@ -1,4 +1,4 @@
-<div class="card mb-4">
+<!-- <div class="card mb-4">
 	<div class="wrapper" *ngIf="member">
 		<div class="card">
 			<img
@@ -24,4 +24,12 @@
 			</div>
 		</div>
 	</div>
+</div> -->
+
+<div *ngIf="member"> 
+	<figure routerLink="/members/{{member.username}}">
+		<img src="{{member.photoUrl || './assets/user.png'}}" alt="Pets">
+		<figcaption>{{member.username}}</figcaption>
+		<div class="wrapper"></div>
+	</figure>
 </div>

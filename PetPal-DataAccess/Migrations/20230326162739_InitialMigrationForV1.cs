@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace PetPalDataAccess.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialMigrationToDb : Migration
+    public partial class InitialMigrationForV1 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -20,7 +20,7 @@ namespace PetPalDataAccess.Migrations
                     Username = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     PasswordHash = table.Column<byte[]>(type: "varbinary(max)", nullable: false),
                     PasswordSalt = table.Column<byte[]>(type: "varbinary(max)", nullable: false),
-                    DateOfBirth = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    DateOfBirth = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Created = table.Column<DateTime>(type: "datetime2", nullable: false),
                     LastActive = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Introduction = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -42,7 +42,7 @@ namespace PetPalDataAccess.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
                     KnownAs = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    DateOfBirth = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    DateOfBirth = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Created = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Age = table.Column<int>(type: "int", nullable: false),
                     Gender = table.Column<int>(type: "int", nullable: true),
@@ -71,15 +71,15 @@ namespace PetPalDataAccess.Migrations
                     Url = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     IsMain = table.Column<bool>(type: "bit", nullable: false),
                     PublicId = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    AnimalsId = table.Column<int>(type: "int", nullable: false)
+                    AppUserId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Photos", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Photos_Animals_AnimalsId",
-                        column: x => x.AnimalsId,
-                        principalTable: "Animals",
+                        name: "FK_Photos_AppUsers_AppUserId",
+                        column: x => x.AppUserId,
+                        principalTable: "AppUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -90,19 +90,19 @@ namespace PetPalDataAccess.Migrations
                 column: "AppUserId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Photos_AnimalsId",
+                name: "IX_Photos_AppUserId",
                 table: "Photos",
-                column: "AnimalsId");
+                column: "AppUserId");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Photos");
+                name: "Animals");
 
             migrationBuilder.DropTable(
-                name: "Animals");
+                name: "Photos");
 
             migrationBuilder.DropTable(
                 name: "AppUsers");

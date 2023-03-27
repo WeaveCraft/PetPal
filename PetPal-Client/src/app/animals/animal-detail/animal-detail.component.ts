@@ -35,29 +35,14 @@ export class AnimalDetailComponent implements OnInit {
     ]
   }
 
-  getImages() {
-    if (!this.animal) return [];
-
-    const imageUrls = [];
-    for(const photo of this.animal.photos) {
-      imageUrls.push({
-        small: photo.url,
-        medium: photo.url,
-        big: photo.url
-      })
-    }
-    return imageUrls;
-  }
 
   loadAnimal() {
     const name = this.route.snapshot.paramMap.get('name');
-
     if(!name) return;
 
     this.animalService.getAnimal(name).subscribe({
       next: animal => {
         this.animal = animal;
-        this.galleryImages = this.getImages();
       }
     })
   }

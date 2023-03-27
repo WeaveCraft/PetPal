@@ -15,5 +15,8 @@ namespace PetPal_Model.DTOs
         public Country? Country { get; set; }
         public Language? Language { get; set; }
         public List<AnimalDto> Animals { get; set; }
+        public string PhotoUrl { get; set; }
+        public List<PhotoDto> Photos { get; set; }
     }
 }
+

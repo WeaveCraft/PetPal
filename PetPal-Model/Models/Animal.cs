@@ -18,7 +18,7 @@ namespace PetPal_Model.Models
         public string? Interests { get; set; }
         public string? FavoriteTreat { get; set; }
         public string? FavoriteToy { get; set; }
-        public List<Photo> Photos { get; set; } = new();
+        //public List<Photo> Photos { get; set; } = new();
         public int AppUserId { get; set; }
         public AppUser AppUser { get; set; }
 

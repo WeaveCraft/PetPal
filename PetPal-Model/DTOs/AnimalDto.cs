@@ -14,7 +14,7 @@ namespace PetPal_Model.DTOs
         public string? Interests { get; set; }
         public string? FavoriteTreat { get; set; }
         public string? FavoriteToy { get; set; }
-        public string PhotoUrl { get; set; }
-        public List<PhotoDto> Photos { get; set; }
+        //    public string PhotoUrl { get; set; }
+        //    public List<PhotoDto> Photos { get; set; }
     }
 }

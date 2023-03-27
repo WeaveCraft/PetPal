@@ -26,7 +26,7 @@ namespace PetPal_Business.Repositories
         public async Task<Animal> GetAnimalByNameAsync(string name)
         {
             return await _context.Animals
-                .Include(x => x.Photos)
+                .Include(x => x.AppUser).ThenInclude(y => y.Photos)
                 .SingleOrDefaultAsync(x => x.Name == name);
         }
 
@@ -41,7 +41,7 @@ namespace PetPal_Business.Repositories
         public async Task<IEnumerable<Animal>> GetAnimalsAsync()
         {
             return await _context.Animals
-                .Include(x => x.Photos)
+                .Include(x => x.AppUser).ThenInclude(y => y.Photos)
                 .ToListAsync();
         }
 

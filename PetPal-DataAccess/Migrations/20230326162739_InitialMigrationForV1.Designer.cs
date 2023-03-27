@@ -12,8 +12,8 @@ using PetPal_DataAccess.Data;
 namespace PetPalDataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20221205221212_InitialMigrationToDb")]
-    partial class InitialMigrationToDb
+    [Migration("20230326162739_InitialMigrationForV1")]
+    partial class InitialMigrationForV1
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -42,7 +42,7 @@ namespace PetPalDataAccess.Migrations
                     b.Property<DateTime>("Created")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime?>("DateOfBirth")
+                    b.Property<DateTime>("DateOfBirth")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("FavoriteToy")
@@ -89,7 +89,7 @@ namespace PetPalDataAccess.Migrations
                     b.Property<DateTime>("Created")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime?>("DateOfBirth")
+                    b.Property<DateTime>("DateOfBirth")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Introduction")
@@ -128,7 +128,7 @@ namespace PetPalDataAccess.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("AnimalsId")
+                    b.Property<int>("AppUserId")
                         .HasColumnType("int");
 
                     b.Property<bool>("IsMain")
@@ -143,7 +143,7 @@ namespace PetPalDataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AnimalsId");
+                    b.HasIndex("AppUserId");
 
                     b.ToTable("Photos");
                 });
@@ -161,23 +161,20 @@ namespace PetPalDataAccess.Migrations
 
             modelBuilder.Entity("PetPal_Model.Models.Photo", b =>
                 {
-                    b.HasOne("PetPal_Model.Models.Animal", "Animals")
+                    b.HasOne("PetPal_Model.Models.AppUser", "AppUser")
                         .WithMany("Photos")
-                        .HasForeignKey("AnimalsId")
+                        .HasForeignKey("AppUserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Animals");
-                });
-
-            modelBuilder.Entity("PetPal_Model.Models.Animal", b =>
-                {
-                    b.Navigation("Photos");
+                    b.Navigation("AppUser");
                 });
 
             modelBuilder.Entity("PetPal_Model.Models.AppUser", b =>
                 {
                     b.Navigation("Animals");
+
+                    b.Navigation("Photos");
                 });
 #pragma warning restore 612, 618
         }

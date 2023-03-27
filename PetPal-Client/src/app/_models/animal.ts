@@ -12,5 +12,5 @@ export interface Animal {
     favoriteTreat: string;
     favoriteToy: string;
     photoUrl: string;
-    photos: Photo[];
+    // photos: Photo[];
 }

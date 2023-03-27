@@ -1,1 +1,53 @@
-<h1>{{member?.username}}</h1>
+<div class="row" *ngIf="member">
+    <div class="col-4">
+        <img src="{{member.photoUrl || './assets/user.png'}}" alt="{{member.username}}"
+            class="card-img-top img-thumbnail">
+        <div class="card">
+            <div class="card-body">
+                <div>
+                    <strong>Hello </strong>
+                    <p>{{member.username}}</p>
+                </div>
+                <div>
+                    <strong>Age:</strong>
+                    <p>{{member.age}}</p>
+                </div>
+                <div>
+                    <strong>Introduction: </strong>
+                    <p>{{member.introduction}}</p>
+                </div>
+                <div>
+                    <strong>Looking For: </strong>
+                    <p>{{member.lookingFor}}</p>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="btn-group d-flex">
+                    <button class="btn btn-primary">Like</button>
+                    <button class="btn btn-success">Message</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-8">
+        <tabset class="member-tabset">
+            <tab heading="About {{member.username}}">
+                <p>Name: {{member.username}}</p>
+                <h4>Age</h4>
+                <p>Date of Birth: {{member.age}}</p>
+                <p>Age: {{member.age}}</p>
+            </tab>
+            <tab heading="Bio">
+                <p>City: {{member.city}}</p>
+                <p>Country: {{member.country}}</p>
+            </tab>
+            <tab heading="Photos">
+                <ngx-gallery [options]="galleryOptions" [images]="galleryImages" class="ngx-gallery"></ngx-gallery>
+            </tab>
+            <tab heading="Messages">
+                <p>Messages will go here</p>
+            </tab>
+        </tabset>
+    </div>
+</div>
