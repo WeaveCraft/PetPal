@@ -12,7 +12,7 @@ export class LoaderService {
   loader() {
     this.loaderRequestCount++;
     this.spinnerService.show(undefined, {
-      type: 'ball-scale-multiple',
+      type: 'ball-clip-rotate',
       bdColor: 'rgba(255, 255, 255, 0)',
       color: '#333333'
     })

@@ -17,7 +17,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     }),
     NgxGalleryModule,
     NgxSpinnerModule.forRoot({
-      type: 'ball-scale-multiple'
+      type: 'ball-clip-rotate'
     })
   ],
   exports: [

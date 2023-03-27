@@ -35,20 +35,20 @@ namespace PetPal_Api.Controllers
             return await _animalRepository.GetPetsAsync(name);
         }
 
-        [HttpPut]
-        public async Task<ActionResult> UpdateAnimal(AnimalUpdateDto animalUpdateDto)
-        {
-            var animal = await _animalRepository.GetAnimalByNameAsync(User.GetUserName());
+        //[HttpPut]
+        //public async Task<ActionResult> UpdateAnimal(AnimalUpdateDto animalUpdateDto)
+        //{
+        //    var animal = await _animalRepository.GetAnimalByNameAsync(User.GetUserName());
 
-            if (animal == null) return NotFound();
+        //    if (animal == null) return NotFound();
 
-            _mapper.Map(animalUpdateDto, animal);
+        //    _mapper.Map(animalUpdateDto, animal);
 
-            if (await _animalRepository.SaveAllAsync())
-                return NoContent();
+        //    if (await _animalRepository.SaveAllAsync())
+        //        return NoContent();
 
-            return BadRequest("Error in updating member!");
-        }
+        //    return BadRequest("Error in updating member!");
+        //}
 
         //[HttpPost("add-photo")]
         //public async Task<ActionResult<PhotoDto>> AddPhoto(IFormFile file)
