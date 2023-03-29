@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { FileUploader } from 'ng2-file-upload';
+import { Component, Directive, Input, OnInit } from '@angular/core';
+import { FileSelectDirective, FileDropDirective, FileUploader } from 'ng2-file-upload';
 import { take } from 'rxjs';
 import { Member } from 'src/app/_models/member';
 import { User } from 'src/app/_models/user';
@@ -14,7 +14,7 @@ import { environment } from 'src/environments/environment';
 export class PhotoEditorComponent implements OnInit {
   @Input() member: Member | undefined;
   uploader: FileUploader | undefined;
-  hasBaseDropzoneOver = false;
+  hasBaseDropZoneOver = false;
   baseUrl = environment.apiUrl;
   user: User | undefined;
 
@@ -31,7 +31,7 @@ export class PhotoEditorComponent implements OnInit {
   }
 
   fileOverBase(e: any){
-    this.hasBaseDropzoneOver = e;
+    this.hasBaseDropZoneOver = e;
   }
 
   initializeUploader() {
@@ -46,7 +46,7 @@ export class PhotoEditorComponent implements OnInit {
     });
 
     this.uploader.onAfterAddingFile = (file) => {
-      file.withCredentials = false
+      file.withCredentials = false;
     }
 
     this.uploader.onSuccessItem = (item, response, status, headers) => {
