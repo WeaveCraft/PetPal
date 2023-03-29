@@ -73,7 +73,11 @@ namespace PetPal_Api.Controllers
 
             user.Photos.Add(photo);
 
-            if (await _userRepository.SaveAllAsync()) return _mapper.Map<PhotoDto>(photo);
+            if (await _userRepository.SaveAllAsync())
+            {
+                return CreatedAtAction(nameof(GetUser),
+                    new {username = user.Username}, _mapper.Map<PhotoDto>(photo));
+            }
 
             return BadRequest("There was a problem adding the photo");
         }
