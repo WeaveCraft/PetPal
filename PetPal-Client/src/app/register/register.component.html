@@ -2,9 +2,15 @@
 	<div class="form-container sign-up-container">
 		<form [formGroup]="registerForm" (ngSubmit)="register()" autocomplete="off">
 			<h1>Create Account</h1>
-			<input formControlName="username" class="form-control me-sm-2 text-dark" type="text" placeholder="Username" />
-			<input formControlName="password" class="form-control me-sm-2 text-dark" type="password" placeholder="Password" />
-			<input formControlName="confirmPassword" class="form-control me-sm-2 text-dark" type="password" placeholder="Confirm Password" />
+			<input formControlName="username" class="form-control me-sm-2 text-dark" type="text" [class.is-invalid]="registerForm.get('username')?.errors && registerForm.get('username')?.touched" placeholder="Username" />
+			<div class="invalid-feedback">Please enter a username for your profile</div>
+			<input formControlName="password" class="form-control me-sm-2 text-dark" type="password" [class.is-invalid]="registerForm.get('password')?.errors && registerForm.get('password')?.touched" placeholder="Password" />
+			<div class="invalid-feedback" *ngIf="registerForm.get('password')?.hasError('required')">Please enter a password for your profile</div>
+			<div class="invalid-feedback" *ngIf="registerForm.get('password')?.hasError('minlength')">Atleast 4 characters</div>
+			<div class="invalid-feedback" *ngIf="registerForm.get('password')?.hasError('maxlength')">Not more than 8 characters</div>
+			<input formControlName="confirmPassword" class="form-control me-sm-2 text-dark" type="password" [class.is-invalid]="registerForm.get('confirmPassword')?.errors && registerForm.get('confirmPassword')?.touched" placeholder="Confirm Password" />
+			<div class="invalid-feedback" *ngIf="registerForm.get('confirmPassword')?.hasError('required')">Please confirm your password</div>
+			<div class="invalid-feedback" *ngIf="registerForm.get('confirmPassword')?.hasError('notMatching')">Password does not match</div>
 			<button>Sign Up</button>
 		</form>
 	</div>
