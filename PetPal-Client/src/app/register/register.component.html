@@ -1,17 +1,18 @@
 <div class="container" id="container">
 	<div class="form-container sign-up-container">
-		<form #registerForm="ngForm" (ngSubmit)="register()" autocomplete="off">
+		<form [formGroup]="registerForm" (ngSubmit)="register()" autocomplete="off">
 			<h1>Create Account</h1>
-			<input type="text" class="form-control" name="username" [(ngModel)]="model.username" placeholder="Username" />
-			<input type="password" class="form-control" name="password" [(ngModel)]="model.password" placeholder="Password" />
+			<input formControlName="username" class="form-control me-sm-2 text-dark" type="text" placeholder="Username" />
+			<input formControlName="password" class="form-control me-sm-2 text-dark" type="password" placeholder="Password" />
+			<input formControlName="confirmPassword" class="form-control me-sm-2 text-dark" type="password" placeholder="Confirm Password" />
 			<button>Sign Up</button>
 		</form>
 	</div>
 	<div class="form-container sign-in-container">
 		<form #loginForm="ngForm" class="d-flex" (ngSubmit)="login()" autocomplete="off">
 			<h1>Sign in</h1>
-			<input name="username" [(ngModel)]="model.username" class="form-control me-sm-2 text-dark" type="text" placeholder="Username" />
-			<input name="password" [(ngModel)]="model.password" class="form-control me-sm-2 text-dark" type="password" placeholder="Password" />
+			<input type="text" class="form-control" name="username" [(ngModel)]="model.username" placeholder="Username" />
+			<input type="password" class="form-control" name="password" [(ngModel)]="model.password" placeholder="Password" />
 			<a href="#">Forgot your password?</a>
 			<button>Sign In</button>
 		</form>
