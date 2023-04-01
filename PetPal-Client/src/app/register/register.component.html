@@ -2,15 +2,12 @@
 	<div class="form-container sign-up-container">
 		<form [formGroup]="registerForm" (ngSubmit)="register()" autocomplete="off">
 			<h1>Create Account</h1>
-			<input formControlName="username" class="form-control me-sm-2 text-dark" type="text" [class.is-invalid]="registerForm.get('username')?.errors && registerForm.get('username')?.touched" placeholder="Username" />
-			<div class="invalid-feedback">Please enter a username for your profile</div>
-			<input formControlName="password" class="form-control me-sm-2 text-dark" type="password" [class.is-invalid]="registerForm.get('password')?.errors && registerForm.get('password')?.touched" placeholder="Password" />
-			<div class="invalid-feedback" *ngIf="registerForm.get('password')?.hasError('required')">Please enter a password for your profile</div>
-			<div class="invalid-feedback" *ngIf="registerForm.get('password')?.hasError('minlength')">Atleast 4 characters</div>
-			<div class="invalid-feedback" *ngIf="registerForm.get('password')?.hasError('maxlength')">Not more than 8 characters</div>
-			<input formControlName="confirmPassword" class="form-control me-sm-2 text-dark" type="password" [class.is-invalid]="registerForm.get('confirmPassword')?.errors && registerForm.get('confirmPassword')?.touched" placeholder="Confirm Password" />
-			<div class="invalid-feedback" *ngIf="registerForm.get('confirmPassword')?.hasError('required')">Please confirm your password</div>
-			<div class="invalid-feedback" *ngIf="registerForm.get('confirmPassword')?.hasError('notMatching')">Password does not match</div>
+			<app-text-input [formControl]="$any(registerForm.controls['username'])" [label]="'Username'"></app-text-input>
+			<app-text-input [formControl]="$any(registerForm.controls['age'])" [label]="'Age'"></app-text-input>
+			<app-text-input [formControl]="$any(registerForm.controls['city'])" [label]="'City'"></app-text-input>
+			<app-text-input [formControl]="$any(registerForm.controls['country'])" [label]="'Country'"></app-text-input>
+			<app-text-input [formControl]="$any(registerForm.controls['password'])" [label]="'Password'" type="password"></app-text-input>
+			<app-text-input [formControl]="$any(registerForm.controls['confirmPassword'])" [label]="'ConfirmPassword'" type="password"></app-text-input>
 			<button>Sign Up</button>
 		</form>
 	</div>
