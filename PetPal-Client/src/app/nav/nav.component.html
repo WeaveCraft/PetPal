@@ -12,7 +12,7 @@
                 <li><a routerLink="/errors" data-item='Errors'>Errors</a></li>
                 
                 <div class="dropdown" *ngIf="(accountService.currentUser$ | async) as user" dropdown>
-                    <img src="{{user.photoUrl}}" alt="user photo">
+                    <img src="{{user.photoUrl || './assets/user.png'}}" alt="user photo">
                     <a class="dropdown-toggle text-dark text-decoration-none" dropdownToggle>Welcome {{user.username | titlecase}}</a>
                     <div class="dropdown-menu mt-3" *dropdownMenu="">
                         <a class="dropdown-item" routerLink="/member/edit">Edit Profile</a>

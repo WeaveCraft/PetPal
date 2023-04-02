@@ -1,6 +1,6 @@
 <div class="container" id="container">
 	<div class="form-container sign-up-container">
-		<form [formGroup]="registerForm" (ngSubmit)="register()" autocomplete="off">
+		<form [formGroup]="registerForm" (ngSubmit)="registerForm.valid && register()" autocomplete="off">
 			<h1>Create Account</h1>
 			
 			<app-text-input [formControl]="$any(registerForm.controls['username'])" [label]="'Username'"></app-text-input>
@@ -19,7 +19,7 @@
 				</ul>
 			</div>
 
-			<button>Sign Up</button>
+			<button [disabled]="!registerForm.valid" type="submit">Sign Up</button>
 			
 						<div class="wrapper">
 							<input type="radio" name="select" id="option-1" checked>
