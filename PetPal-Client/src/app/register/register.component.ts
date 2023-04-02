@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output, OnInit } from '@angular/core';
-import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidatorFn, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup, ValidatorFn, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { AccountService } from '../_services/account.service';
@@ -12,9 +12,11 @@ import { AccountService } from '../_services/account.service';
 export class RegisterComponent implements OnInit {
   @Output() cancelRegister = new EventEmitter();
   registerForm: FormGroup = new FormGroup({});;
+  maxDate: Date = new Date();
   model: any = {}
+  validationErrors: string[] | undefined;
 
-  constructor(public accountService: AccountService, private routers: Router, private toastr: ToastrService, private fb: FormBuilder) { }
+  constructor(public accountService: AccountService, private routers: Router, private toastr: ToastrService, private fb: FormBuilder, private router: Router) { }
 
   ngOnInit(): void {
     const signUpButton = document.getElementById('signUp') as HTMLElement;
@@ -28,14 +30,16 @@ export class RegisterComponent implements OnInit {
     signInButton.addEventListener('click', () => {
       container.classList.remove("right-panel-active");
     });
-
     this.initializeForm();
+    this.maxDate.setFullYear(this.maxDate.getFullYear() -1);
   }
 
   initializeForm() {
     this.registerForm = this.fb.group({
       username: ['', Validators.required],
-      age: ['', Validators.required],
+      knownAs: ['', Validators.required],
+      gender: ['male'],
+      dateOfBirth: ['', Validators.required],
       city: ['', Validators.required],
       country: ['', Validators.required],
       password: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(8)]],
@@ -65,11 +69,13 @@ export class RegisterComponent implements OnInit {
   }
 
   register() {
-    this.accountService.register(this.model).subscribe({
+    this.accountService.register(this.registerForm.value).subscribe({
       next: () => {
-        this.cancel();
+        this.router.navigateByUrl('/members')
       },
-      error: error => this.toastr.error(error.error)
+      error: error => {
+        this.validationErrors = error
+      }
     })
   }
 

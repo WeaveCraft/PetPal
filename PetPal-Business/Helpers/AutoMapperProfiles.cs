@@ -16,6 +16,7 @@ namespace PetPal_Business.Helpers
             CreateMap<Photo, PhotoDto>();
             CreateMap<MemberUpdateDto, AppUser>();
             CreateMap<AnimalUpdateDto, Animal>();
+            CreateMap<RegisterDto, AppUser>();
         }
     }
 }

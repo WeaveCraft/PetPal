@@ -2,13 +2,37 @@
 	<div class="form-container sign-up-container">
 		<form [formGroup]="registerForm" (ngSubmit)="register()" autocomplete="off">
 			<h1>Create Account</h1>
+			
 			<app-text-input [formControl]="$any(registerForm.controls['username'])" [label]="'Username'"></app-text-input>
-			<app-text-input [formControl]="$any(registerForm.controls['age'])" [label]="'Age'"></app-text-input>
+			<app-text-input [formControl]="$any(registerForm.controls['knownAs'])" [label]="'Known As'"></app-text-input>
+			<app-date-picker [formControl]="$any(registerForm.controls['dateOfBirth'])" [label]="'Date of Birth'" [maxDate]="maxDate"></app-date-picker>
 			<app-text-input [formControl]="$any(registerForm.controls['city'])" [label]="'City'"></app-text-input>
 			<app-text-input [formControl]="$any(registerForm.controls['country'])" [label]="'Country'"></app-text-input>
 			<app-text-input [formControl]="$any(registerForm.controls['password'])" [label]="'Password'" type="password"></app-text-input>
 			<app-text-input [formControl]="$any(registerForm.controls['confirmPassword'])" [label]="'ConfirmPassword'" type="password"></app-text-input>
+
+			<div class="row" *ngIf="validationErrors">
+				<ul class="text-danger">
+					<li *ngFor="let error of validationErrors">
+						{{error}}
+					</li>
+				</ul>
+			</div>
+
 			<button>Sign Up</button>
+			
+						<div class="wrapper">
+							<input type="radio" name="select" id="option-1" checked>
+							<input type="radio" name="select" id="option-2">
+							  <label for="option-1" class="option option-1">
+								<div class="dot"></div>
+								 <span formControlName="gender">Male</span>
+								 </label>
+							  <label for="option-2" class="option option-2">
+								<div class="dot"></div>
+								 <span formControlName="gender">Female</span>
+							  </label>
+						   </div>
 		</form>
 	</div>
 	<div class="form-container sign-in-container">

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PetPal_Business.Services.Interfaces;
 using PetPal_DataAccess.Data;
@@ -13,26 +14,27 @@ namespace PetPal_Api.Controllers
     {
         private readonly ApplicationDbContext _context;
         private readonly ITokenService _tokenService;
+        private readonly IMapper _mapper;
 
-        public AccountController(ApplicationDbContext context, ITokenService tokenService)
+        public AccountController(ApplicationDbContext context, ITokenService tokenService, IMapper mapper)
         {
             _context = context;
             _tokenService = tokenService;
+            _mapper = mapper;
         }
 
         [HttpPost("register")] // POST: api/account/register?username=dave&password=pwd
-        public async Task<ActionResult<UserDto>> Register(RegisterDTO registerDto)
+        public async Task<ActionResult<UserDto>> Register(RegisterDto registerDto)
         {
             if(await UserExists(registerDto.Username)) return BadRequest("Username is Taken");
 
+            var user = _mapper.Map<AppUser>(registerDto);
+
             using var hmac = new HMACSHA512(); //Password Salt
 
-            var user = new AppUser
-            {
-                Username = registerDto.Username.ToLower(),
-                PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(registerDto.Password)),
-                PasswordSalt = hmac.Key
-            };
+            user.Username = registerDto.Username.ToLower();
+            user.PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(registerDto.Password));
+            user.PasswordSalt = hmac.Key;
             
             _context.AppUsers.Add(user);
             await _context.SaveChangesAsync();
@@ -41,6 +43,7 @@ namespace PetPal_Api.Controllers
             {
                 Username = user.Username,
                 Token = _tokenService.CreateToken(user),
+                KnownAs = user.KnownAs
             };
         }
 
@@ -66,7 +69,8 @@ namespace PetPal_Api.Controllers
             {
                 Username = user.Username,
                 Token = _tokenService.CreateToken(user),
-                PhotoUrl = user.Photos.FirstOrDefault(x => x.IsMain)?.Url
+                PhotoUrl = user.Photos.FirstOrDefault(x => x.IsMain)?.Url,
+                KnownAs = user.KnownAs
             };
         }
 

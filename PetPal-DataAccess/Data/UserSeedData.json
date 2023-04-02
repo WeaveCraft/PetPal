@@ -1,14 +1,16 @@
 [
   {
     "Username": "Helga",
+    "KnownAs": "Hela",
+    "Gender": "female",
     "DateOfBirth": "1972-12-11",
     "Created": "2019-07-20",
     "LastActive": "2020-06-16",
     "Introduction": "Veniam do cillum ullamco culpa cillum aliqua deserunt nisi enim excepteur aliqua. Magna nostrud qui culpa fugiat ipsum fugiat velit. Nulla consequat reprehenderit laboris eu elit quis ullamco proident adipisicing. Ex consectetur ad aliqua veniam velit non in exercitation.\r\n",
     "LookingFor": "Amet mollit dolor sit ea excepteur ex deserunt culpa nisi aliquip dolor elit ipsum. Proident ad nisi qui ad minim nostrud mollit ipsum dolore nostrud id. Ut exercitation labore enim Lorem officia nostrud tempor est consequat aute aliqua pariatur quis. Do consectetur et consectetur consectetur ad commodo labore consectetur consectetur consectetur nostrud eu. Aliqua adipisicing nisi est laborum consequat et nostrud dolor. Dolor fugiat nulla do excepteur dolore occaecat ullamco et sunt consequat adipisicing veniam sint. Nostrud reprehenderit cupidatat id veniam dolore duis sit culpa ex.\r\n",
     "City": "Darbydale",
-    "Country": 5,
-    "Language": 1,
+    "Country": "Sweden",
+    "Language": "Swedish",
     "Animals": [
       {
         "Name": "Livingston",
@@ -16,7 +18,7 @@
         "DateOfBirth": "1981-07-09",
         "Created": "2019-07-25",
         "Age": 13,
-        "Gender": 2,
+        "Gender": "age",
         "Interests": "Tempor ullamco voluptate incididunt reprehenderit irure velit.",
         "FavoriteTreat": "Elit nostrud ullamco eiusmod ad culpa culpa quis Lorem.",
         "FavoriteToy": "Anim eiusmod esse exercitation aliquip nisi sint Lorem sint labore ullamco sit minim."
@@ -31,14 +33,16 @@
   },
   {
     "Username": "Jana",
+    "KnownAs": "Jeje",
+    "Gender": "female",
     "DateOfBirth": "1993-11-23",
     "Created": "2019-02-26",
     "LastActive": "2020-05-07",
     "Introduction": "Sit magna ex eu ipsum non id irure veniam duis qui ut nisi officia incididunt. Laboris in velit Lorem quis enim ipsum. Irure sit do ipsum velit voluptate incididunt officia nostrud ex pariatur do mollit et.\r\n",
     "LookingFor": "Magna sit reprehenderit quis qui labore commodo amet. Nostrud labore culpa sit laborum id proident minim enim eiusmod ad ea ex. Officia proident ut anim ut veniam et do laborum Lorem proident. Ea nulla do excepteur laborum mollit aliqua duis proident dolore laboris cillum exercitation eu nisi.\r\n",
     "City": "Harborton",
-    "Country": 1,
-    "Language": 5,
+    "Country": "Sweden",
+    "Language": "Swedish",
     "Animals": [
       {
         "Name": "Pratt",
@@ -46,7 +50,7 @@
         "DateOfBirth": "1957-12-07",
         "Created": "2020-01-28",
         "Age": 8,
-        "Gender": 0,
+        "Gender": "female",
         "Interests": "Laboris minim exercitation consequat mollit eu id veniam in do nisi.",
         "FavoriteTreat": "Enim nisi consectetur laboris est in ea culpa minim laboris officia dolore.",
         "FavoriteToy": "Consectetur occaecat pariatur ex sunt excepteur sit nisi mollit consequat esse tempor pariatur."
@@ -61,14 +65,16 @@
   },
   {
     "Username": "Rosie",
+    "KnownAs": "Roro",
+    "Gender": "female",
     "DateOfBirth": "1981-03-04",
     "Created": "2019-08-16",
     "LastActive": "2020-06-11",
     "Introduction": "Elit ipsum sit nulla amet voluptate ullamco. Lorem et ex fugiat tempor voluptate sit ut laborum fugiat laborum consectetur enim. Mollit nisi ex ut labore voluptate duis elit. Nisi ut eu amet quis. Exercitation dolore mollit exercitation magna ullamco pariatur aute anim.\r\n",
     "LookingFor": "Ad exercitation duis aute ut quis. Duis irure magna fugiat tempor velit ut excepteur occaecat qui laborum. Pariatur non officia consequat et officia veniam in sit id dolor velit cupidatat. Ipsum ut culpa non ipsum aliquip tempor. Non adipisicing sit ullamco exercitation.\r\n",
     "City": "Sunriver",
-    "Country": 3,
-    "Language": 2,
+    "Country": "England",
+    "Language": "English",
     "Animals": [
       {
         "Name": "Hughes",
@@ -76,7 +82,7 @@
         "DateOfBirth": "1972-09-19",
         "Created": "2020-04-16",
         "Age": 17,
-        "Gender": 1,
+        "Gender": "female",
         "Interests": "Minim ut Lorem quis irure ipsum eiusmod occaecat velit pariatur.",
         "FavoriteTreat": "Lorem ex amet eiusmod dolore mollit consectetur laboris incididunt quis velit do.",
         "FavoriteToy": "Laboris non magna ea incididunt reprehenderit."
@@ -91,14 +97,16 @@
   },
   {
     "Username": "Felecia",
+    "KnownAs": "Feya",
+    "Gender": "female",
     "DateOfBirth": "1964-10-19",
     "Created": "2019-07-12",
     "LastActive": "2020-06-07",
     "Introduction": "Excepteur ea excepteur nisi amet proident enim veniam mollit mollit qui nulla. Laboris ad irure magna eiusmod. Cillum mollit proident amet consectetur exercitation ea enim minim non magna mollit aliquip aute.\r\n",
     "LookingFor": "Eiusmod nostrud ipsum aliqua culpa sunt eu. Lorem ea officia ipsum qui proident cillum pariatur commodo consequat nisi aliqua ut in eiusmod. Nisi laborum laborum nulla adipisicing Lorem pariatur occaecat occaecat dolor ipsum mollit sit enim ea. Consequat id magna voluptate esse nulla occaecat ex nisi consequat sint excepteur.\r\n",
     "City": "Soham",
-    "Country": 4,
-    "Language": 0,
+    "Country": "France",
+    "Language": "French",
     "Animals": [
       {
         "Name": "Gallagher",
@@ -106,7 +114,7 @@
         "DateOfBirth": "1989-06-16",
         "Created": "2019-05-31",
         "Age": 2,
-        "Gender": 1,
+        "Gender": "female",
         "Interests": "Ullamco cupidatat duis consectetur labore tempor irure veniam ut non aliquip irure esse.",
         "FavoriteTreat": "Cillum veniam tempor exercitation aliqua laborum id id eiusmod pariatur nostrud quis cillum.",
         "FavoriteToy": "Dolore in magna sunt tempor."
@@ -121,14 +129,16 @@
   },
   {
     "Username": "Daphne",
+    "KnownAs": "Dappy",
+    "Gender": "female",
     "DateOfBirth": "1977-07-10",
     "Created": "2020-01-19",
     "LastActive": "2020-06-10",
     "Introduction": "Est nisi dolore exercitation velit minim cupidatat aute veniam eiusmod voluptate. Irure anim nulla labore cupidatat. Voluptate consectetur reprehenderit voluptate esse incididunt in.\r\n",
     "LookingFor": "Reprehenderit excepteur ad esse ut. Minim elit aliquip ullamco irure ea. Sunt adipisicing deserunt proident esse dolore esse dolore elit qui Lorem. Non laborum ullamco laboris ad aliqua non. Consectetur aliquip aute commodo amet consequat dolore proident commodo labore excepteur. Est occaecat eu ut ex laboris proident eiusmod ipsum nostrud mollit. Ut consequat eiusmod consequat consectetur ad cillum proident nulla elit ut duis pariatur.\r\n",
     "City": "Cascades",
-    "Country": 1,
-    "Language": 4,
+    "Country": "Sweden",
+    "Language": "Japanese",
     "Animals": [
       {
         "Name": "Bond",
@@ -136,17 +146,17 @@
         "DateOfBirth": "1982-11-20",
         "Created": "2019-08-23",
         "Age": 19,
-        "Gender": 2,
+        "Gender": "female",
         "Interests": "Fugiat nostrud adipisicing quis veniam fugiat sint labore consectetur dolor.",
         "FavoriteTreat": "Quis irure pariatur ea fugiat aliqua voluptate nisi laboris officia aute ut nostrud.",
         "FavoriteToy": "In irure anim non nisi fugiat labore consequat ipsum laboris non et."
       }
     ],
-     "Photos": [
-       {
-         "Url": "https://images.dog.ceo/breeds/newfoundland/n02111277_8930.jpg",
-         "IsMain": true
-       }
-     ]
+    "Photos": [
+      {
+        "Url": "https://images.dog.ceo/breeds/newfoundland/n02111277_8930.jpg",
+        "IsMain": true
+      }
+    ]
   }
 ]

@@ -7,6 +7,8 @@ namespace PetPal_Model.Models
     {
         public int Id { get; set; }
         public string? Username { get; set; }
+        public string? KnownAs { get; set; }
+        public string Gender { get; set; }
         public byte[] PasswordHash { get; set; }
         public byte[] PasswordSalt { get; set; }
         public DateTime DateOfBirth { get; set; }
@@ -15,8 +17,8 @@ namespace PetPal_Model.Models
         public string? Introduction { get; set; }
         public string? LookingFor { get; set; }
         public string? City { get; set; }
-        public Country? Country { get; set; }
-        public Language? Language { get; set; }
+        public string? Country { get; set; }
+        public string? Language { get; set; }
         public List<Animal> Animals { get; set; } = new();
         public List<Photo> Photos { get; set; } = new();
     }

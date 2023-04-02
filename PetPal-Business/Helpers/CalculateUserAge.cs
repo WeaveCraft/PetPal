@@ -22,5 +22,16 @@
 
             return (a - b) / 10000;
         }
+
+        public static Int32 GetAge(this DateOnly dateOfBirth)
+        {
+            var today = DateOnly.FromDateTime(DateTime.UtcNow);
+
+            var age = today.Year - dateOfBirth.Year;
+
+            if (dateOfBirth > today.AddYears(-age)) age--;
+
+            return age;
+        }
     }
 }

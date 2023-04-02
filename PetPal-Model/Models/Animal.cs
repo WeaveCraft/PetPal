@@ -14,7 +14,7 @@ namespace PetPal_Model.Models
         public DateTime DateOfBirth { get; set; }
         public DateTime Created { get; set; } = DateTime.UtcNow;
         public int Age { get; set; }
-        public Gender? Gender { get; set; }
+        public string? Gender { get; set; }
         public string? Interests { get; set; }
         public string? FavoriteTreat { get; set; }
         public string? FavoriteToy { get; set; }

@@ -10,7 +10,7 @@ namespace PetPal_Model.DTOs
         public DateTime? DateOfBirth { get; set; }
         public DateTime Created { get; set; }
         public int Age { get; set; }
-        public Gender? Gender { get; set; }
+        public string? Gender { get; set; }
         public string? Interests { get; set; }
         public string? FavoriteTreat { get; set; }
         public string? FavoriteToy { get; set; }

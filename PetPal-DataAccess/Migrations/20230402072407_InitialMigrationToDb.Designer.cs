@@ -12,8 +12,8 @@ using PetPal_DataAccess.Data;
 namespace PetPalDataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230326162739_InitialMigrationForV1")]
-    partial class InitialMigrationForV1
+    [Migration("20230402072407_InitialMigrationToDb")]
+    partial class InitialMigrationToDb
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -51,8 +51,8 @@ namespace PetPalDataAccess.Migrations
                     b.Property<string>("FavoriteTreat")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("Gender")
-                        .HasColumnType("int");
+                    b.Property<string>("Gender")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Interests")
                         .HasColumnType("nvarchar(max)");
@@ -83,8 +83,8 @@ namespace PetPalDataAccess.Migrations
                     b.Property<string>("City")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("Country")
-                        .HasColumnType("int");
+                    b.Property<string>("Country")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("Created")
                         .HasColumnType("datetime2");
@@ -92,11 +92,18 @@ namespace PetPalDataAccess.Migrations
                     b.Property<DateTime>("DateOfBirth")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("Gender")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Introduction")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("Language")
-                        .HasColumnType("int");
+                    b.Property<string>("KnownAs")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Language")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("LastActive")
                         .HasColumnType("datetime2");

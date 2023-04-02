@@ -1,13 +1,24 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using PetPal_Model.Enums;
+using System.ComponentModel.DataAnnotations;
 
 namespace PetPal_Model.DTOs
 {
-    public class RegisterDTO
+    public class RegisterDto
     {
+        [Required]
+        public string? Gender { get; set; }
         [Required]
         public string Username { get; set; }
         [Required]
+        public string KnownAs { get; set; }
+        [Required]
         [StringLength(8, MinimumLength = 4)]
         public string Password { get; set; }
+        [Required]
+        public DateTime? DateOfBirth { get; set; }
+        [Required]
+        public string City { get; set; }
+        [Required]
+        public string Country { get; set; }
     }
 }
