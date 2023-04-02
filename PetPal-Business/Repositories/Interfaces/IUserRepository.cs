@@ -1,4 +1,5 @@
-﻿using PetPal_Model.DTOs;
+﻿using PetPal_Business.Helpers;
+using PetPal_Model.DTOs;
 using PetPal_Model.Models;
 
 namespace PetPal_Business.Repositories.Interfaces
@@ -10,7 +11,7 @@ namespace PetPal_Business.Repositories.Interfaces
         Task<IEnumerable<AppUser>> GetUsersAsync();
         Task<AppUser> GetUserByIdAsync(int id);
         Task<AppUser> GetUserByUsernameAsync(string name);
-        Task<IEnumerable<MemberDto>> GetMembersAsync();
+        Task<PagedList<MemberDto>> GetMembersAsync(UserParams userParams);
         Task<MemberDto> GetMemberAsync(string username);
     }
 }
