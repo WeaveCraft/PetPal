@@ -6,6 +6,7 @@ export interface Member {
     username: string;
     knownAs: string;
     gender: string;
+    mood: string;
     age: number;
     dateOfBirth: Date;
     created: Date;

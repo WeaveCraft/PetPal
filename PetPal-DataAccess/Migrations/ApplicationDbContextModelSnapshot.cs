@@ -108,6 +108,10 @@ namespace PetPalDataAccess.Migrations
                     b.Property<string>("LookingFor")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Mood")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<byte[]>("PasswordHash")
                         .IsRequired()
                         .HasColumnType("varbinary(max)");

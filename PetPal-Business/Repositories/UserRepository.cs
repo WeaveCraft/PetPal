@@ -30,11 +30,15 @@ namespace PetPal_Business.Repositories
 
         public async Task<PagedList<MemberDto>> GetMembersAsync(UserParams userParams)
         {
-            var query = _context.AppUsers
-               .ProjectTo<MemberDto>(_mapper.ConfigurationProvider)
-               .AsNoTracking();
+            var query = _context.AppUsers.AsQueryable();
 
-            return await PagedList<MemberDto>.CreateAsync(query, userParams.PageNumber, userParams.PageSize);
+            query = query.Where(x => x.Username != userParams.CurrentUsername);
+            query = query.Where(x => x.Mood == userParams.Mood);
+
+            return await PagedList<MemberDto>.CreateAsync(
+                query.AsNoTracking().ProjectTo<MemberDto>(_mapper.ConfigurationProvider)
+                ,userParams.PageNumber
+                ,userParams.PageSize);
         }
 
         public async Task<AppUser> GetUserByIdAsync(int id)

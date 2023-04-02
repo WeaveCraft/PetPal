@@ -27,9 +27,17 @@ namespace PetPal_Api.Controllers
         [HttpGet]
         public async Task<ActionResult<PagedList<MemberDto>>> GetUsers([FromQuery]UserParams userParams)
         {
+            var currentUser = await _userRepository.GetUserByUsernameAsync(User.GetUserName());
+            userParams.CurrentUsername = currentUser.Username;
+
+            if (string.IsNullOrEmpty(userParams.Mood))
+            {
+                userParams.Mood = currentUser.Mood == "playful" ? "calm" : "playful";
+            }
+
             var users = await _userRepository.GetMembersAsync(userParams);
 
-            Response.AddPAgninationHeader(new PaginationHeader(users.CurrentPage, users.PageSize, users.TotalCount, users.TotalPages));
+            Response.AddPagninationHeader(new PaginationHeader(users.CurrentPage, users.PageSize, users.TotalCount, users.TotalPages));
 
             return Ok(users);
         }

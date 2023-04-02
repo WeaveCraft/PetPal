@@ -8,6 +8,8 @@ namespace PetPal_Model.DTOs
         [Required]
         public string? Gender { get; set; }
         [Required]
+        public string? Mood { get; set; }
+        [Required]
         public string Username { get; set; }
         [Required]
         public string KnownAs { get; set; }
