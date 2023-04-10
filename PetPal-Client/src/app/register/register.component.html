@@ -2,14 +2,19 @@
 	<div class="form-container sign-up-container">
 		<form [formGroup]="registerForm" (ngSubmit)="registerForm.valid && register()" autocomplete="off">
 			<h1>Create Account</h1>
-			
-			<app-text-input [formControl]="$any(registerForm.controls['username'])" [label]="'Username'"></app-text-input>
-			<app-text-input [formControl]="$any(registerForm.controls['knownAs'])" [label]="'Known As'"></app-text-input>
-			<app-date-picker [formControl]="$any(registerForm.controls['dateOfBirth'])" [label]="'Date of Birth'" [maxDate]="maxDate"></app-date-picker>
+
+			<app-text-input [formControl]="$any(registerForm.controls['username'])"
+				[label]="'Username'"></app-text-input>
+			<app-text-input [formControl]="$any(registerForm.controls['knownAs'])"
+				[label]="'Known As'"></app-text-input>
+			<app-date-picker [formControl]="$any(registerForm.controls['dateOfBirth'])" [label]="'Date of Birth'"
+				[maxDate]="maxDate"></app-date-picker>
 			<app-text-input [formControl]="$any(registerForm.controls['city'])" [label]="'City'"></app-text-input>
 			<app-text-input [formControl]="$any(registerForm.controls['country'])" [label]="'Country'"></app-text-input>
-			<app-text-input [formControl]="$any(registerForm.controls['password'])" [label]="'Password'" type="password"></app-text-input>
-			<app-text-input [formControl]="$any(registerForm.controls['confirmPassword'])" [label]="'ConfirmPassword'" type="password"></app-text-input>
+			<app-text-input [formControl]="$any(registerForm.controls['password'])" [label]="'Password'"
+				type="password"></app-text-input>
+			<app-text-input [formControl]="$any(registerForm.controls['confirmPassword'])" [label]="'ConfirmPassword'"
+				type="password"></app-text-input>
 
 			<div class="row" *ngIf="validationErrors">
 				<ul class="text-danger">
@@ -20,7 +25,6 @@
 			</div>
 
 			<button [disabled]="!registerForm.valid" type="submit">Sign Up</button>
-			
 			<div class="wrapper">
 				<input type="radio" formControlName="gender" name="gender" value="male" id="option-1" checked>
 				<input type="radio" formControlName="gender" name="gender" value="female" id="option-2">
@@ -47,11 +51,15 @@
 			</div>
 		</form>
 	</div>
+
+
 	<div class="form-container sign-in-container">
 		<form #loginForm="ngForm" class="d-flex" (ngSubmit)="login()" autocomplete="off">
 			<h1>Sign in</h1>
-			<input type="text" class="form-control" name="username" [(ngModel)]="model.username" placeholder="Username" />
-			<input type="password" class="form-control" name="password" [(ngModel)]="model.password" placeholder="Password" />
+			<input type="text" class="form-control" name="username" [(ngModel)]="model.username"
+				placeholder="Username" />
+			<input type="password" class="form-control" name="password" [(ngModel)]="model.password"
+				placeholder="Password" />
 			<a href="#">Forgot your password?</a>
 			<button>Sign In</button>
 		</form>
