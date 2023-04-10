@@ -21,18 +21,30 @@
 
 			<button [disabled]="!registerForm.valid" type="submit">Sign Up</button>
 			
-						<div class="wrapper">
-							<input type="radio" name="select" id="option-1" checked>
-							<input type="radio" name="select" id="option-2">
-							  <label for="option-1" class="option option-1">
-								<div class="dot"></div>
-								 <span formControlName="gender">Male</span>
-								 </label>
-							  <label for="option-2" class="option option-2">
-								<div class="dot"></div>
-								 <span formControlName="gender">Female</span>
-							  </label>
-						   </div>
+			<div class="wrapper">
+				<input type="radio" formControlName="gender" name="gender" value="male" id="option-1" checked>
+				<input type="radio" formControlName="gender" name="gender" value="female" id="option-2">
+				<label for="option-1" class="option option-1">
+					<div class="dot"></div>
+					<span>Male</span>
+				</label>
+				<label for="option-2" class="option option-2">
+					<div class="dot"></div>
+					<span>Female</span>
+				</label>
+			</div>
+			<div class="wrapper">
+				<input formControlName="mood" type="radio" name="mood" value="playful" id="option-3" checked>
+				<input formControlName="mood" type="radio" name="mood" value="calm" id="option-4">
+				<label for="option-3" class="option option-3">
+					<div class="dot"></div>
+					<span >Playful</span>
+				</label>
+				<label for="option-4" class="option option-4">
+					<div class="dot"></div>
+					<span >Calm</span>
+				</label>
+			</div>
 		</form>
 	</div>
 	<div class="form-container sign-in-container">

@@ -12,7 +12,7 @@ using PetPal_DataAccess.Data;
 namespace PetPalDataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230402072407_InitialMigrationToDb")]
+    [Migration("20230410124821_InitialMigrationToDb")]
     partial class InitialMigrationToDb
     {
         /// <inheritdoc />
@@ -109,6 +109,10 @@ namespace PetPalDataAccess.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("LookingFor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Mood")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<byte[]>("PasswordHash")
