@@ -6,6 +6,10 @@ namespace PetPal_Business.Extensions
     {
         public static string GetUserName(this ClaimsPrincipal member)
         {
+            return member.FindFirst(ClaimTypes.Name)?.Value;
+        }
+        public static string GetUserId(this ClaimsPrincipal member)
+        {
             return member.FindFirst(ClaimTypes.NameIdentifier)?.Value;
         }
     }

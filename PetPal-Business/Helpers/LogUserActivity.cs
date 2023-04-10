@@ -13,10 +13,10 @@ namespace PetPal_Business.Helpers
 
             if (!resultContext.HttpContext.User.Identity.IsAuthenticated) return;
 
-            var username = resultContext.HttpContext.User.GetUserName();
+            var userId = resultContext.HttpContext.User.GetUserId();
 
             var repo = resultContext.HttpContext.RequestServices.GetRequiredService<IUserRepository>();
-            var user = await repo.GetUserByUsernameAsync(username);
+            var user = await repo.GetUserByIdAsync(int.Parse(userId));
             user.LastActive = DateTime.UtcNow;
             await repo.SaveAllAsync();
         }
