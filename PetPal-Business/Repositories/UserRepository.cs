@@ -35,6 +35,11 @@ namespace PetPal_Business.Repositories
             query = query.Where(x => x.Username != userParams.CurrentUsername);
             query = query.Where(x => x.Mood == userParams.Mood);
 
+            var minDob = DateTime.Today.AddYears(-userParams.MaxAge - 1);
+            var maxDob = DateTime.Today.AddYears(-userParams.MinAge);
+
+            query = query.Where(x => x.DateOfBirth >= minDob && x.DateOfBirth <= maxDob);
+
             return await PagedList<MemberDto>.CreateAsync(
                 query.AsNoTracking().ProjectTo<MemberDto>(_mapper.ConfigurationProvider)
                 ,userParams.PageNumber
