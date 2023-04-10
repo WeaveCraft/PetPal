@@ -12,7 +12,7 @@ using PetPal_DataAccess.Data;
 namespace PetPalDataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230402115155_InitialMigrationToDb")]
+    [Migration("20230410132424_InitialMigrationToDb")]
     partial class InitialMigrationToDb
     {
         /// <inheritdoc />

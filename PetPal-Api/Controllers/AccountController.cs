@@ -43,7 +43,8 @@ namespace PetPal_Api.Controllers
             {
                 UserName = user.Username,
                 Token = _tokenService.CreateToken(user),
-                KnownAs = user.KnownAs
+                KnownAs = user.KnownAs,
+                Mood = user.Mood,
             };
         }
 
@@ -70,7 +71,8 @@ namespace PetPal_Api.Controllers
                 UserName = user.Username,
                 Token = _tokenService.CreateToken(user),
                 PhotoUrl = user.Photos.FirstOrDefault(x => x.IsMain)?.Url,
-                KnownAs = user.KnownAs
+                KnownAs = user.KnownAs,
+                Mood = user.Mood
             };
         }
 
