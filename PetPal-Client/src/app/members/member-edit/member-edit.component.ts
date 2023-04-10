@@ -6,6 +6,7 @@ import { AccountService } from 'src/app/_services/account.service';
 import { MembersService } from 'src/app/_services/members.service';
 import { ToastrService } from 'ngx-toastr';
 import { NgForm } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-animal-edit',
@@ -48,4 +49,5 @@ updateMember() {
     } 
   });
 }
+
 }
