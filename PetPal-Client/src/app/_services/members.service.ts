@@ -35,8 +35,8 @@ export class MembersService {
         }
         return this.paginatedResult;
       })
-    )
-  }
+      )
+    }
 
   getMember(userName: string) {
     const member = this.members.find(x => x.username === userName);
