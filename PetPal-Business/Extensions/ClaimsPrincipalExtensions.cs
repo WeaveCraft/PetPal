@@ -8,9 +8,9 @@ namespace PetPal_Business.Extensions
         {
             return member.FindFirst(ClaimTypes.Name)?.Value;
         }
-        public static string GetUserId(this ClaimsPrincipal member)
+        public static int GetUserId(this ClaimsPrincipal member)
         {
-            return member.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            return int.Parse(member.FindFirst(ClaimTypes.NameIdentifier)?.Value);
         }
     }
 }
