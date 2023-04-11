@@ -22,5 +22,7 @@ namespace PetPal_Model.Models
         public string? Language { get; set; }
         public List<Animal> Animals { get; set; } = new();
         public List<Photo> Photos { get; set; } = new();
+        public List<UserLike> LikedByUsers { get; set; } 
+        public List<UserLike> LikedUsers { get; set; } 
     }
 }
