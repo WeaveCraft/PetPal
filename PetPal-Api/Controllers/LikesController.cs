@@ -50,7 +50,7 @@ namespace PetPal_Api.Controllers
             likesParams.UserId = User.GetUserId();
 
             var users = await _likesRepository.GetUserLikes(likesParams);
-            Response.AddPagninationHeader(new PaginationHeader(users.CurrentPage, users.PageSize, users.TotalCount, users.TotalPages));
+            Response.AddPaginationHeader(new PaginationHeader(users.CurrentPage, users.PageSize, users.TotalCount, users.TotalPages));
 
             return Ok(users);
         }

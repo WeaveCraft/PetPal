@@ -1,18 +1,19 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using PetPal_Business.Extensions;
+using PetPal_Business.Helpers;
 using PetPal_Business.Repositories.Interfaces;
 using PetPal_Model.DTOs;
 using PetPal_Model.Models;
 
 namespace PetPal_Api.Controllers
 {
-    public class MessageController : BaseApiController
+    public class MessagesController : BaseApiController
     {
         private readonly IMessageRepository _messageRepository;
         private readonly IUserRepository _userRepository;
         private readonly IMapper _mapper;
-        public MessageController(IUserRepository userRepository, IMessageRepository messageRepository, IMapper mapper)
+        public MessagesController(IUserRepository userRepository, IMessageRepository messageRepository, IMapper mapper)
         {
             _messageRepository = messageRepository;
             _userRepository = userRepository;
@@ -22,7 +23,7 @@ namespace PetPal_Api.Controllers
         [HttpPost]
         public async Task<ActionResult<MessageDto>> CreateMessage(CreateMessageDto createMessageDto)
         {
-            var username = User.GetUserName();
+            var username = User.GetUsername();
 
             if (username == createMessageDto.RecipientUsername.ToLower()) return BadRequest("Cannot send messages to yourself");
 
@@ -45,7 +46,20 @@ namespace PetPal_Api.Controllers
             if (await _messageRepository.SaveAllAsync()) return Ok(_mapper.Map<MessageDto>(message));
 
             return BadRequest("Failed to send message");
+        }
 
+        [HttpGet]
+        public async Task<ActionResult<PagedList<MessageDto>>> GetMessagesForUser([FromQuery]
+            MessageParams messageParams)
+        {
+            messageParams.Username = User.GetUsername();
+
+            var messages = await _messageRepository.GetMessagesForUser(messageParams);
+
+            Response.AddPaginationHeader(new PaginationHeader(messages.CurrentPage, messages.PageSize,
+                messages.TotalCount, messages.TotalPages));
+
+            return messages;
         }
     }
 }

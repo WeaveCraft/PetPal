@@ -1,4 +1,6 @@
-﻿using PetPal_Business.Helpers;
+﻿using AutoMapper;
+using AutoMapper.QueryableExtensions;
+using PetPal_Business.Helpers;
 using PetPal_Business.Repositories.Interfaces;
 using PetPal_DataAccess.Data;
 using PetPal_Model.DTOs;
@@ -9,9 +11,11 @@ namespace PetPal_Business.Repositories
     public class MessageRepository : IMessageRepository
     {
         private readonly ApplicationDbContext _context;
-        public MessageRepository(ApplicationDbContext context)
+        private readonly IMapper _mapper;
+        public MessageRepository(ApplicationDbContext context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
 
         public void AddMessage(Message message)
@@ -29,9 +33,26 @@ namespace PetPal_Business.Repositories
             return await _context.Messages.FindAsync(id);
         }
 
-        public Task<PagedList<MessageDto>> GetMessagesForUser()
+        public async Task<PagedList<MessageDto>> GetMessagesForUser(MessageParams messageParams)
         {
-            throw new NotImplementedException();
+            var query = _context.Messages
+                .OrderByDescending(x => x.MessageSent)
+                .AsQueryable();
+
+            query = messageParams.Container switch
+            {
+                "Inbox" => query.Where(u => u.RecipientUsername == messageParams.Username
+                    && u.RecipientDeleted == false),
+                "Outbox" => query.Where(u => u.SenderUsername == messageParams.Username
+                    && u.SenderDeleted == false),
+                _ => query.Where(u => u.RecipientUsername == messageParams.Username
+                    && u.RecipientDeleted == false && u.DateRead == null)
+            };
+
+            var messages = query.ProjectTo<MessageDto>(_mapper.ConfigurationProvider);
+
+            return await PagedList<MessageDto>
+                .CreateAsync(messages, messageParams.PageNumber, messageParams.PageSize);
         }
 
         public Task<IEnumerable<MessageDto>> GetMessageThread(int currentUserId, int recipientId)
