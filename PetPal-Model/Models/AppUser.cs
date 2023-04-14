@@ -6,10 +6,10 @@ namespace PetPal_Model.Models
     public class AppUser
     {
         public int Id { get; set; }
-        public string? Username { get; set; }
-        public string? KnownAs { get; set; }
-        public string Gender { get; set; }
-        public string Mood { get; set; }
+        public string? Username { get; set; } // Should not be nullable
+        public string? KnownAs { get; set; } // Should not be nullable
+        public string? Gender { get; set; } // Should not be nullable
+        public string? Mood { get; set; } // Should not be nullable
         public byte[] PasswordHash { get; set; }
         public byte[] PasswordSalt { get; set; }
         public DateTime DateOfBirth { get; set; }
