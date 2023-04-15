@@ -17,6 +17,15 @@ export class MemberMessagesComponent implements OnInit {
   constructor(private messageService: MessageService) { }
 
   ngOnInit(): void {
+    this.loadMessages();
+  }
+
+  loadMessages() {
+    if (this.username) {
+      this.messageService.getMessageThread(this.username).subscribe({
+        next: messages => this.messages = messages
+      })
+    }
   }
 
   sendMessage() {
