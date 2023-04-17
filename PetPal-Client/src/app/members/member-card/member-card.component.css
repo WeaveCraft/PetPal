@@ -1,13 +1,15 @@
+
 figure {
     display: grid;
     border-radius: 1rem;
     overflow: hidden;
     cursor: pointer;
-    float: left;
-    max-height: 20rem;
-    max-width: 20rem;
-    margin: auto;
+    max-height: 40rem;
+    max-width: 40rem;
     justify-content: center;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
   }
   figure > * {
     grid-area: 1/1;
@@ -24,8 +26,8 @@ figure {
     background: var(--c,#0009);
     clip-path: inset(0 var(--_i,100%) 0 0);
     -webkit-mask:
-      linear-gradient(#000 0 0),
-      linear-gradient(#000 0 0);
+    linear-gradient(#000 0 0),
+    linear-gradient(#000 0 0);
     -webkit-mask-composite: xor;
     -webkit-mask-clip: text, padding-box;
   }
@@ -37,16 +39,8 @@ figure {
   }
   @supports not (-webkit-mask-clip: text) {
     figure figcaption {
-     -webkit-mask: none;
-     color: #fff;
+      -webkit-mask: none;
+      color: #fff;
     }
   }
   
-  body {
-    margin: 0;
-    min-height: 100vh;
-    display: grid;
-    grid-auto-flow: column;
-    place-content: center;
-    background: #425a52;
-  }

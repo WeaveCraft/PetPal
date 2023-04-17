@@ -1,32 +1,4 @@
-<!-- <div class="card mb-4">
-	<div class="wrapper" *ngIf="member">
-		<div class="card">
-			<img
-				src="https://images.unsplash.com/photo-1568572933382-74d440642117?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1935&q=80" />
-			<div class="descriptions">
-				<h1>{{member.username}}</h1>
-				
-				<ul>
-					<li>City: {{member.city}}</li>
-					<li>Created: {{member.created}}</li>
-					<li>Age: {{member.age}}</li>
-				  </ul>
-
-				<button routerLink="/members/{{member.username}}">
-					<i class="fa fa-user"></i>
-				</button>
-				<button >
-					<i class="fa fa-heart"></i>
-				</button>
-				<button>
-					<i class="fa fa-envelope"></i>
-				</button>
-			</div>
-		</div>
-	</div>
-</div> -->
-
-<div *ngIf="member"> 
+<div *ngIf="member">
 	<figure routerLink="/members/{{member.username}}">
 		<img src="{{member.photoUrl || './assets/user.png'}}" alt="Pets">
 		<figcaption>{{member.username}}</figcaption>
