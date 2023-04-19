@@ -14,6 +14,12 @@ export class NavComponent implements OnInit {
   constructor(public accountService: AccountService, private routers: Router, private toastr: ToastrService) { }
 
   ngOnInit(): void {
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+    
+    navbarToggler?.addEventListener('click', () => {
+      navbarCollapse?.classList.toggle('show');
+    });
   }
 
   login() {
@@ -27,5 +33,7 @@ export class NavComponent implements OnInit {
     this.accountService.logout();
     this.routers.navigateByUrl('/');
   }
+
+  
 
 }

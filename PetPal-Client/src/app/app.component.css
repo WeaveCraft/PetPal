@@ -1,0 +1,14 @@
+/* Set the position of the div to fixed */
+div {
+    position: fixed;
+    top: 100px; /* adjust this value to match the height of your navbar */
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  
+  /* Add some padding to the body to make room for the fixed div */
+  body {
+    padding-top: 100px; /* adjust this value to match the height of your navbar */
+  }
+  
