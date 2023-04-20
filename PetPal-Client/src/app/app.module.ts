@@ -30,6 +30,7 @@ import { PhotoEditorComponent } from './members/photo-editor/photo-editor.compon
 import { TextInputComponent } from './_forms/text-input/text-input.component';
 import { DatePickerComponent } from './_forms/date-picker/date-picker.component';
 import { MemberMessagesComponent } from './members/member-messages/member-messages.component';
+import { ButtonComponent } from './_forms/button/button.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { MemberMessagesComponent } from './members/member-messages/member-messag
     TextInputComponent,
     DatePickerComponent,
     MemberMessagesComponent,
+    ButtonComponent
   ],
   imports: [
     BrowserAnimationsModule,

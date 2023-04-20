@@ -18,13 +18,13 @@
             <select name="mood" style="width: 130px" class="form-select ms-1" [(ngModel)]="userParams.mood"><option *ngFor="let mood of moodList" [value]="mood.value">{{mood.display}}</option></select>
         </div>
 
-        <button class="btn btn-primary ms-1" type="submit">Apply Filters</button>
-        <button (click)="resetFilters()" class="btn btn-info ms-1" type="submit">Reset Filters</button>
+        <app-button [label]="'Apply Filters'" type="submit"></app-button>
+        <app-button [label]="'Reset Filters'" type="submit" (click)="resetFilters()"></app-button>
 
         <div class="col">
             <div class="btn-group float-end">
-                <button class="btn btn-primary" type="button" name="orderBy" [(ngModel)]="userParams.orderBy" btnRadio="lastActive" (click)="loadMembers()">Last Active</button>
-                <button class="btn btn-primary" type="button" name="orderBy" [(ngModel)]="userParams.orderBy" btnRadio="created" (click)="loadMembers()">Newest Member</button>
+                <app-button [label]="'Last Active'" name="orderBy" [(ngModel)]="userParams.orderBy" btnRadio="lastActive" (click)="loadMembers()"></app-button>
+                <app-button [label]="'Newest Member'" name="orderBy" [(ngModel)]="userParams.orderBy" btnRadio="created" (click)="loadMembers()"></app-button>
             </div>
         </div>
     </form>
