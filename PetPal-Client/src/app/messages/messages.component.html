@@ -1,13 +1,13 @@
 <div class="mb-4 d-flex">
     <div class="btn-group" name="container">
-        <button 
-            class="btn btn-primary"
+        <app-button 
+            [label]="'Unread'"
             btnRadio="Unread"
             [(ngModel)]="container"
             (click)="loadMessages()"
         >
-            <i class="fa fa-envelope"></i> Unread
-        </button>
+            <i class="fa fa-envelope"></i>
+        </app-button>
         <button 
             class="btn btn-primary"
             btnRadio="Inbox"
