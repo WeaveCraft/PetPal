@@ -1,5 +1,5 @@
-import { Component, EventEmitter, Output, OnInit } from '@angular/core';
-import { AbstractControl, FormBuilder, FormGroup, ValidatorFn, Validators } from '@angular/forms';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidatorFn, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { AccountService } from '../_services/account.service';
@@ -11,39 +11,29 @@ import { AccountService } from '../_services/account.service';
 })
 export class RegisterComponent implements OnInit {
   @Output() cancelRegister = new EventEmitter();
-  registerForm: FormGroup = new FormGroup({});;
+  registerForm: FormGroup = new FormGroup({});
   maxDate: Date = new Date();
-  model: any = {}
   validationErrors: string[] | undefined;
 
-  constructor(public accountService: AccountService, private routers: Router, private toastr: ToastrService, private fb: FormBuilder, private router: Router) { }
+  constructor(private accountService: AccountService, private toastr: ToastrService, 
+      private fb: FormBuilder, private router: Router) { }
 
   ngOnInit(): void {
-    const signUpButton = document.getElementById('signUp') as HTMLElement;
-    const signInButton = document.getElementById('signIn') as HTMLElement;
-    const container = document.getElementById('container') as HTMLElement;
-
-    signUpButton.addEventListener('click', () => {
-      container.classList.add("right-panel-active");
-    });
-
-    signInButton.addEventListener('click', () => {
-      container.classList.remove("right-panel-active");
-    });
     this.initializeForm();
-    this.maxDate.setFullYear(this.maxDate.getFullYear() -1);
+    this.maxDate.setFullYear(this.maxDate.getFullYear() -18);
   }
 
   initializeForm() {
     this.registerForm = this.fb.group({
       gender: ['male'],
-      mood: ['playful'],
+      mood: ['calm'],
       username: ['', Validators.required],
       knownAs: ['', Validators.required],
       dateOfBirth: ['', Validators.required],
       city: ['', Validators.required],
       country: ['', Validators.required],
-      password: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(8)]],
+      password: ['', [Validators.required, 
+        Validators.minLength(4), Validators.maxLength(18)]],
       confirmPassword: ['', [Validators.required, this.matchValues('password')]],
     });
     this.registerForm.controls['password'].valueChanges.subscribe({
@@ -57,29 +47,16 @@ export class RegisterComponent implements OnInit {
     }
   }
 
-  login() {
-    this.accountService.login(this.model).subscribe({
-      next: () => 
-        this.routers.navigateByUrl('/'),
-    })
-  }
-
-  logout() {
-    this.accountService.logout();
-    this.routers.navigateByUrl('/');
-  }
-
   register() {
     const dob = this.getDateOnly(this.registerForm.controls['dateOfBirth'].value);
     const values = {...this.registerForm.value, dateOfBirth: dob};
-    
     this.accountService.register(values).subscribe({
       next: () => {
         this.router.navigateByUrl('/members')
       },
       error: error => {
         this.validationErrors = error
-      }
+      } 
     })
   }
 
@@ -87,9 +64,11 @@ export class RegisterComponent implements OnInit {
     this.cancelRegister.emit(false);
   }
 
-  private getDateOnly(dob: string | undefined) { //dob = Date of Birth from Database/member model.
+  private getDateOnly(dob: string | undefined) {
     if (!dob) return;
     let theDob = new Date(dob);
-    return new Date(theDob.setMinutes(theDob.getMinutes()-theDob.getTimezoneOffset())).toISOString().slice(0, 10); //remove minutes & hours from our Date of Birth.
+    return new Date(theDob.setMinutes(theDob.getMinutes()-theDob.getTimezoneOffset()))
+      .toISOString().slice(0,10);
   }
+
 }
