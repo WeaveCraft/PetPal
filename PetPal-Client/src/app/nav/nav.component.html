@@ -17,10 +17,12 @@
                     <a class="nav-link" routerLink="/messages" routerLinkActive="active">Messages</a>
                 </li>
             </ng-container>
-            <li class="nav-item">
-                <a class="nav-link" routerLink="/errors" routerLinkActive="active">Errors</a>
-            </li>
         </ul>
+        
+        
+     
+
+        
         
         <div class="dropdown" *ngIf="(accountService.currentUser$  | async) as user" dropdown>
             <img src="{{user.photoUrl || './assets/user.png'}}" alt="user photo">
@@ -37,9 +39,10 @@
         placeholder="Username">
         <input name="password" [(ngModel)]="model.password" class="form-control me-2" type="password"
         placeholder="Password">
-        <button class="btn btn-success" type="submit">Login</button>
+        <app-button type="submit" [label]="'Login'"></app-button>
     </form>
-    
 </div>
 </nav>
 </section>
+
+

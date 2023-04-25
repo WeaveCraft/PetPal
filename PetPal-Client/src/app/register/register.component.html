@@ -1,81 +1,92 @@
-<div class="container" id="container">
-	<div class="form-container sign-up-container">
-		<form [formGroup]="registerForm" (ngSubmit)="registerForm.valid && register()" autocomplete="off">
-			<h1>Create Account</h1>
+<div class="wrapper">
+  <a href="#demo-modal">Open Demo Modal</a>
+</div>
 
-			<app-text-input [formControl]="$any(registerForm.controls['username'])"
-				[label]="'Username'"></app-text-input>
-			<app-text-input [formControl]="$any(registerForm.controls['knownAs'])"
-				[label]="'Known As'"></app-text-input>
-			<app-date-picker [formControl]="$any(registerForm.controls['dateOfBirth'])" [label]="'Date of Birth'"
-				[maxDate]="maxDate"></app-date-picker>
-			<app-text-input [formControl]="$any(registerForm.controls['city'])" [label]="'City'"></app-text-input>
-			<app-text-input [formControl]="$any(registerForm.controls['country'])" [label]="'Country'"></app-text-input>
-			<app-text-input [formControl]="$any(registerForm.controls['password'])" [label]="'Password'"
-				type="password"></app-text-input>
-			<app-text-input [formControl]="$any(registerForm.controls['confirmPassword'])" [label]="'ConfirmPassword'"
-				type="password"></app-text-input>
+<div id="demo-modal" class="modal">
+  <div class="modal__content">
+        <div class="container" id="container">
+          <div class="form-container sign-up-container">
+            <form [formGroup]="registerForm" (ngSubmit)="registerForm.valid && register()" autocomplete="off">
+              <h1>Create Account</h1>
+        
+              <app-text-input [formControl]="$any(registerForm.controls['username'])"
+                [label]="'Username'"></app-text-input>
+              <app-text-input [formControl]="$any(registerForm.controls['knownAs'])"
+                [label]="'Known As'"></app-text-input>
+              <app-date-picker [formControl]="$any(registerForm.controls['dateOfBirth'])" [label]="'Date of Birth'"
+                [maxDate]="maxDate"></app-date-picker>
+              <app-text-input [formControl]="$any(registerForm.controls['city'])" [label]="'City'"></app-text-input>
+              <app-text-input [formControl]="$any(registerForm.controls['country'])" [label]="'Country'"></app-text-input>
+              <app-text-input [formControl]="$any(registerForm.controls['password'])" [label]="'Password'"
+                type="password"></app-text-input>
+              <app-text-input [formControl]="$any(registerForm.controls['confirmPassword'])" [label]="'ConfirmPassword'"
+                type="password"></app-text-input>
+        
+              <div class="row" *ngIf="validationErrors">
+                <ul class="text-danger">
+                  <li *ngFor="let error of validationErrors">
+                    {{error}}
+                  </li>
+                </ul>
+              </div>
+        
+              <button [disabled]="!registerForm.valid" type="submit">Sign Up</button>
+              <div class="wrapper">
+                <input type="radio" formControlName="gender" name="gender" value="male" id="option-1" checked>
+                <input type="radio" formControlName="gender" name="gender" value="female" id="option-2">
+                <label for="option-1" class="option option-1">
+                  <div class="dot"></div>
+                  <span>Male</span>
+                </label>
+                <label for="option-2" class="option option-2">
+                  <div class="dot"></div>
+                  <span>Female</span>
+                </label>
+              </div>
+              <div class="wrapper">
+                <input formControlName="mood" type="radio" name="mood" value="playful" id="option-3" checked>
+                <input formControlName="mood" type="radio" name="mood" value="calm" id="option-4">
+                <label for="option-3" class="option option-3">
+                  <div class="dot"></div>
+                  <span >Playful</span>
+                </label>
+                <label for="option-4" class="option option-4">
+                  <div class="dot"></div>
+                  <span >Calm</span>
+                </label>
+              </div>
+            </form>
+          </div>
+        
+        
+          <div class="form-container sign-in-container">
+            <form #loginForm="ngForm" class="d-flex" (ngSubmit)="login()" autocomplete="off">
+              <h1>Sign in</h1>
+              <input type="text" class="form-control" name="username" [(ngModel)]="model.username"
+                placeholder="Username" />
+              <input type="password" class="form-control" name="password" [(ngModel)]="model.password"
+                placeholder="Password" />
+              <a href="#">Forgot your password?</a>
+              <button>Sign In</button>
+            </form>
+          </div>
+          <div class="overlay-container">
+            <div class="overlay">
+              <div class="overlay-panel overlay-left">
+                <h1>Welcome Back!</h1>
+                <p>To keep connected with us please login with your personal info</p>
+                <button class="ghost" id="signIn">Sign In</button>
+              </div>
+              <div class="overlay-panel overlay-right">
+                <h1>Hello, Friend!</h1>
+                <p>Enter your personal details and start journey with us</p>
+                <button class="ghost" id="signUp">Sign Up</button>
+              </div>
+            </div>
+          </div>
+        </div>
 
-			<div class="row" *ngIf="validationErrors">
-				<ul class="text-danger">
-					<li *ngFor="let error of validationErrors">
-						{{error}}
-					</li>
-				</ul>
-			</div>
 
-			<button [disabled]="!registerForm.valid" type="submit">Sign Up</button>
-			<div class="wrapper">
-				<input type="radio" formControlName="gender" name="gender" value="male" id="option-1" checked>
-				<input type="radio" formControlName="gender" name="gender" value="female" id="option-2">
-				<label for="option-1" class="option option-1">
-					<div class="dot"></div>
-					<span>Male</span>
-				</label>
-				<label for="option-2" class="option option-2">
-					<div class="dot"></div>
-					<span>Female</span>
-				</label>
-			</div>
-			<div class="wrapper">
-				<input formControlName="mood" type="radio" name="mood" value="playful" id="option-3" checked>
-				<input formControlName="mood" type="radio" name="mood" value="calm" id="option-4">
-				<label for="option-3" class="option option-3">
-					<div class="dot"></div>
-					<span >Playful</span>
-				</label>
-				<label for="option-4" class="option option-4">
-					<div class="dot"></div>
-					<span >Calm</span>
-				</label>
-			</div>
-		</form>
-	</div>
-
-
-	<div class="form-container sign-in-container">
-		<form #loginForm="ngForm" class="d-flex" (ngSubmit)="login()" autocomplete="off">
-			<h1>Sign in</h1>
-			<input type="text" class="form-control" name="username" [(ngModel)]="model.username"
-				placeholder="Username" />
-			<input type="password" class="form-control" name="password" [(ngModel)]="model.password"
-				placeholder="Password" />
-			<a href="#">Forgot your password?</a>
-			<button>Sign In</button>
-		</form>
-	</div>
-	<div class="overlay-container">
-		<div class="overlay">
-			<div class="overlay-panel overlay-left">
-				<h1>Welcome Back!</h1>
-				<p>To keep connected with us please login with your personal info</p>
-				<button class="ghost" id="signIn">Sign In</button>
-			</div>
-			<div class="overlay-panel overlay-right">
-				<h1>Hello, Friend!</h1>
-				<p>Enter your personal details and start journey with us</p>
-				<button class="ghost" id="signUp">Sign Up</button>
-			</div>
-		</div>
-	</div>
+      <a href="#" class="modal__close">&times;</a>
+  </div>
 </div>

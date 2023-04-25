@@ -1,33 +1,8 @@
-<div class="accordion">
-    <ul>
-        <li><a routerLink="/members">
-                <div>
-                    <h1>Matches</h1>
-                    <p>Find a buddy for your buddy! </p>
-                </div>
-            </a> </li>
-        <li><a routerLink="/lists">
-                <div>
-                    <h1>Pals</h1>
-                    <p>See list of pals that I have liked or liked me back!</p>
-                </div>
-            </a> </li>
-        <li><a routerLink="/messages">
-                <div>
-                    <h1>Messages</h1>
-                    <p>See all your messages!</p>
-                </div>
-            </a> </li>
-    </ul>
-</div>
 
 <div class="container mt-5">
     <div *ngIf="!registerMode" style="text-align: center;">
-        <h1>Find your match</h1>
-        <p class="lead">View your matches</p>
         <div class="text-center">
             <button (click)="registerToggle()" class="btn btn-warning btn-lg me-2">Register</button>
-            <button class="btn btn-warning btn-lg">Learn More</button>
         </div>
     </div>
 
@@ -38,4 +13,29 @@
             </div>
         </div>
     </div>
+</div>
+
+
+
+<div class="accordion">
+    <ul>
+        <li><a routerLink="/lists">
+                <div>
+                    <h1>Matches</h1>
+                    <p>See pals that you have matched with </p>
+                </div>
+            </a> </li>
+        <li><a (click)="registerToggle()">
+                <div>
+                    <h1>Register</h1>
+                    <p>Create a profile and see a list of pals to match with!</p>
+                </div>
+            </a> </li>
+        <li><a routerLink="/messages">
+                <div>
+                    <h1>Messages</h1>
+                    <p>See all your messages!</p>
+                </div>
+            </a> </li>
+    </ul>
 </div>

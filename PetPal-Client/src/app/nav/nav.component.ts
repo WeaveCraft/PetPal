@@ -36,14 +36,4 @@ export class NavComponent implements OnInit {
     this.routers.navigateByUrl('/');
   }
 
-  registerToggle() {
-    this.registerMode = !this.registerMode;
-  }
-
-  cancelRegisterMode(event: boolean) {
-    this.registerMode = event;
-  }
-
-  
-
 }
