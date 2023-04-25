@@ -60,7 +60,7 @@ export class RegisterComponent implements OnInit {
   login() {
     this.accountService.login(this.model).subscribe({
       next: () => 
-        this.routers.navigateByUrl('/members'),
+        this.routers.navigateByUrl('/'),
     })
   }
 

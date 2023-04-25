@@ -10,6 +10,8 @@ import { AccountService } from '../_services/account.service';
 })
 export class NavComponent implements OnInit {
   model: any = {}
+  registerMode = false;
+  users: any;
 
   constructor(public accountService: AccountService, private routers: Router, private toastr: ToastrService) { }
 
@@ -32,6 +34,14 @@ export class NavComponent implements OnInit {
   logout() {
     this.accountService.logout();
     this.routers.navigateByUrl('/');
+  }
+
+  registerToggle() {
+    this.registerMode = !this.registerMode;
+  }
+
+  cancelRegisterMode(event: boolean) {
+    this.registerMode = event;
   }
 
   
