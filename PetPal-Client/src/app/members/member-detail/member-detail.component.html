@@ -23,8 +23,8 @@
             </div>
             <div class="card-footer">
                 <div class="btn-group d-flex">
-                    <button (click)="addLike(member)" class="btn btn-primary">Like</button>
-                    <button (click)="selectTab('Messages')" class="btn btn-success">Message</button>
+                    <app-button [label]="'Like'" (click)="addLike(member)"></app-button>
+                    <app-button [label]="'Message'" (click)="selectTab('Messages')"></app-button>
                 </div>
             </div>
         </div>

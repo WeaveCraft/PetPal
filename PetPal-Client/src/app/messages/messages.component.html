@@ -6,7 +6,6 @@
             [(ngModel)]="container"
             (click)="loadMessages()"
         >
-            <i class="fa fa-envelope"></i>
         </app-button>
         <app-button 
             [label]="'Inbox'"
@@ -14,15 +13,13 @@
             [(ngModel)]="container"
             (click)="loadMessages()"
         >
-            <i class="fa fa-envelope-open"></i>
         </app-button>
         <app-button 
-            [label]="'Outbox'"
+            [label]="'Sent'"
             btnRadio="Outbox"
             [(ngModel)]="container"
             (click)="loadMessages()"
         >
-            <i class="fa fa-paper-plane"></i> Outbox
         </app-button>
     </div>
 </div>

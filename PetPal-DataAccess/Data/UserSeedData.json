@@ -27,7 +27,7 @@
     ],
     "Photos": [
       {
-        "Url": "https://images.dog.ceo/breeds/frise-bichon/stevebaxter_bichon_frise.jpg",
+        "Url": "https://api-ninjas.com/images/dogs/maltese.jpg",
         "IsMain": true
       }
     ]
@@ -60,7 +60,7 @@
     ],
     "Photos": [
       {
-        "Url": "https://images.dog.ceo/breeds/terrier-cairn/n02096177_911.jpg",
+        "Url": "https://api-ninjas.com/images/dogs/pug.jpg",
         "IsMain": true
       }
     ]
@@ -93,7 +93,7 @@
     ],
     "Photos": [
       {
-        "Url": "https://images.dog.ceo/breeds/pinscher-miniature/n02107312_2478.jpg",
+        "Url": "https://api-ninjas.com/images/dogs/newfoundland.jpg",
         "IsMain": true
       }
     ]
@@ -126,7 +126,7 @@
     ],
     "Photos": [
       {
-        "Url": "https://images.dog.ceo/breeds/puggle/IMG_081858.jpg",
+        "Url": "https://api-ninjas.com/images/dogs/english_cocker_spaniel.jpg",
         "IsMain": true
       }
     ]
@@ -159,7 +159,7 @@
     ],
     "Photos": [
       {
-        "Url": "https://images.dog.ceo/breeds/newfoundland/n02111277_8930.jpg",
+        "Url": "https://api-ninjas.com/images/dogs/cocker_spaniel.jpg",
         "IsMain": true
       }
     ]
@@ -192,7 +192,7 @@
     ],
     "Photos": [
       {
-        "Url": "https://images.dog.ceo/breeds/newfoundland/n02111277_8930.jpg",
+        "Url": "https://api-ninjas.com/images/dogs/pembroke_welsh_corgi.jpg",
         "IsMain": true
       }
     ]
@@ -225,7 +225,7 @@
     ],
     "Photos": [
       {
-        "Url": "https://images.dog.ceo/breeds/samoyed/n02111889_13772.jpg",
+        "Url": "https://api-ninjas.com/images/dogs/cardigan_welsh_corgi.jpg",
         "IsMain": true
       }
     ]
@@ -258,7 +258,7 @@
     ],
     "Photos": [
       {
-        "Url": "https://images.dog.ceo/breeds/mountain-swiss/n02107574_2651.jpg",
+        "Url": "https://api-ninjas.com/images/dogs/chow_chow.jpg",
         "IsMain": true
       }
     ]
@@ -291,7 +291,7 @@
     ],
     "Photos": [
       {
-        "Url": "https://images.dog.ceo/breeds/borzoi/n02090622_585.jpg",
+        "Url": "https://api-ninjas.com/images/dogs/pomeranian.jpg",
         "IsMain": true
       }
     ]
@@ -324,7 +324,7 @@
     ],
     "Photos": [
       {
-        "Url": "https://images.dog.ceo/breeds/appenzeller/n02107908_2608.jpg",
+        "Url": "https://api-ninjas.com/images/dogs/border_terrier.jpg",
         "IsMain": true
       }
     ]
@@ -357,7 +357,7 @@
     ],
     "Photos": [
       {
-        "Url": "https://images.dog.ceo/breeds/hound-walker/n02089867_3072.jpg",
+        "Url": "https://api-ninjas.com/images/dogs/border_collie.jpg",
         "IsMain": true
       }
     ]
@@ -390,7 +390,7 @@
     ],
     "Photos": [
       {
-        "Url": "https://images.dog.ceo/breeds/labradoodle/Cali.jpg",
+        "Url": "https://api-ninjas.com/images/dogs/siberian_husky.jpg",
         "IsMain": true
       }
     ]
@@ -423,7 +423,7 @@
     ],
     "Photos": [
       {
-        "Url": "https://images.dog.ceo/breeds/australian-shepherd/forest.jpg",
+        "Url": "https://api-ninjas.com/images/dogs/beagle.jpg",
         "IsMain": true
       }
     ]
@@ -456,7 +456,7 @@
     ],
     "Photos": [
       {
-        "Url": "https://images.dog.ceo/breeds/terrier-scottish/n02097298_759.jpg",
+        "Url": "https://api-ninjas.com/images/dogs/german_longhaired_pointer.jpg",
         "IsMain": true
       }
     ]
@@ -489,7 +489,7 @@
     ],
     "Photos": [
       {
-        "Url": "https://images.dog.ceo/breeds/kuvasz/n02104029_3564.jpg",
+        "Url": "https://api-ninjas.com/images/dogs/great_dane.jpg",
         "IsMain": true
       }
     ]
@@ -522,7 +522,7 @@
     ],
     "Photos": [
       {
-        "Url": "https://images.dog.ceo/breeds/bulldog-english/jager-1.jpg",
+        "Url": "https://api-ninjas.com/images/dogs/flat-coated_retriever.jpg",
         "IsMain": true
       }
     ]
@@ -555,7 +555,7 @@
     ],
     "Photos": [
       {
-        "Url": "https://images.dog.ceo/breeds/havanese/00100trPORTRAIT_00100_BURST20191126134713895_COVER.jpg",
+        "Url": "https://api-ninjas.com/images/dogs/labrador_retriever.jpg",
         "IsMain": true
       }
     ]
@@ -588,7 +588,7 @@
     ],
     "Photos": [
       {
-        "Url": "https://images.dog.ceo/breeds/terrier-wheaten/n02098105_2256.jpg",
+        "Url": "https://api-ninjas.com/images/dogs/rottweiler.jpg",
         "IsMain": true
       }
     ]
@@ -621,7 +621,7 @@
     ],
     "Photos": [
       {
-        "Url": "https://images.dog.ceo/breeds/schipperke/n02104365_7641.jpg",
+        "Url": "https://api-ninjas.com/images/dogs/japanese_spitz.jpg",
         "IsMain": true
       }
     ]
@@ -654,7 +654,7 @@
     ],
     "Photos": [
       {
-        "Url": "https://images.dog.ceo/breeds/bulldog-boston/n02096585_1403.jpg",
+        "Url": "https://api-ninjas.com/images/dogs/german_spitz.jpg",
         "IsMain": true
       }
     ]
@@ -687,7 +687,7 @@
     ],
     "Photos": [
       {
-        "Url": "https://images.dog.ceo/breeds/spaniel-cocker/n02102318_1671.jpg",
+        "Url": "https://api-ninjas.com/images/dogs/finnish_spitz.jpg",
         "IsMain": true
       }
     ]
@@ -720,7 +720,7 @@
     ],
     "Photos": [
       {
-        "Url": "https://images.dog.ceo/breeds/corgi-cardigan/n02113186_13335.jpg",
+        "Url": "https://api-ninjas.com/images/dogs/swedish_lapphund.jpg",
         "IsMain": true
       }
     ]
@@ -753,7 +753,7 @@
     ],
     "Photos": [
       {
-        "Url": "https://images.dog.ceo/breeds/bulldog-french/n02108915_1188.jpg",
+        "Url": "https://api-ninjas.com/images/dogs/lapponian_herder.jpg",
         "IsMain": true
       }
     ]
@@ -786,7 +786,7 @@
     ],
     "Photos": [
       {
-        "Url": "https://images.dog.ceo/breeds/pomeranian/n02112018_10174.jpg",
+        "Url": "https://api-ninjas.com/images/dogs/finnish_lapphund.jpg",
         "IsMain": true
       }
     ]
@@ -801,7 +801,7 @@
     "LastActive": "2020-06-10",
     "Introduction": "Est nisi dolore exercitation velit minim cupidatat aute veniam eiusmod voluptate. Irure anim nulla labore cupidatat. Voluptate consectetur reprehenderit voluptate esse incididunt in.\r\n",
     "LookingFor": "Reprehenderit excepteur ad esse ut. Minim elit aliquip ullamco irure ea. Sunt adipisicing deserunt proident esse dolore esse dolore elit qui Lorem. Non laborum ullamco laboris ad aliqua non. Consectetur aliquip aute commodo amet consequat dolore proident commodo labore excepteur. Est occaecat eu ut ex laboris proident eiusmod ipsum nostrud mollit. Ut consequat eiusmod consequat consectetur ad cillum proident nulla elit ut duis pariatur.\r\n",
-    "City": "Nyköping",
+    "City": "Stockholm",
     "Country": "Sweden",
     "Language": "Woff",
     "Animals": [
@@ -819,7 +819,40 @@
     ],
     "Photos": [
       {
-        "Url": "https://images.dog.ceo/breeds/pekinese/n02086079_11511.jpg",
+        "Url": "https://api-ninjas.com/images/dogs/chihuahua.jpg",
+        "IsMain": true
+      }
+    ]
+  },
+  {
+    "Username": "Umani",
+    "KnownAs": "Umo",
+    "Gender": "female",
+    "Mood": "playful",
+    "DateOfBirth": "2013-06-13",
+    "Created": "2020-01-19",
+    "LastActive": "2020-06-10",
+    "Introduction": "Est nisi dolore exercitation velit minim cupidatat aute veniam eiusmod voluptate. Irure anim nulla labore cupidatat. Voluptate consectetur reprehenderit voluptate esse incididunt in.\r\n",
+    "LookingFor": "Reprehenderit excepteur ad esse ut. Minim elit aliquip ullamco irure ea. Sunt adipisicing deserunt proident esse dolore esse dolore elit qui Lorem. Non laborum ullamco laboris ad aliqua non. Consectetur aliquip aute commodo amet consequat dolore proident commodo labore excepteur. Est occaecat eu ut ex laboris proident eiusmod ipsum nostrud mollit. Ut consequat eiusmod consequat consectetur ad cillum proident nulla elit ut duis pariatur.\r\n",
+    "City": "Stockholm",
+    "Country": "Sweden",
+    "Language": "Woff",
+    "Animals": [
+      {
+        "Name": "Olof",
+        "KnownAs": "Lolo",
+        "DateOfBirth": "1996-04-26",
+        "Created": "2019-08-23",
+        "Age": 19,
+        "Gender": "male",
+        "Interests": "Fugiat nostrud adipisicing quis veniam fugiat sint labore consectetur dolor.",
+        "FavoriteTreat": "Quis irure pariatur ea fugiat aliqua voluptate nisi laboris officia aute ut nostrud.",
+        "FavoriteToy": "In irure anim non nisi fugiat labore consequat ipsum laboris non et."
+      }
+    ],
+    "Photos": [
+      {
+        "Url": "https://api-ninjas.com/images/dogs/golden_retriever.jpg",
         "IsMain": true
       }
     ]
