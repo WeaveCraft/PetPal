@@ -1,7 +1,4 @@
-﻿using PetPal_Model.Enums;
-using System.ComponentModel.DataAnnotations.Schema;
-
-namespace PetPal_Model.Models
+﻿namespace PetPal_Model.Models
 {
     public class AppUser
     {
@@ -20,7 +17,6 @@ namespace PetPal_Model.Models
         public string? City { get; set; }
         public string? Country { get; set; }
         public string? Language { get; set; }
-        public List<Animal> Animals { get; set; } = new();
         public List<Photo> Photos { get; set; } = new();
 
         public List<UserLike> LikedByUsers { get; set; } 

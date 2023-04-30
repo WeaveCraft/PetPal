@@ -9,7 +9,6 @@ namespace PetPal_DataAccess.Data
         {
         }
 
-        public DbSet<Animal> Animals { get; set; }
         public DbSet<AppUser> AppUsers { get; set; }
         public DbSet<UserLike> Likes { get; set; }
         public DbSet<Message> Messages { get; set; }

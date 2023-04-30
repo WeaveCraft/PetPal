@@ -12,8 +12,8 @@ using PetPal_DataAccess.Data;
 namespace PetPalDataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230412061542_MessageTableAddedToDbMigration")]
-    partial class MessageTableAddedToDbMigration
+    [Migration("20230430115850_InitialDbToDb_n01")]
+    partial class InitialDbToDbn01
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,53 +24,6 @@ namespace PetPalDataAccess.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
-
-            modelBuilder.Entity("PetPal_Model.Models.Animal", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("Age")
-                        .HasColumnType("int");
-
-                    b.Property<int>("AppUserId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("Created")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("DateOfBirth")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("FavoriteToy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FavoriteTreat")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Gender")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Interests")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("KnownAs")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("AppUserId");
-
-                    b.ToTable("Animals");
-                });
 
             modelBuilder.Entity("PetPal_Model.Models.AppUser", b =>
                 {
@@ -93,7 +46,6 @@ namespace PetPalDataAccess.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Gender")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Introduction")
@@ -112,7 +64,6 @@ namespace PetPalDataAccess.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Mood")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<byte[]>("PasswordHash")
@@ -221,17 +172,6 @@ namespace PetPalDataAccess.Migrations
                     b.ToTable("Likes");
                 });
 
-            modelBuilder.Entity("PetPal_Model.Models.Animal", b =>
-                {
-                    b.HasOne("PetPal_Model.Models.AppUser", "AppUser")
-                        .WithMany("Animals")
-                        .HasForeignKey("AppUserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("AppUser");
-                });
-
             modelBuilder.Entity("PetPal_Model.Models.Message", b =>
                 {
                     b.HasOne("PetPal_Model.Models.AppUser", "Recipient")
@@ -283,8 +223,6 @@ namespace PetPalDataAccess.Migrations
 
             modelBuilder.Entity("PetPal_Model.Models.AppUser", b =>
                 {
-                    b.Navigation("Animals");
-
                     b.Navigation("LikedByUsers");
 
                     b.Navigation("LikedUsers");

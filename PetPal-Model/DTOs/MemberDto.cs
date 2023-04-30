@@ -1,6 +1,4 @@
-﻿using PetPal_Model.Enums;
-
-namespace PetPal_Model.DTOs
+﻿namespace PetPal_Model.DTOs
 {
     public class MemberDto
     {
@@ -16,7 +14,6 @@ namespace PetPal_Model.DTOs
         public string? City { get; set; }
         public string? Country { get; set; }
         public string? Language { get; set; }
-        public List<AnimalDto> Animals { get; set; }
         public string PhotoUrl { get; set; }
         public List<PhotoDto> Photos { get; set; }
     }

@@ -12,19 +12,6 @@
     "City": "Darbydale",
     "Country": "Sweden",
     "Language": "Swedish",
-    "Animals": [
-      {
-        "Name": "Livingston",
-        "KnownAs": "Livingston",
-        "DateOfBirth": "1981-07-09",
-        "Created": "2019-07-25",
-        "Age": 13,
-        "Gender": "age",
-        "Interests": "Tempor ullamco voluptate incididunt reprehenderit irure velit.",
-        "FavoriteTreat": "Elit nostrud ullamco eiusmod ad culpa culpa quis Lorem.",
-        "FavoriteToy": "Anim eiusmod esse exercitation aliquip nisi sint Lorem sint labore ullamco sit minim."
-      }
-    ],
     "Photos": [
       {
         "Url": "https://api-ninjas.com/images/dogs/maltese.jpg",
@@ -45,19 +32,6 @@
     "City": "Harborton",
     "Country": "Sweden",
     "Language": "Swedish",
-    "Animals": [
-      {
-        "Name": "Pratt",
-        "KnownAs": "Pratt",
-        "DateOfBirth": "1957-12-07",
-        "Created": "2020-01-28",
-        "Age": 8,
-        "Gender": "female",
-        "Interests": "Laboris minim exercitation consequat mollit eu id veniam in do nisi.",
-        "FavoriteTreat": "Enim nisi consectetur laboris est in ea culpa minim laboris officia dolore.",
-        "FavoriteToy": "Consectetur occaecat pariatur ex sunt excepteur sit nisi mollit consequat esse tempor pariatur."
-      }
-    ],
     "Photos": [
       {
         "Url": "https://api-ninjas.com/images/dogs/pug.jpg",
@@ -78,19 +52,6 @@
     "City": "Sunriver",
     "Country": "England",
     "Language": "English",
-    "Animals": [
-      {
-        "Name": "Hughes",
-        "KnownAs": "Hughes",
-        "DateOfBirth": "1972-09-19",
-        "Created": "2020-04-16",
-        "Age": 17,
-        "Gender": "female",
-        "Interests": "Minim ut Lorem quis irure ipsum eiusmod occaecat velit pariatur.",
-        "FavoriteTreat": "Lorem ex amet eiusmod dolore mollit consectetur laboris incididunt quis velit do.",
-        "FavoriteToy": "Laboris non magna ea incididunt reprehenderit."
-      }
-    ],
     "Photos": [
       {
         "Url": "https://api-ninjas.com/images/dogs/newfoundland.jpg",
@@ -111,19 +72,6 @@
     "City": "Soham",
     "Country": "France",
     "Language": "French",
-    "Animals": [
-      {
-        "Name": "Gallagher",
-        "KnownAs": "Gallagher",
-        "DateOfBirth": "1989-06-16",
-        "Created": "2019-05-31",
-        "Age": 2,
-        "Gender": "female",
-        "Interests": "Ullamco cupidatat duis consectetur labore tempor irure veniam ut non aliquip irure esse.",
-        "FavoriteTreat": "Cillum veniam tempor exercitation aliqua laborum id id eiusmod pariatur nostrud quis cillum.",
-        "FavoriteToy": "Dolore in magna sunt tempor."
-      }
-    ],
     "Photos": [
       {
         "Url": "https://api-ninjas.com/images/dogs/english_cocker_spaniel.jpg",
@@ -144,19 +92,6 @@
     "City": "Cascades",
     "Country": "Sweden",
     "Language": "Japanese",
-    "Animals": [
-      {
-        "Name": "Bond",
-        "KnownAs": "Bond",
-        "DateOfBirth": "1982-11-20",
-        "Created": "2019-08-23",
-        "Age": 19,
-        "Gender": "female",
-        "Interests": "Fugiat nostrud adipisicing quis veniam fugiat sint labore consectetur dolor.",
-        "FavoriteTreat": "Quis irure pariatur ea fugiat aliqua voluptate nisi laboris officia aute ut nostrud.",
-        "FavoriteToy": "In irure anim non nisi fugiat labore consequat ipsum laboris non et."
-      }
-    ],
     "Photos": [
       {
         "Url": "https://api-ninjas.com/images/dogs/cocker_spaniel.jpg",
@@ -177,19 +112,6 @@
     "City": "Nyköping",
     "Country": "Sweden",
     "Language": "Woff",
-    "Animals": [
-      {
-        "Name": "Rocelia",
-        "KnownAs": "Rocalia",
-        "DateOfBirth": "1996-04-26",
-        "Created": "2019-08-23",
-        "Age": 19,
-        "Gender": "female",
-        "Interests": "Fugiat nostrud adipisicing quis veniam fugiat sint labore consectetur dolor.",
-        "FavoriteTreat": "Quis irure pariatur ea fugiat aliqua voluptate nisi laboris officia aute ut nostrud.",
-        "FavoriteToy": "In irure anim non nisi fugiat labore consequat ipsum laboris non et."
-      }
-    ],
     "Photos": [
       {
         "Url": "https://api-ninjas.com/images/dogs/pembroke_welsh_corgi.jpg",
@@ -210,19 +132,6 @@
     "City": "Nyköping",
     "Country": "Sweden",
     "Language": "Woff",
-    "Animals": [
-      {
-        "Name": "Daniel",
-        "KnownAs": "Piloten",
-        "DateOfBirth": "1996-04-26",
-        "Created": "2019-08-23",
-        "Age": 19,
-        "Gender": "male",
-        "Interests": "Fugiat nostrud adipisicing quis veniam fugiat sint labore consectetur dolor.",
-        "FavoriteTreat": "Quis irure pariatur ea fugiat aliqua voluptate nisi laboris officia aute ut nostrud.",
-        "FavoriteToy": "In irure anim non nisi fugiat labore consequat ipsum laboris non et."
-      }
-    ],
     "Photos": [
       {
         "Url": "https://api-ninjas.com/images/dogs/cardigan_welsh_corgi.jpg",
@@ -243,19 +152,6 @@
     "City": "Nyköping",
     "Country": "Sweden",
     "Language": "Woff",
-    "Animals": [
-      {
-        "Name": "Robert",
-        "KnownAs": "Robert",
-        "DateOfBirth": "1996-04-26",
-        "Created": "2019-08-23",
-        "Age": 19,
-        "Gender": "male",
-        "Interests": "Fugiat nostrud adipisicing quis veniam fugiat sint labore consectetur dolor.",
-        "FavoriteTreat": "Quis irure pariatur ea fugiat aliqua voluptate nisi laboris officia aute ut nostrud.",
-        "FavoriteToy": "In irure anim non nisi fugiat labore consequat ipsum laboris non et."
-      }
-    ],
     "Photos": [
       {
         "Url": "https://api-ninjas.com/images/dogs/chow_chow.jpg",
@@ -276,19 +172,6 @@
     "City": "Nyköping",
     "Country": "Sweden",
     "Language": "Woff",
-    "Animals": [
-      {
-        "Name": "Jocelyn",
-        "KnownAs": "Jocelyn",
-        "DateOfBirth": "1996-04-26",
-        "Created": "2019-08-23",
-        "Age": 19,
-        "Gender": "female",
-        "Interests": "Fugiat nostrud adipisicing quis veniam fugiat sint labore consectetur dolor.",
-        "FavoriteTreat": "Quis irure pariatur ea fugiat aliqua voluptate nisi laboris officia aute ut nostrud.",
-        "FavoriteToy": "In irure anim non nisi fugiat labore consequat ipsum laboris non et."
-      }
-    ],
     "Photos": [
       {
         "Url": "https://api-ninjas.com/images/dogs/pomeranian.jpg",
@@ -309,19 +192,6 @@
     "City": "Nyköping",
     "Country": "Sweden",
     "Language": "Woff",
-    "Animals": [
-      {
-        "Name": "Achmed",
-        "KnownAs": "Achmed",
-        "DateOfBirth": "1996-04-26",
-        "Created": "2019-08-23",
-        "Age": 19,
-        "Gender": "male",
-        "Interests": "Fugiat nostrud adipisicing quis veniam fugiat sint labore consectetur dolor.",
-        "FavoriteTreat": "Quis irure pariatur ea fugiat aliqua voluptate nisi laboris officia aute ut nostrud.",
-        "FavoriteToy": "In irure anim non nisi fugiat labore consequat ipsum laboris non et."
-      }
-    ],
     "Photos": [
       {
         "Url": "https://api-ninjas.com/images/dogs/border_terrier.jpg",
@@ -342,19 +212,6 @@
     "City": "Nyköping",
     "Country": "Sweden",
     "Language": "Woff",
-    "Animals": [
-      {
-        "Name": "Oswaldo",
-        "KnownAs": "Waldo",
-        "DateOfBirth": "1996-04-26",
-        "Created": "2019-08-23",
-        "Age": 19,
-        "Gender": "female",
-        "Interests": "Fugiat nostrud adipisicing quis veniam fugiat sint labore consectetur dolor.",
-        "FavoriteTreat": "Quis irure pariatur ea fugiat aliqua voluptate nisi laboris officia aute ut nostrud.",
-        "FavoriteToy": "In irure anim non nisi fugiat labore consequat ipsum laboris non et."
-      }
-    ],
     "Photos": [
       {
         "Url": "https://api-ninjas.com/images/dogs/border_collie.jpg",
@@ -375,19 +232,6 @@
     "City": "Nyköping",
     "Country": "Sweden",
     "Language": "Woff",
-    "Animals": [
-      {
-        "Name": "Tuffe",
-        "KnownAs": "Tuff",
-        "DateOfBirth": "1996-04-26",
-        "Created": "2019-08-23",
-        "Age": 19,
-        "Gender": "female",
-        "Interests": "Fugiat nostrud adipisicing quis veniam fugiat sint labore consectetur dolor.",
-        "FavoriteTreat": "Quis irure pariatur ea fugiat aliqua voluptate nisi laboris officia aute ut nostrud.",
-        "FavoriteToy": "In irure anim non nisi fugiat labore consequat ipsum laboris non et."
-      }
-    ],
     "Photos": [
       {
         "Url": "https://api-ninjas.com/images/dogs/siberian_husky.jpg",
@@ -408,19 +252,6 @@
     "City": "Nyköping",
     "Country": "Sweden",
     "Language": "Woff",
-    "Animals": [
-      {
-        "Name": "Herbert",
-        "KnownAs": "Berb",
-        "DateOfBirth": "1996-04-26",
-        "Created": "2019-08-23",
-        "Age": 19,
-        "Gender": "male",
-        "Interests": "Fugiat nostrud adipisicing quis veniam fugiat sint labore consectetur dolor.",
-        "FavoriteTreat": "Quis irure pariatur ea fugiat aliqua voluptate nisi laboris officia aute ut nostrud.",
-        "FavoriteToy": "In irure anim non nisi fugiat labore consequat ipsum laboris non et."
-      }
-    ],
     "Photos": [
       {
         "Url": "https://api-ninjas.com/images/dogs/beagle.jpg",
@@ -441,19 +272,6 @@
     "City": "Nyköping",
     "Country": "Sweden",
     "Language": "Woff",
-    "Animals": [
-      {
-        "Name": "Olle",
-        "KnownAs": "Olle",
-        "DateOfBirth": "1996-04-26",
-        "Created": "2019-08-23",
-        "Age": 19,
-        "Gender": "female",
-        "Interests": "Fugiat nostrud adipisicing quis veniam fugiat sint labore consectetur dolor.",
-        "FavoriteTreat": "Quis irure pariatur ea fugiat aliqua voluptate nisi laboris officia aute ut nostrud.",
-        "FavoriteToy": "In irure anim non nisi fugiat labore consequat ipsum laboris non et."
-      }
-    ],
     "Photos": [
       {
         "Url": "https://api-ninjas.com/images/dogs/german_longhaired_pointer.jpg",
@@ -474,19 +292,6 @@
     "City": "Nyköping",
     "Country": "Sweden",
     "Language": "Woff",
-    "Animals": [
-      {
-        "Name": "Mikael",
-        "KnownAs": "Micke",
-        "DateOfBirth": "1996-04-26",
-        "Created": "2019-08-23",
-        "Age": 19,
-        "Gender": "female",
-        "Interests": "Fugiat nostrud adipisicing quis veniam fugiat sint labore consectetur dolor.",
-        "FavoriteTreat": "Quis irure pariatur ea fugiat aliqua voluptate nisi laboris officia aute ut nostrud.",
-        "FavoriteToy": "In irure anim non nisi fugiat labore consequat ipsum laboris non et."
-      }
-    ],
     "Photos": [
       {
         "Url": "https://api-ninjas.com/images/dogs/great_dane.jpg",
@@ -507,19 +312,6 @@
     "City": "Nyköping",
     "Country": "Sweden",
     "Language": "Woff",
-    "Animals": [
-      {
-        "Name": "Yrsa",
-        "KnownAs": "Yrsa",
-        "DateOfBirth": "1996-04-26",
-        "Created": "2019-08-23",
-        "Age": 19,
-        "Gender": "female",
-        "Interests": "Fugiat nostrud adipisicing quis veniam fugiat sint labore consectetur dolor.",
-        "FavoriteTreat": "Quis irure pariatur ea fugiat aliqua voluptate nisi laboris officia aute ut nostrud.",
-        "FavoriteToy": "In irure anim non nisi fugiat labore consequat ipsum laboris non et."
-      }
-    ],
     "Photos": [
       {
         "Url": "https://api-ninjas.com/images/dogs/flat-coated_retriever.jpg",
@@ -540,19 +332,6 @@
     "City": "Nyköping",
     "Country": "Sweden",
     "Language": "Woff",
-    "Animals": [
-      {
-        "Name": "Olle",
-        "KnownAs": "Rocalia",
-        "DateOfBirth": "1996-04-26",
-        "Created": "2019-08-23",
-        "Age": 19,
-        "Gender": "female",
-        "Interests": "Fugiat nostrud adipisicing quis veniam fugiat sint labore consectetur dolor.",
-        "FavoriteTreat": "Quis irure pariatur ea fugiat aliqua voluptate nisi laboris officia aute ut nostrud.",
-        "FavoriteToy": "In irure anim non nisi fugiat labore consequat ipsum laboris non et."
-      }
-    ],
     "Photos": [
       {
         "Url": "https://api-ninjas.com/images/dogs/labrador_retriever.jpg",
@@ -573,19 +352,6 @@
     "City": "Nyköping",
     "Country": "Sweden",
     "Language": "Woff",
-    "Animals": [
-      {
-        "Name": "Olof",
-        "KnownAs": "Olofberg",
-        "DateOfBirth": "1996-04-26",
-        "Created": "2019-08-23",
-        "Age": 19,
-        "Gender": "male",
-        "Interests": "Fugiat nostrud adipisicing quis veniam fugiat sint labore consectetur dolor.",
-        "FavoriteTreat": "Quis irure pariatur ea fugiat aliqua voluptate nisi laboris officia aute ut nostrud.",
-        "FavoriteToy": "In irure anim non nisi fugiat labore consequat ipsum laboris non et."
-      }
-    ],
     "Photos": [
       {
         "Url": "https://api-ninjas.com/images/dogs/rottweiler.jpg",
@@ -606,19 +372,6 @@
     "City": "Nyköping",
     "Country": "Sweden",
     "Language": "Woff",
-    "Animals": [
-      {
-        "Name": "Teffani",
-        "KnownAs": "Teff",
-        "DateOfBirth": "1996-04-26",
-        "Created": "2019-08-23",
-        "Age": 19,
-        "Gender": "female",
-        "Interests": "Fugiat nostrud adipisicing quis veniam fugiat sint labore consectetur dolor.",
-        "FavoriteTreat": "Quis irure pariatur ea fugiat aliqua voluptate nisi laboris officia aute ut nostrud.",
-        "FavoriteToy": "In irure anim non nisi fugiat labore consequat ipsum laboris non et."
-      }
-    ],
     "Photos": [
       {
         "Url": "https://api-ninjas.com/images/dogs/japanese_spitz.jpg",
@@ -639,19 +392,6 @@
     "City": "Nyköping",
     "Country": "Sweden",
     "Language": "Woff",
-    "Animals": [
-      {
-        "Name": "Lisa",
-        "KnownAs": "Lisa",
-        "DateOfBirth": "1996-04-26",
-        "Created": "2019-08-23",
-        "Age": 19,
-        "Gender": "female",
-        "Interests": "Fugiat nostrud adipisicing quis veniam fugiat sint labore consectetur dolor.",
-        "FavoriteTreat": "Quis irure pariatur ea fugiat aliqua voluptate nisi laboris officia aute ut nostrud.",
-        "FavoriteToy": "In irure anim non nisi fugiat labore consequat ipsum laboris non et."
-      }
-    ],
     "Photos": [
       {
         "Url": "https://api-ninjas.com/images/dogs/german_spitz.jpg",
@@ -672,19 +412,6 @@
     "City": "Nyköping",
     "Country": "Sweden",
     "Language": "Woff",
-    "Animals": [
-      {
-        "Name": "Hedvig",
-        "KnownAs": "Hedig",
-        "DateOfBirth": "1996-04-26",
-        "Created": "2019-08-23",
-        "Age": 19,
-        "Gender": "female",
-        "Interests": "Fugiat nostrud adipisicing quis veniam fugiat sint labore consectetur dolor.",
-        "FavoriteTreat": "Quis irure pariatur ea fugiat aliqua voluptate nisi laboris officia aute ut nostrud.",
-        "FavoriteToy": "In irure anim non nisi fugiat labore consequat ipsum laboris non et."
-      }
-    ],
     "Photos": [
       {
         "Url": "https://api-ninjas.com/images/dogs/finnish_spitz.jpg",
@@ -705,19 +432,6 @@
     "City": "Nyköping",
     "Country": "Sweden",
     "Language": "Woff",
-    "Animals": [
-      {
-        "Name": "Max",
-        "KnownAs": "Max",
-        "DateOfBirth": "1996-04-26",
-        "Created": "2019-08-23",
-        "Age": 19,
-        "Gender": "male",
-        "Interests": "Fugiat nostrud adipisicing quis veniam fugiat sint labore consectetur dolor.",
-        "FavoriteTreat": "Quis irure pariatur ea fugiat aliqua voluptate nisi laboris officia aute ut nostrud.",
-        "FavoriteToy": "In irure anim non nisi fugiat labore consequat ipsum laboris non et."
-      }
-    ],
     "Photos": [
       {
         "Url": "https://api-ninjas.com/images/dogs/swedish_lapphund.jpg",
@@ -738,19 +452,6 @@
     "City": "Nyköping",
     "Country": "Sweden",
     "Language": "Woff",
-    "Animals": [
-      {
-        "Name": "Akiko",
-        "KnownAs": "Ako",
-        "DateOfBirth": "1996-04-26",
-        "Created": "2019-08-23",
-        "Age": 19,
-        "Gender": "female",
-        "Interests": "Fugiat nostrud adipisicing quis veniam fugiat sint labore consectetur dolor.",
-        "FavoriteTreat": "Quis irure pariatur ea fugiat aliqua voluptate nisi laboris officia aute ut nostrud.",
-        "FavoriteToy": "In irure anim non nisi fugiat labore consequat ipsum laboris non et."
-      }
-    ],
     "Photos": [
       {
         "Url": "https://api-ninjas.com/images/dogs/lapponian_herder.jpg",
@@ -771,19 +472,6 @@
     "City": "Nyköping",
     "Country": "Sweden",
     "Language": "Woff",
-    "Animals": [
-      {
-        "Name": "Petter",
-        "KnownAs": "Petter",
-        "DateOfBirth": "1996-04-26",
-        "Created": "2019-08-23",
-        "Age": 19,
-        "Gender": "male",
-        "Interests": "Fugiat nostrud adipisicing quis veniam fugiat sint labore consectetur dolor.",
-        "FavoriteTreat": "Quis irure pariatur ea fugiat aliqua voluptate nisi laboris officia aute ut nostrud.",
-        "FavoriteToy": "In irure anim non nisi fugiat labore consequat ipsum laboris non et."
-      }
-    ],
     "Photos": [
       {
         "Url": "https://api-ninjas.com/images/dogs/finnish_lapphund.jpg",
@@ -804,19 +492,6 @@
     "City": "Stockholm",
     "Country": "Sweden",
     "Language": "Woff",
-    "Animals": [
-      {
-        "Name": "Olof",
-        "KnownAs": "Lolo",
-        "DateOfBirth": "1996-04-26",
-        "Created": "2019-08-23",
-        "Age": 19,
-        "Gender": "male",
-        "Interests": "Fugiat nostrud adipisicing quis veniam fugiat sint labore consectetur dolor.",
-        "FavoriteTreat": "Quis irure pariatur ea fugiat aliqua voluptate nisi laboris officia aute ut nostrud.",
-        "FavoriteToy": "In irure anim non nisi fugiat labore consequat ipsum laboris non et."
-      }
-    ],
     "Photos": [
       {
         "Url": "https://api-ninjas.com/images/dogs/chihuahua.jpg",
@@ -837,19 +512,6 @@
     "City": "Stockholm",
     "Country": "Sweden",
     "Language": "Woff",
-    "Animals": [
-      {
-        "Name": "Olof",
-        "KnownAs": "Lolo",
-        "DateOfBirth": "1996-04-26",
-        "Created": "2019-08-23",
-        "Age": 19,
-        "Gender": "male",
-        "Interests": "Fugiat nostrud adipisicing quis veniam fugiat sint labore consectetur dolor.",
-        "FavoriteTreat": "Quis irure pariatur ea fugiat aliqua voluptate nisi laboris officia aute ut nostrud.",
-        "FavoriteToy": "In irure anim non nisi fugiat labore consequat ipsum laboris non et."
-      }
-    ],
     "Photos": [
       {
         "Url": "https://api-ninjas.com/images/dogs/golden_retriever.jpg",

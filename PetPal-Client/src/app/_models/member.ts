@@ -1,4 +1,3 @@
-import { Animal } from './animal';
 import { Photo } from './photo';
 
 export interface Member {
@@ -16,7 +15,6 @@ export interface Member {
     city: string;
     country: number;
     language: number;
-    animals: Animal[];
     photoUrl: string;
     photos: Photo[];
 }

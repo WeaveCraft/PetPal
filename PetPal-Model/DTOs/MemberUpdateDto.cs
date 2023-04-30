@@ -1,6 +1,4 @@
-﻿using PetPal_Model.Enums;
-
-namespace PetPal_Model.DTOs
+﻿namespace PetPal_Model.DTOs
 {
     public class MemberUpdateDto
     {

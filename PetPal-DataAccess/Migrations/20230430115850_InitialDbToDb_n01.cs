@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace PetPalDataAccess.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialMigrationToDb : Migration
+    public partial class InitialDbToDbn01 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -19,8 +19,8 @@ namespace PetPalDataAccess.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Username = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     KnownAs = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Gender = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Mood = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Gender = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Mood = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     PasswordHash = table.Column<byte[]>(type: "varbinary(max)", nullable: false),
                     PasswordSalt = table.Column<byte[]>(type: "varbinary(max)", nullable: false),
                     DateOfBirth = table.Column<DateTime>(type: "datetime2", nullable: false),
@@ -38,28 +38,56 @@ namespace PetPalDataAccess.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Animals",
+                name: "Likes",
+                columns: table => new
+                {
+                    SourceUserId = table.Column<int>(type: "int", nullable: false),
+                    TargetUserId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Likes", x => new { x.SourceUserId, x.TargetUserId });
+                    table.ForeignKey(
+                        name: "FK_Likes_AppUsers_SourceUserId",
+                        column: x => x.SourceUserId,
+                        principalTable: "AppUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Likes_AppUsers_TargetUserId",
+                        column: x => x.TargetUserId,
+                        principalTable: "AppUsers",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Messages",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
-                    KnownAs = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    DateOfBirth = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Created = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Age = table.Column<int>(type: "int", nullable: false),
-                    Gender = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Interests = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    FavoriteTreat = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    FavoriteToy = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    AppUserId = table.Column<int>(type: "int", nullable: false)
+                    SenderId = table.Column<int>(type: "int", nullable: false),
+                    SenderUsername = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    RecipientId = table.Column<int>(type: "int", nullable: false),
+                    RecipientUsername = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Content = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    DateRead = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    MessageSent = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    SenderDeleted = table.Column<bool>(type: "bit", nullable: false),
+                    RecipientDeleted = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Animals", x => x.Id);
+                    table.PrimaryKey("PK_Messages", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Animals_AppUsers_AppUserId",
-                        column: x => x.AppUserId,
+                        name: "FK_Messages_AppUsers_RecipientId",
+                        column: x => x.RecipientId,
+                        principalTable: "AppUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Messages_AppUsers_SenderId",
+                        column: x => x.SenderId,
                         principalTable: "AppUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -88,9 +116,19 @@ namespace PetPalDataAccess.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Animals_AppUserId",
-                table: "Animals",
-                column: "AppUserId");
+                name: "IX_Likes_TargetUserId",
+                table: "Likes",
+                column: "TargetUserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Messages_RecipientId",
+                table: "Messages",
+                column: "RecipientId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Messages_SenderId",
+                table: "Messages",
+                column: "SenderId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Photos_AppUserId",
@@ -102,7 +140,10 @@ namespace PetPalDataAccess.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Animals");
+                name: "Likes");
+
+            migrationBuilder.DropTable(
+                name: "Messages");
 
             migrationBuilder.DropTable(
                 name: "Photos");

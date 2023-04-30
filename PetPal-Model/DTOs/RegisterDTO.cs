@@ -1,5 +1,4 @@
-﻿using PetPal_Model.Enums;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace PetPal_Model.DTOs
 {
