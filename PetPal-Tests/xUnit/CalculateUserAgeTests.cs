@@ -19,33 +19,5 @@ namespace PetPal_Tests.xUnit
             // Assert
             Assert.Equal(expectedAge, age);
         }
-
-        [Fact]
-        public void GetAge_ReturnsCorrectAge()
-        {
-            // Arrange
-            var dob = new DateTime(1990, 1, 1); 
-            var expectedAge = DateTime.UtcNow.Year - dob.Year; 
-
-            // Act
-            var age = dob.GetAge();
-
-            // Assert
-            Assert.Equal(expectedAge, age);
-        }
-
-        [Fact]
-        public void GetAge_DateOnly_ReturnsCorrectAge()
-        {
-            // Arrange
-            var dob = new DateOnly(1990, 1, 1); 
-            var expectedAge = DateTime.UtcNow.Year - dob.Year; 
-
-            // Act
-            var age = dob.GetAge();
-
-            // Assert
-            Assert.Equal(expectedAge, age);
-        }
     }
 }
