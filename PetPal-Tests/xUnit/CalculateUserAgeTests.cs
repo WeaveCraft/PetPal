@@ -2,7 +2,7 @@
 using System;
 using Xunit;
 
-namespace PetPal_Tests
+namespace PetPal_Tests.xUnit
 {
     public class CalculateUserAgeTests
     {
