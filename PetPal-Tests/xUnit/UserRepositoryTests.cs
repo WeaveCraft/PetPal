@@ -1,24 +1,18 @@
-using Microsoft.EntityFrameworkCore;
 using Moq;
 using Xunit;
-using PetPal_Business.Repositories;
 using PetPal_Business.Repositories.Interfaces;
-using PetPal_DataAccess.Data;
 using PetPal_Model.Models;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace PetPal_Tests
 {
-    public class UserRepoTests
+    public class UserRepositoryTests
     {
-        //public Mock<ApplicationDbContext> _context;
-        //public ApplicationDbContext _sut;
+        //Mock
         public Mock<IUserRepository> _userRepositoryMock { get; set; }
         public IUserRepository _sut { get; set; }
 
-        public UserRepoTests()
+        public UserRepositoryTests()
         {
             var user = (AppUser)null;
 
