@@ -5,20 +5,20 @@
         <div class="card">
             <div class="card-body">
                 <div>
-                    <strong>Last Active: </strong>
-                    <p>{{member.lastActive | date}}</p>
-                </div>
-                <div>
                     <strong>Age:</strong>
                     <p>{{member.age}}</p>
                 </div>
                 <div>
-                    <strong>Introduction: </strong>
-                    <p>{{member.introduction}}</p>
+                    <strong>Last Active: </strong>
+                    <p>{{member.lastActive | date}}</p>
                 </div>
                 <div>
-                    <strong>Looking For: </strong>
-                    <p>{{member.lookingFor}}</p>
+                    <strong>Account Created: </strong>
+                    <p>{{member.created | date}}</p>
+                </div>
+                <div>
+                    <strong>Mood: </strong>
+                    <p>{{member.mood}}</p>
                 </div>
             </div>
             <div class="card-footer">
@@ -33,14 +33,10 @@
     <div class="col-8">
         <tabset class="member-tabset" #memberTabs>
             <tab heading="About {{member.username}}" (selectTab)="onTabActivated($event)">
-                <p>Name: {{member.username}}</p>
-                <h4>Age</h4>
-                <p>Date of Birth: {{member.age}}</p>
-                <p>Age: {{member.age}}</p>
-            </tab>
-            <tab heading="Bio" (selectTab)="onTabActivated($event)">
-                <p>City: {{member.city}}</p>
-                <p>Country: {{member.country}}</p>
+                <h4>Introduction</h4>
+                <p>{{member.introduction}}</p>
+                <h4>Looking For</h4>
+                <p>{{member.lookingFor}}</p>
             </tab>
             <tab heading="Photos" (selectTab)="onTabActivated($event)">
                 <ngx-gallery [options]="galleryOptions" [images]="galleryImages" class="ngx-gallery"></ngx-gallery>

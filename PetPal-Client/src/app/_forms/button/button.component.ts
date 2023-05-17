@@ -1,5 +1,5 @@
-import { Component, Input, Self } from '@angular/core';
-import { ControlValueAccessor, FormControl, NgControl } from '@angular/forms';
+import { Component, Input, Self, ViewChild } from '@angular/core';
+import { ControlValueAccessor, FormControl, NgControl, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-button',
@@ -8,7 +8,6 @@ import { ControlValueAccessor, FormControl, NgControl } from '@angular/forms';
 })
 export class ButtonComponent implements ControlValueAccessor {
   @Input() label = '';
-
   writeValue(obj: any): void {
   }
 

@@ -3,6 +3,7 @@ using Xunit;
 using PetPal_Business.Repositories.Interfaces;
 using PetPal_Model.Models;
 using System.Threading.Tasks;
+using PetPal_DataAccess.Data;
 
 namespace PetPal_Tests
 {
@@ -11,6 +12,7 @@ namespace PetPal_Tests
         //Mock
         public Mock<IUserRepository> _userRepositoryMock { get; set; }
         public IUserRepository _sut { get; set; }
+        public Mock<ApplicationDbContext> _context { get; set; }
 
         public UserRepositoryTests()
         {
@@ -35,10 +37,11 @@ namespace PetPal_Tests
         [Fact]
         public void GetUserByUsernameAsync_HandleNull()
         {
-            // ACT
-            var result = _sut.GetUserByIdAsync(100);
+            // Act
+            var result = _sut.GetUserByIdAsync(-1);
+            //var user = _context.AppUsers.Find(-1);
 
-            // ASSERT
+            // Assert
             Assert.Null(result.Result);
 
         }

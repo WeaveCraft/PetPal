@@ -21,14 +21,14 @@ namespace PetPal_Api.Controllers
         public async Task<ActionResult> AddLike(string username)
         {
             var sourceUserId = User.GetUserId();
-            var likedUser = await _userRepository.GetUserByUsernameAsync(username);
-            var sourceUser = await _likesRepository.GetUserWithLikes(sourceUserId);
 
+            var likedUser = await _userRepository.GetUserByUsernameAsync(username);
             if (likedUser == null) return NotFound();
+
+            var sourceUser = await _likesRepository.GetUserWithLikes(sourceUserId);
             if (sourceUser.Username == username) return BadRequest("Not able to like yourself");
 
             var userLike = await _likesRepository.GetUserLike(sourceUserId, likedUser.Id);
-
             if (userLike != null) return BadRequest("You have already like this member");
 
             userLike = new UserLike

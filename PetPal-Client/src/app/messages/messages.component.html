@@ -64,7 +64,7 @@
                 </td>
                 <td>{{message.messageSent | date}}</td>
                 <td>
-                    <button (click)="$event.stopPropagation()" (click)="deleteMessage(message.id)" class="btn btn-danger">Delete</button>
+                    <app-button [label]="'Delete'" type="submit" (click)="$event.stopPropagation()" (click)="deleteMessage(message.id)"></app-button>
                 </td>
             </tr>
         </tbody>
