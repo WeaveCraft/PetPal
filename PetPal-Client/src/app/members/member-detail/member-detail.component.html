@@ -1,32 +1,12 @@
 <div class="row">
     <div class="col-4">
-        <img src="{{member.photoUrl || './assets/user.png'}}" alt="{{member.username}}"
-            class="card-img-top img-thumbnail">
         <div class="card">
-            <div class="card-body">
-                <div>
-                    <strong>Age:</strong>
-                    <p>{{member.age}}</p>
-                </div>
-                <div>
-                    <strong>Last Active: </strong>
-                    <p>{{member.lastActive | date}}</p>
-                </div>
-                <div>
-                    <strong>Account Created: </strong>
-                    <p>{{member.created | date}}</p>
-                </div>
-                <div>
-                    <strong>Mood: </strong>
-                    <p>{{member.mood}}</p>
-                </div>
-            </div>
-            <div class="card-footer">
-                <div class="btn-group d-flex">
-                    <app-button [label]="'Like'" (click)="addLike(member)"></app-button>
-                    <app-button [label]="'Message'" (click)="selectTab('Messages')"></app-button>
-                </div>
-            </div>
+            <img src="{{member.photoUrl || './assets/user.png'}}" alt="{{member.username}}"
+                class="card-img-top img-thumbnail">
+            <span class="card__action">
+                <app-button [label]="'Like'" (click)="addLike(member)"></app-button>
+            </span>
+            <h2 style="text-align: center;">{{capitalizeFirstLetter(member.username)}}</h2>
         </div>
     </div>
 
