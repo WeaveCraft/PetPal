@@ -38,7 +38,8 @@ export class MemberDetailComponent implements OnInit {
         preview: false
       }
     ]
-
+    console.log(this.member.knownAs);
+    console.log(this.member.age);
     this.galleryImages = this.getImages();
   }
 

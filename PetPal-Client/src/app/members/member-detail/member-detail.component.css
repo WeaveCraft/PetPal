@@ -83,3 +83,13 @@
   .card:is(:hover, :focus-visible) {
     --hover: 1;
   }
+
+  .about-info {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .info-item {
+    flex: 0 0 50%;
+  }
+  

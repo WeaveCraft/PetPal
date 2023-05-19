@@ -13,11 +13,38 @@
     <div class="col-8">
         <tabset class="member-tabset" #memberTabs>
             <tab heading="About {{member.username}}" (selectTab)="onTabActivated($event)">
-                <h4>Introduction</h4>
-                <p>{{member.introduction}}</p>
-                <h4>Looking For</h4>
-                <p>{{member.lookingFor}}</p>
+                <div class="about-info">
+                    <div class="info-item">
+                        <h4>Living In</h4>
+                        <p>{{capitalizeFirstLetter(member.city + ' ' + member.country)}}</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Gender</h4>
+                        <p>{{capitalizeFirstLetter(member.gender)}}</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Mood</h4>
+                        <p>{{capitalizeFirstLetter(member.mood)}}</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Age</h4>
+                        <p>{{member.age}}</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Account Created</h4>
+                        <p>{{member.created | date: 'dd MMM yyyy'}}</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Last Active</h4>
+                        <p>{{member.lastActive | date: 'dd MMM yyyy'}}</p>
+                    </div>
+                    <h4>Introduction</h4>
+                    <p>{{member.introduction}}</p>
+                    <h4>Looking For</h4>
+                    <p>{{member.lookingFor}}</p>
+                </div>
             </tab>
+
             <tab heading="Photos" (selectTab)="onTabActivated($event)">
                 <ngx-gallery [options]="galleryOptions" [images]="galleryImages" class="ngx-gallery"></ngx-gallery>
             </tab>
