@@ -6,6 +6,10 @@ using PetPal_Business.Repositories.Interfaces;
 using PetPal_DataAccess.Data;
 using PetPal_Model.DTOs;
 using PetPal_Model.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace PetPal_Business.Repositories
 {
@@ -13,6 +17,7 @@ namespace PetPal_Business.Repositories
     {
         private readonly ApplicationDbContext _context;
         private readonly IMapper _mapper;
+
         public MessageRepository(ApplicationDbContext context, IMapper mapper)
         {
             _context = context;
@@ -42,18 +47,14 @@ namespace PetPal_Business.Repositories
 
             query = messageParams.Container switch
             {
-                "Inbox" => query.Where(u => u.RecipientUsername == messageParams.Username
-                    && u.RecipientDeleted == false),
-                "Outbox" => query.Where(u => u.SenderUsername == messageParams.Username
-                    && u.SenderDeleted == false),
-                _ => query.Where(u => u.RecipientUsername == messageParams.Username
-                    && u.RecipientDeleted == false && u.DateRead == null)
+                "Inbox" => query.Where(u => u.RecipientUsername == messageParams.Username && !u.RecipientDeleted),
+                "Outbox" => query.Where(u => u.SenderUsername == messageParams.Username && !u.SenderDeleted),
+                _ => query.Where(u => u.RecipientUsername == messageParams.Username && !u.RecipientDeleted && u.DateRead == null)
             };
 
             var messages = query.ProjectTo<MessageDto>(_mapper.ConfigurationProvider);
 
-            return await PagedList<MessageDto>
-                .CreateAsync(messages, messageParams.PageNumber, messageParams.PageSize);
+            return await PagedList<MessageDto>.CreateAsync(messages, messageParams.PageNumber, messageParams.PageSize);
         }
 
         public async Task<IEnumerable<MessageDto>> GetMessageThread(string currentUsername, string recipientUsername)
@@ -61,12 +62,9 @@ namespace PetPal_Business.Repositories
             var messages = await _context.Messages
                 .Include(u => u.Sender).ThenInclude(p => p.Photos)
                 .Include(u => u.Recipient).ThenInclude(p => p.Photos)
-                .Where(
-                    m => m.RecipientUsername == currentUsername && m.RecipientDeleted == false &&
-                    m.SenderUsername == recipientUsername ||
-                    m.RecipientUsername == recipientUsername && m.SenderDeleted == false &&
-                    m.SenderUsername == currentUsername
-                    )
+                .Where(m =>
+                    (m.RecipientUsername == currentUsername && !m.RecipientDeleted && m.SenderUsername == recipientUsername) ||
+                    (m.RecipientUsername == recipientUsername && !m.SenderDeleted && m.SenderUsername == currentUsername))
                 .OrderByDescending(m => m.MessageSent)
                 .ToListAsync();
 

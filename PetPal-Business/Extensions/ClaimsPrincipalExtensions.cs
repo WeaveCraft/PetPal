@@ -4,13 +4,15 @@ namespace PetPal_Business.Extensions
 {
     public static class ClaimsPrincipalExtensions
     {
-        public static string GetUsername(this ClaimsPrincipal member)
+        public static string GetUsername(this ClaimsPrincipal claimsPrincipal)
         {
-            return member.FindFirst(ClaimTypes.Name)?.Value;
+            return claimsPrincipal.FindFirstValue(ClaimTypes.Name);
         }
-        public static int GetUserId(this ClaimsPrincipal member)
+
+        public static int GetUserId(this ClaimsPrincipal claimsPrincipal)
         {
-            return int.Parse(member.FindFirst(ClaimTypes.NameIdentifier)?.Value);
+            var userIdValue = claimsPrincipal.FindFirstValue(ClaimTypes.NameIdentifier);
+            return int.Parse(userIdValue);
         }
     }
 }

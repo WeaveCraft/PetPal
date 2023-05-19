@@ -14,10 +14,8 @@ namespace PetPal_Business.Extensions
     {
         public static IServiceCollection AddApplicationServices(this IServiceCollection services, IConfiguration config)
         {
-            services.AddDbContext<ApplicationDbContext>(opt =>
-            {
-                opt.UseSqlServer(config.GetConnectionString("DefaultConnection"));
-            });
+            services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseSqlServer(config.GetConnectionString("DefaultConnection")));
 
             services.AddCors();
             services.AddScoped<ITokenService, TokenService>();
@@ -25,9 +23,9 @@ namespace PetPal_Business.Extensions
             services.AddScoped<ILikesRepository, LikesRepository>();
             services.AddScoped<IMessageRepository, MessageRepository>();
             services.AddScoped<IPhotoService, PhotoService>();
-            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies()); ;
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.Configure<CloudinarySettings>(config.GetSection("CloudinarySettings"));
-            services.AddScoped<LogUserActivity> ();
+            services.AddScoped<LogUserActivity>();
 
             return services;
         }

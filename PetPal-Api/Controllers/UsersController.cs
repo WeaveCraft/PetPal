@@ -60,7 +60,7 @@ namespace PetPal_Api.Controllers
             if (await _userRepository.SaveAllAsync()) 
                return NoContent();
 
-            return BadRequest("Error in updating member!");
+            return BadRequest("Error in updating member.");
         }
 
         [HttpPost("add-photo")]
@@ -113,7 +113,7 @@ namespace PetPal_Api.Controllers
 
             if (await _userRepository.SaveAllAsync()) return NoContent();
 
-            return BadRequest("Problem with choosing main photo");
+            return BadRequest("Problem with choosing main photo, try again later");
         }
 
         [HttpDelete("delete-photo/{photoId}")]
@@ -125,7 +125,7 @@ namespace PetPal_Api.Controllers
 
             if (photo == null) return NotFound();
 
-            if (photo.IsMain) return BadRequest("Not possible to delete main photo.");
+            if (photo.IsMain) return BadRequest("Can't delete main photo.");
 
             if (photo.PublicId != null)
             {
@@ -137,7 +137,7 @@ namespace PetPal_Api.Controllers
 
             if (await _userRepository.SaveAllAsync()) return Ok();
 
-            return BadRequest("There was a problem when deleting the photo");
+            return BadRequest("Problem deleting photo, try again later.");
         }
     }
 }

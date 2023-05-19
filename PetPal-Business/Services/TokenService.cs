@@ -28,7 +28,7 @@ namespace PetPal_Business.Services
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(claims),
-                Expires = DateTime.Now.AddDays(7), //Token Expires after one week, and after that we need to login again to get another token.
+                Expires = DateTime.UtcNow.AddDays(7), //Token Expires after one week, and after that we need to login again to get another token.
                 SigningCredentials = creds
             };
 

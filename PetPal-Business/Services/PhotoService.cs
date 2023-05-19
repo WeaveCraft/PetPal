@@ -12,14 +12,14 @@ namespace PetPal_Business.Services
         private readonly Cloudinary _cloudinary;
         public PhotoService(IOptions<CloudinarySettings> config)
         {
-            var acc = new Account
+            var account = new Account
                 (
                 config.Value.CloudName,
                 config.Value.ApiKey,
                 config.Value.ApiSecret
                 );
 
-            _cloudinary = new Cloudinary(acc);
+            _cloudinary = new Cloudinary(account);
         }
 
         public async Task<ImageUploadResult> AddPhotoAsync(IFormFile file)

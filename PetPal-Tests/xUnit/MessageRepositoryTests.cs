@@ -16,13 +16,11 @@ namespace PetPal_Tests.xUnit
 {
     public class MessageRepositoryTests
     {
-        public Mock<IMessageRepository> _messageRepositoryMock { get; set; }
-        public IMessageRepository _sut { get; set; }
+        private readonly Mock<IMessageRepository> _messageRepositoryMock;
+        private readonly IMessageRepository _sut;
 
         public MessageRepositoryTests()
         {
-            var addMessage = new Message();
-
             var testMessage = new Message
             {
                 Id = 1,
@@ -36,7 +34,6 @@ namespace PetPal_Tests.xUnit
 
             _messageRepositoryMock = new Mock<IMessageRepository>();
             _messageRepositoryMock.Setup(x => x.GetMessage(1)).ReturnsAsync(testMessage);
-            _messageRepositoryMock.Setup(x => x.AddMessage(addMessage));
 
             _sut = _messageRepositoryMock.Object;
         }
@@ -45,7 +42,7 @@ namespace PetPal_Tests.xUnit
         public void AddMessageTest()
         {
             // Arrange
-            var testMessage = new Message()
+            var testMessage = new Message
             {
                 Id = 1,
                 SenderUsername = "SenderUsername",
@@ -65,7 +62,7 @@ namespace PetPal_Tests.xUnit
         [Fact]
         public async Task GetMessage()
         {
-            //Arrenge
+            // Arrange
             var expectedMessage = new Message
             {
                 Id = 1,
@@ -75,17 +72,15 @@ namespace PetPal_Tests.xUnit
                 Content = "Message Content",
             };
 
-            //Act
+            // Act
             var result = await _sut.GetMessage(1);
 
-            //Assert
+            // Assert
             Assert.Equal(expectedMessage.Id, result.Id);
             Assert.Equal(expectedMessage.SenderUsername, result.SenderUsername);
             Assert.Equal(expectedMessage.RecipientId, result.RecipientId);
             Assert.Equal(expectedMessage.RecipientUsername, result.RecipientUsername);
             Assert.Equal(expectedMessage.Content, result.Content);
         }
-
-
     }
 }
