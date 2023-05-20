@@ -14,4 +14,3 @@ To run the backend simply open the PetPal.sln with (preferably) Visual Studio an
 SSMS must be installed in order for the backend to work. Starting the project will automatically create a Database and seed it with test data.
 
 Run the backend together with the frontend to use the project. Frontend can be run without the backend but you'll encounter multiple errors. Simply run the backend together with the frontedn to avoid this.
-
