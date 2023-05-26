@@ -2,8 +2,6 @@
     <div class="btn-group" name="container">
         <app-button [label]="'Inbox'" btnRadio="Inbox" [(ngModel)]="container" (click)="loadMessages()">
         </app-button>
-        <app-button [label]="'Sent'" btnRadio="Outbox" [(ngModel)]="container" (click)="loadMessages()">
-        </app-button>
         <app-button [label]="'Unread'" btnRadio="Unread" [(ngModel)]="container" (click)="loadMessages()">
         </app-button>
     </div>
