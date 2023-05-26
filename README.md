@@ -6,12 +6,21 @@ The goal is to broaden the network for pet owners and help them find friends for
 The user can create an account and thereafter view other users and their pets.
 The user can message and like other users to match with them and socialice with them.
 
-# Installation
+## Local Development
+### **Install**:
 
-To run the frontend just open PetPal-Client with Visual Studio Code and run "npm install" in the terminal.
+- Project was built with using Visual Studio to building Backend and using VS Code to build frontend
 
-To run the backend simply open the PetPal.sln with (preferably) Visual Studio and press f5. 
-SSMS must be installed in order for the backend to work. Starting the project will automatically create a Database and seed it with test data.
+### Start project only using VS Code:
+- Open project in VS Code. 
+- Open termianl and navigate to PetPal-Client `cd petpal-client` and run `npm i --force` 
+- In terminal run `npm run ng serve` or `ng serve`
+- Navigate to PetPal-Api and run `dotnet run` (if you're currently in PetPal-Client simply `cd ../PetPal-Api`)
+- Lastly `dotnet build` `dotnet run` or `dotnet watch`
 
-Run the backend together with the frontend to use the project. Frontend can be run without the backend but you'll encounter multiple errors. Simply run the backend together with the frontedn to avoid this.
-
+### Start projekt using VS Code frontend & Visual Studio Backend
+- Open PetPal-Client in VS Code.
+- Open termianl and navigate to PetPal-Client `cd petpal-client` and run `npm i --force` 
+- In terminal run `npm run ng serve` or `ng serve`
+- Either click `PetPal.sln` or open PetPal using Visual Studio.
+- Start program `f5` or in terminal run `dotnet build` `dotnet run` or `dotnet watch`
