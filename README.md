@@ -11,6 +11,8 @@ The user can message and like other users to match with them and socialice with 
 
 - Project was built with using Visual Studio to building Backend and using VS Code to build frontend
 
+- Make sure you have SSMS downloaded since this project is using SQL Server as Database and have test data seeded upon starting backend.
+
 ### Start project only using VS Code:
 - Open project in VS Code. 
 - Open termianl and navigate to PetPal-Client `cd petpal-client` and run `npm i --force` 
@@ -24,3 +26,4 @@ The user can message and like other users to match with them and socialice with 
 - In terminal run `npm run ng serve` or `ng serve`
 - Either click `PetPal.sln` or open PetPal using Visual Studio.
 - Start program `f5` or in terminal run `dotnet build` `dotnet run` or `dotnet watch`
+
