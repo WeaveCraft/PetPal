@@ -20,7 +20,7 @@ The user can message and like other users to match with them and socialice with 
 - Navigate to PetPal-Api and run `dotnet run` (if you're currently in PetPal-Client simply `cd ../PetPal-Api`)
 - Lastly `dotnet build` `dotnet run` or `dotnet watch`
 
-### Start projekt using VS Code frontend & Visual Studio Backend
+### Start projekt using VS Code Frontend & Visual Studio Backend
 - Open PetPal-Client in VS Code.
 - Open termianl and navigate to PetPal-Client `cd petpal-client` and run `npm i --force` 
 - In terminal run `npm run ng serve` or `ng serve`
