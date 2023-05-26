@@ -1,0 +1,1205 @@
+{
+	"info": {
+		"_postman_id": "af2ffea2-abf1-404c-b244-73215bffd86e",
+		"name": "PetPal",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20891952"
+	},
+	"item": [
+		{
+			"name": "User Controller",
+			"item": [
+				{
+					"name": "Get Users",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/users",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/users/?Id=2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								""
+							],
+							"query": [
+								{
+									"key": "Id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Set Main Photo",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/users/set-main-photo/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"set-main-photo",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User by username",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/users/helga",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"helga"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add photo for user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "File",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/users/add-photo",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"add-photo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Photo",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/users/delete-photo/27",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"delete-photo",
+								"27"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update user",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"introduction\": \"Updated intro\",\n\t\"lookingFor\": \"Updated lookingFor\",\n\t\"interests\": \"Updated interests\",\n\t\"city\": \"Updated city\",\n\t\"country\": \"Updated country\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/users",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User by username",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/users/jana",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"jana"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Users with pagination",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/users?pageNumber=1&pageSize=3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"users"
+							],
+							"query": [
+								{
+									"key": "pageNumber",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Users with mood",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/users?mood=playful",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"users"
+							],
+							"query": [
+								{
+									"key": "mood",
+									"value": "playful"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Users with minAge",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/users?minAge=50",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"users"
+							],
+							"query": [
+								{
+									"key": "minAge",
+									"value": "50"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Users with maxAge",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/users?maxAge=40",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"users"
+							],
+							"query": [
+								{
+									"key": "maxAge",
+									"value": "40"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Users in 50s",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/users?minAge=50&maxAge=59",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"users"
+							],
+							"query": [
+								{
+									"key": "minAge",
+									"value": "50"
+								},
+								{
+									"key": "maxAge",
+									"value": "59"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Users orderedby Created",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/users?orderBy=created&mood=calm",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"users"
+							],
+							"query": [
+								{
+									"key": "orderBy",
+									"value": "created"
+								},
+								{
+									"key": "mood",
+									"value": "calm"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Users orderedby lastActive",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/users?orderBy=lastActive&mood=calm",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"users"
+							],
+							"query": [
+								{
+									"key": "orderBy",
+									"value": "lastActive"
+								},
+								{
+									"key": "mood",
+									"value": "calm"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Account Controller (Register Here to get valid token)",
+			"item": [
+				{
+					"name": "Login as Helga and save token to env",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const user = pm.response.json();",
+									"",
+									"pm.test(\"Has properties\", function () {",
+									"    pm.expect(user).to.have.property('username');",
+									"    pm.expect(user).to.have.property('token');",
+									"});",
+									"",
+									"if (pm.test(\"Has properties\")) {",
+									"    pm.globals.set('token', user.token);",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\": \"helga\",\n\t\"password\": \"Pa$$w0rd\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/account/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"account",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const user = pm.response.json();",
+									"",
+									"pm.test(\"Has properties\", function () {",
+									"    pm.expect(user).to.have.property('username');",
+									"    pm.expect(user).to.have.property('token');",
+									"});",
+									"",
+									"if (pm.test(\"Has properties\")) {",
+									"    pm.globals.set('token', user.token);",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"gender\": \"Male\",\n    \"mood\": \"Playful\",\n    \"username\": \"Postman\",\n    \"knownAs\": \"TestUser\",\n    \"password\": \"HashMe\",\n    \"dateOfBirth\": \"1985-01-23\",\n    \"city\": \"London\",\n    \"country\": \"England\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/account/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"account",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login as TestUser(Postman)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const user = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Has properties\", function () {\r",
+									"    pm.expect(user).to.have.property('username');\r",
+									"    pm.expect(user).to.have.property('token');\r",
+									"});\r",
+									"\r",
+									"if (pm.test(\"Has properties\")) {\r",
+									"    pm.globals.set('token', user.token);\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"username\": \"Postman\",\r\n\t\"password\": \"HashMe\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/account/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"account",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Photo for TestUser (Remember to select a photo to upload manually, See User Controller -> Add photo for user as example.",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "File",
+									"type": "file",
+									"src": "/C:/Users/Vikto/OneDrive/Pictures/341329377_1963513027318580_5227668334464636668_n (1).jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/users/add-photo",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"add-photo"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Buggy Controller",
+			"item": [
+				{
+					"name": "Get Null Ref Error",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/buggy/server-error",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"buggy",
+								"server-error"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Auth Error",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/buggy/auth",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"buggy",
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Not Found error",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/buggy/not-found",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"buggy",
+								"not-found"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Bad Request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/buggy/bad-request",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"buggy",
+								"bad-request"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Validation Error",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/account/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"account",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Likes Controller",
+			"item": [
+				{
+					"name": "Login as Helga and save token to env",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const user = pm.response.json();",
+									"",
+									"pm.test(\"Has properties\", function () {",
+									"    pm.expect(user).to.have.property('username');",
+									"    pm.expect(user).to.have.property('token');",
+									"});",
+									"",
+									"if (pm.test(\"Has properties\")) {",
+									"    pm.globals.set('token', user.token);",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\": \"helga\",\n\t\"password\": \"Pa$$w0rd\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/account/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"account",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Liked Users",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/likes?predicate=liked",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"likes"
+							],
+							"query": [
+								{
+									"key": "predicate",
+									"value": "liked"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Liked Users Liked by",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/likes?predicate=likedBy",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"likes"
+							],
+							"query": [
+								{
+									"key": "predicate",
+									"value": "likedBy"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add like for Felecia from logged in user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/likes/Felecia",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"likes",
+								"Felecia"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Message Controller",
+			"item": [
+				{
+					"name": "Create Message From Helga to Jana",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"recipientUsername\": \"Daphne\",\n    \"content\": \"Test message 1 from Helga to Jana\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/messages",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"messages"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login as jana and save token to env",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const user = pm.response.json();",
+									"",
+									"pm.test(\"Has properties\", function () {",
+									"    pm.expect(user).to.have.property('username');",
+									"    pm.expect(user).to.have.property('jana_token');",
+									"});",
+									"",
+									"if (pm.test(\"Has properties\")) {",
+									"    pm.globals.set('jana_token', user.token);",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\": \"jana\",\n\t\"password\": \"Pa$$w0rd\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/account/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"account",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Message From Jana to Helga",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{jana_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"recipientUsername\": \"Helga\",\n    \"content\": \"Test message from Jana to Helga\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/messages",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"messages"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Default Messages for Helga",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{token}}"
+							},
+							{
+								"key": "Username",
+								"value": "Helga",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "Username",
+									"value": "Helga",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/messages?Username=Helga",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"messages"
+							],
+							"query": [
+								{
+									"key": "Username",
+									"value": "Helga"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Default Messages for Todd",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{todd_token}}"
+							},
+							{
+								"key": "Username",
+								"value": "Jana",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/messages?Username=Jana",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"messages"
+							],
+							"query": [
+								{
+									"key": "Username",
+									"value": "Jana"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Outbox Messages for Lisa",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/messages?container=Outbox&Username=Helga",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"messages"
+							],
+							"query": [
+								{
+									"key": "container",
+									"value": "Outbox"
+								},
+								{
+									"key": "Username",
+									"value": "Helga"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Message thread Lisa and Todd",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/messages/thread/jana",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"messages",
+								"thread",
+								"jana"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "https://localhost:7025"
+		}
+	]
+}
