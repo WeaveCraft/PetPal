@@ -1,12 +1,12 @@
 <div class="texrt-center mt-3">
-    <h2>{{predicate === 'liked' ? 'Members I like' : 'Members whom like me'}}</h2>
+    <h2>{{predicate === 'liked' ? 'Pals Im Friends With' : 'Pals That Are Friends With Me'}}</h2>
 </div>
 
 <div class="container mt-3">
     <div class="d-flex">
         <div class="btn-group" name="predicate">
-            <app-button [label]="'Pals I Like'" btnRadio="liked" [(ngModel)]="predicate" (click)="loadLikes()"></app-button>
-            <app-button [label]="'Pals that like me'" btnRadio="likedBy" [(ngModel)]="predicate" (click)="loadLikes()"></app-button>
+            <app-button [label]="'Show Who I Like'" btnRadio="liked" [(ngModel)]="predicate" (click)="loadLikes()"></app-button>
+            <app-button [label]="'Show Who Likes Me'" btnRadio="likedBy" [(ngModel)]="predicate" (click)="loadLikes()"></app-button>
         </div>
     </div>
     <div class="row mt-3">
