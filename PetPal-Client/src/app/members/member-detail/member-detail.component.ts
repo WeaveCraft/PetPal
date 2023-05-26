@@ -1,7 +1,6 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NgxGalleryAnimation, NgxGalleryImage, NgxGalleryOptions } from '@kolkov/ngx-gallery';
-import { TabDirective, TabsetComponent } from 'ngx-bootstrap/tabs';
 import { ToastrService } from 'ngx-toastr';
 import { Member } from 'src/app/_models/member';
 import { Message } from 'src/app/_models/message';
@@ -14,8 +13,6 @@ import { MessageService } from 'src/app/_services/message.service';
   styleUrls: ['./member-detail.component.css']
 })
 export class MemberDetailComponent implements OnInit {
-  @ViewChild('memberTabs', {static: true}) memberTabs: TabsetComponent | undefined;
-  activeTab: TabDirective | undefined;
   member: Member = {} as Member;
   galleryOptions: NgxGalleryOptions[] = [];
   galleryImages: NgxGalleryImage[] = [];
@@ -38,9 +35,8 @@ export class MemberDetailComponent implements OnInit {
         preview: false
       }
     ]
-    console.log(this.member.knownAs);
-    console.log(this.member.age);
     this.galleryImages = this.getImages();
+    this.loadMessages();
   }
 
   addLike(member: Member) {
@@ -63,24 +59,11 @@ export class MemberDetailComponent implements OnInit {
     return imageUrls;
   }
   
-  selectTab(heading: string) {
-    if (this.memberTabs) {
-      this.memberTabs.tabs.find(x => x.heading === heading)!.active = true;
-    }
-  }
-
   loadMessages() {
     if (this.member) {
       this.messageService.getMessageThread(this.member.username).subscribe({
         next: messages => this.messages = messages
       })
-    }
-  }
-
-  onTabActivated(data: TabDirective) {
-    this.activeTab = data;
-    if (this.activeTab.heading == 'Messages') {
-      this.loadMessages();
     }
   }
 

@@ -54,4 +54,17 @@
     --hover: 1;
   }
 
-  
+  .scrollable-container {
+    overflow: auto;
+    max-height: 50rem; 
+}
+
+.info-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.info-item {
+  flex: 1 1 200px; /* Adjust the width as per your requirements */
+  margin-right: 20px; /* Adjust the spacing between items as per your requirements */
+}

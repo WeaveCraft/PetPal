@@ -1,56 +1,32 @@
 <div class="row">
     <div class="col-4">
         <div class="card">
+
             <img src="{{member.photoUrl || './assets/user.png'}}" alt="{{member.username}}"
-                class="card-img-top img-thumbnail">
+            class="card-img-top img-thumbnail">
             <span class="card__action">
                 <app-button [label]="'Like'" (click)="addLike(member)"></app-button>
             </span>
-            <h2 style="text-align: center;">{{capitalizeFirstLetter(member.username)}}</h2>
+            <h2 style="text-align: center;">{{capitalizeFirstLetter(member.mood + ' ')}}{{capitalizeFirstLetter(member.username)}}, Age {{member.age}}, {{member.city}}</h2>
+        </div>
+        <div class="card info-container">
+            <div class="info-item">
+                <br/>
+                <h4>Introduction</h4>
+                <p>{{member.introduction}}</p>
+                <h4>Looking For</h4>
+                <p> {{member.lookingFor}}</p>
+            </div>
+            <div class="info-item">
+                <h4>Looking For</h4>
+                <p>{{member.lookingFor}}</p>
+            </div>
         </div>
     </div>
+    
 
-    <div class="col-8">
-        <tabset class="member-tabset" #memberTabs>
-            <tab heading="About {{member.username}}" (selectTab)="onTabActivated($event)">
-                <div class="about-info">
-                    <div class="info-item">
-                        <h4>Living In</h4>
-                        <p>{{capitalizeFirstLetter(member.city + ' ' + member.country)}}</p>
-                    </div>
-                    <div class="info-item">
-                        <h4>Gender</h4>
-                        <p>{{capitalizeFirstLetter(member.gender)}}</p>
-                    </div>
-                    <div class="info-item">
-                        <h4>Mood</h4>
-                        <p>{{capitalizeFirstLetter(member.mood)}}</p>
-                    </div>
-                    <div class="info-item">
-                        <h4>Age</h4>
-                        <p>{{member.age}}</p>
-                    </div>
-                    <div class="info-item">
-                        <h4>Account Created</h4>
-                        <p>{{member.created | date: 'dd MMM yyyy'}}</p>
-                    </div>
-                    <div class="info-item">
-                        <h4>Last Active</h4>
-                        <p>{{member.lastActive | date: 'dd MMM yyyy'}}</p>
-                    </div>
-                    <h4>Introduction</h4>
-                    <p>{{member.introduction}}</p>
-                    <h4>Looking For</h4>
-                    <p>{{member.lookingFor}}</p>
-                </div>
-            </tab>
-
-            <tab heading="Photos" (selectTab)="onTabActivated($event)">
-                <ngx-gallery [options]="galleryOptions" [images]="galleryImages" class="ngx-gallery"></ngx-gallery>
-            </tab>
-            <tab heading="Messages" (selectTab)="onTabActivated($event)">
-                <app-member-messages [messages]="messages" [username]="member.username"></app-member-messages>
-            </tab>
-        </tabset>
+    <div class="col-8 scrollable-container">
+        <app-member-messages [messages]="messages" [username]="member.username"></app-member-messages>
     </div>
+    
 </div>
