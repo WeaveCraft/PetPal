@@ -26,4 +26,3 @@ The user can message and like other users to match with them and socialice with 
 - In terminal run `npm run ng serve` or `ng serve`
 - Either click `PetPal.sln` or open PetPal using Visual Studio.
 - Start program `f5` or in terminal run `dotnet build` `dotnet run` or `dotnet watch`
-
