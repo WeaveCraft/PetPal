@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  registerMode = false;
+  registerMode: boolean = true;
   users: any;
 
   constructor() { }
@@ -15,11 +15,13 @@ export class HomeComponent implements OnInit {
   }
 
   registerToggle() {
-    this.registerMode = !this.registerMode;
+    this.registerMode = this.registerMode;
   }
 
   cancelRegisterMode(event: boolean) {
     this.registerMode = event;
   }
+
+
 
 }
