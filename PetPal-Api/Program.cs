@@ -7,7 +7,6 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers();
 builder.Services.AddApplicationServices(builder.Configuration);
 builder.Services.AddIdentityServices(builder.Configuration);
 
@@ -42,6 +41,8 @@ try
     var context = services.GetRequiredService<ApplicationDbContext>();
     await context.Database.MigrateAsync();
     await Seed.SeedUsers(context);
+    await Seed.SeedMessages(context);
+    await Seed.SeedLikes(context);
 }
 catch (Exception ex)
 {

@@ -1,0 +1,10 @@
+﻿[
+  {
+    "SourceUserId": 1,
+    "TargetUserId": 2
+  },
+  {
+    "SourceUserId": 2,
+    "TargetUserId": 1
+  }
+]

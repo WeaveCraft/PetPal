@@ -1,0 +1,42 @@
+﻿[
+  {
+    "SenderId": 2,
+    "SenderUsername": "jana",
+    "RecipientId": 1,
+    "RecipientUsername": "helga",
+    "Content": "Message Content",
+    "DateRead": null,
+    "SenderDeleted": false,
+    "RecipientDeleted": false
+  },
+  {
+    "SenderId": 2,
+    "SenderUsername": "jana",
+    "RecipientId": 1,
+    "RecipientUsername": "helga",
+    "Content": "Message Content Two",
+    "DateRead": null,
+    "SenderDeleted": false,
+    "RecipientDeleted": false
+  },
+  {
+    "SenderId": 1,
+    "SenderUsername": "helga",
+    "RecipientId": 2,
+    "RecipientUsername": "jana",
+    "Content": "Message Content",
+    "DateRead": null,
+    "SenderDeleted": false,
+    "RecipientDeleted": false
+  },
+  {
+    "SenderId": 1,
+    "SenderUsername": "helga",
+    "RecipientId": 2,
+    "RecipientUsername": "jana",
+    "Content": "Message Content 2",
+    "DateRead": null,
+    "SenderDeleted": false,
+    "RecipientDeleted": false
+  }
+]
