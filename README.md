@@ -30,4 +30,4 @@ The user can message and like other users to match with them and socialice with 
 ## Postman
 
 ### Download Postman
-- Navigate to "Import" and import file `Postman-BackendTests` located under PetPal-Postman.
+- Navigate to "Import" and import file `Postman-BackendTests` located under PetPal-Postman
