@@ -31,3 +31,12 @@ The user can message and like other users to match with them and socialice with 
 
 ### Download Postman
 - Navigate to "Import" and import file `Postman-BackendTests` located under PetPal-Postman
+
+![PetPal02](https://github.com/WeaveCraft/PetPal/assets/90194213/c4cb1514-ad07-4704-a051-847f37737bba)
+![Uploading PetPal01.png…]()
+![PetPal08](https://github.com/WeaveCraft/PetPal/assets/90194213/91226779-4176-44f6-be91-41b5345cc5e4)
+![PetPal07](https://github.com/WeaveCraft/PetPal/assets/90194213/aa37d9b6-cbcf-4ebd-a403-185c917983a9)
+![PetPal06](https://github.com/WeaveCraft/PetPal/assets/90194213/9ee9885f-3f97-4324-a682-e65cf6702968)
+![PetPal05](https://github.com/WeaveCraft/PetPal/assets/90194213/605566f8-a72f-4831-ac1b-9cdfc326d7f9)
+![PetPal04](https://github.com/WeaveCraft/PetPal/assets/90194213/52558ae3-7bc2-4081-a69e-f251bbd196d2)
+![PetPal03](https://github.com/WeaveCraft/PetPal/assets/90194213/b308649f-848e-40b8-bbce-d861d26ab551)
